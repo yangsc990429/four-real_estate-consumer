@@ -137,7 +137,28 @@ $(function() {
 
 
 <!-- Contents -->
-<div id="Contents">
+<%--<div id="Contents">--%>
+
+    <%--style="margin-top: 50px"--%>
+    <div class="row"  id="xxkdiv">
+        <div class="col-lg-9 main-chart">
+            <div  style="height:630px;width:1400px" class="span10" id="mainFrameTabs1">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="bTabs_navTabsMainPage">
+                        <div style="text-align:center;font-size: 20px;line-height: 20px;">
+                            <div id="shineflip"  style="margin-top: 70px;margin-left: 100px">
+                                <div id="shineflip-pages">
+                                    <canvas id="shineflip-canvas"></canvas>
+                                    <canvas id="shineflip-page-mid-canvas"></canvas>
+                                </div></div></div></div></div></div>
+        </div><!-- /col-lg-9 END SECTION MIDDLE -->
+    <%--</div>--%><!--/row -->
+
+
+
 <script type="text/javascript">
 $(function(){
 $(".select").each(function(){
@@ -194,27 +215,10 @@ $("body").click(function(i){ !$(i.target).parents(".select").first().is(s) ? _hi
 <%--    <section id="main-content">
         <section class="wrapper">--%>
 
-            <div class="row" style="margin-top: 50px" id="xxkdiv">
-                <div class="col-lg-9 main-chart">
-                    <div   style="height:630px;width:1400px" class="span10" id="mainFrameTabs1">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="bTabs_navTabsMainPage">
-                                <div style="text-align:center;font-size: 20px;line-height: 20px;">
-                                    <div id="shineflip"  style="margin-top: 70px;margin-left: 100px">
-                                        <div id="shineflip-pages">
-                                            <canvas id="shineflip-canvas"></canvas>
-                                            <canvas id="shineflip-page-mid-canvas"></canvas>
-                                        </div></div></div></div></div></div>
-                </div><!-- /col-lg-9 END SECTION MIDDLE -->
 
-                <!-- **********************************************************************************************************************************************************
-                RIGHT SIDEBAR CONTENT
-                *********************************************************************************************************************************************************** -->
 
-            </div><!--/row -->
+
+
  <%--       </section>
     </section>--%>
 <%--        </div>
