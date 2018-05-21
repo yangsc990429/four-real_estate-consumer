@@ -1,5 +1,5 @@
 package com.four.controller;
 
-public class zxhController {
+public class ZxhController {
 
 }
