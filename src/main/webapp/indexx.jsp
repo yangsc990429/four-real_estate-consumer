@@ -141,8 +141,8 @@ $(function() {
 
     <%--style="margin-top: 50px"--%>
     <div class="row"  id="xxkdiv">
-        <div class="col-lg-9 main-chart">
-            <div  style="height:630px;width:1400px" class="span10" id="mainFrameTabs1">
+        <div class="col-lg-9 main-chart" style="height:630px;width:1200px">
+            <div  style="height:630px;width:1200px" class="span10" id="mainFrameTabs1">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
                 </ul>
@@ -291,8 +291,8 @@ $(function(){
 
    function querytreess(aass) {
 
-        $("#xxkdiv").html('<div class="col-lg-9 main-chart">\n' +
-            '                    <div   style="height:630px;width:1400px" class="span10" id="mainFrameTabs1">\n' +
+        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:630px;width:1200px">\n' +
+            '                    <div   style="height:630px;width:1200px" class="span10" id="mainFrameTabs1">\n' +
             '                        <ul class="nav nav-tabs" role="tablist">\n' +
             '                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>\n' +
             '                        </ul>\n' +
@@ -398,7 +398,7 @@ $(function(){
 </script>
 
 <!-- PageNum -->
-<ul id="PageNum">
+<%--<ul id="PageNum">
 <li><a href="">首页</a></li>
 <li><a href="">上一页</a></li>
 <li><a href="">1</a></li>
@@ -409,7 +409,7 @@ $(function(){
 <li><a href="">6</a></li>
 <li><a href="">下一页</a></li>
 <li><a href="">尾页</a></li>
-</ul>
+</ul>--%>
 <!-- /PageNum -->
 </div>
 <!-- /Contents -->
