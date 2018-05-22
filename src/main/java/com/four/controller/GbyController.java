@@ -66,6 +66,12 @@ public class GbyController {
     public  Apartment queryById(Integer id){
         return  gbyService.queryById(id);
     }
+    //修改
+    @RequestMapping("updateApartment")
+    @ResponseBody
+    public  void  updateApartment(Apartment apartment){
+        gbyService.updateApartment(apartment);
+    }
 
 
 }

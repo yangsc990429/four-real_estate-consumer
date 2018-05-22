@@ -17,4 +17,6 @@ public interface GbyService {
     void deleteApartment(Integer id);
 
     Apartment queryById(Integer id);
+
+    void updateApartment(Apartment apartment);
 }
