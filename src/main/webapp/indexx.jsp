@@ -141,8 +141,8 @@ $(function() {
 
     <%--style="margin-top: 50px"--%>
     <div class="row"  id="xxkdiv">
-        <div class="col-lg-9 main-chart" style="height:600px;width:1200px">
-            <div  style="height:600px;width:1200px" class="span10" id="mainFrameTabs1">
+        <div class="col-lg-9 main-chart" style="height:100%;width:100%">
+            <div  style="height:100%;width:100%" class="span10" id="mainFrameTabs1">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
                 </ul>
@@ -291,8 +291,8 @@ $(function(){
 
    function querytreess(aass) {
 
-        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:600px;width:1200px">\n' +
-            '                    <div   style="height:600px;width:1200px" class="span10" id="mainFrameTabs1">\n' +
+        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:100%;width:100%">\n' +
+            '                    <div   style="height:100%;width:100%" class="span10" id="mainFrameTabs1">\n' +
             '                        <ul class="nav nav-tabs" role="tablist">\n' +
             '                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>\n' +
             '                        </ul>\n' +
@@ -347,12 +347,7 @@ $(function(){
                    page_width: 475,
                    page_height: 482
                });*/
-
-
    }
-
-
-
    /*$(function (){*/
     function getTreeDatasss() {
         $.ajax({

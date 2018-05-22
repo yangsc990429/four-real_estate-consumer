@@ -5,18 +5,18 @@
   Time: 下午 03:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
-
 
     <link href="<%=request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="<%=request.getContextPath() %>/assets/css/style.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/assets/css/style-responsive.css" rel="stylesheet">
-
-
     <!-- Bootstrap 插件 css -->
     <link href="<%=request.getContextPath()%>/js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Bootstrap 核心css -->
@@ -27,18 +27,16 @@
     <link href="<%=request.getContextPath()%>/js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
     <!-- Bootstrap table css -->
     <link href="<%=request.getContextPath()%>/js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
-
 </head>
 <body>
 
 <table  id="aoplist"></table>
+
 <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootStrap-addTabs/bootstrap.addtabs.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap-table/dist/bootstrap-table.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
-
-
 <!-- js placed at the end of the document so the pages load faster -->
 <script src="<%=request.getContextPath() %>/assets/js/bootstrap.min.js"></script>
 <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
@@ -74,7 +72,7 @@
                 {field:'denglu',title:'操作',width:230},
                 {field:'datelo',title:'登录时间',width:230},
                 {field:'pcip',title:'登录IP',width:230},
-             			]
+             ]
         })
     })
 
