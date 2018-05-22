@@ -161,6 +161,22 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.1.24</version>
 		</dependency>
+
+		<!-- SpringBoot集成 mongodb -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+		</dependency>
+		<!--Aop-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
 		<!--
 
                 &lt;!&ndash; SpringBoot集成 mongodb &ndash;&gt;
