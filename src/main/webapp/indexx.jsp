@@ -141,8 +141,8 @@ $(function() {
 
     <%--style="margin-top: 50px"--%>
     <div class="row"  id="xxkdiv">
-        <div class="col-lg-9 main-chart" style="height:630px;width:1250px">
-            <div  style="height:630px;width:1250px" class="span10" id="mainFrameTabs1">
+        <div class="col-lg-9 main-chart" style="height:100%;width:100%">
+            <div  style="height:100%;width:100%" class="span10" id="mainFrameTabs1">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
                 </ul>
@@ -291,8 +291,8 @@ $(function(){
 
    function querytreess(aass) {
 
-        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:630px;width:1250px">\n' +
-            '                    <div   style="height:630px;width:1250px" class="span10" id="mainFrameTabs1">\n' +
+        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:100%;width:100%">\n' +
+            '                    <div   style="height:100%;width:100%" class="span10" id="mainFrameTabs1">\n' +
             '                        <ul class="nav nav-tabs" role="tablist">\n' +
             '                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>\n' +
             '                        </ul>\n' +
@@ -347,12 +347,7 @@ $(function(){
                    page_width: 475,
                    page_height: 482
                });*/
-
-
    }
-
-
-
    /*$(function (){*/
     function getTreeDatasss() {
         $.ajax({
@@ -415,9 +410,9 @@ $(function(){
 <!-- /Contents -->
 
 <!-- /footer -->
-<footer>
+<%--<footer>
 <address>电子邮箱：sales@haiersoft.com  技术支持：人单合一平台项目组<br>青岛海尔软件有限公司版权所有  Copyright &copy; 2015 Haiersoft Corporation, All Rights.</address>
-</footer>
+</footer>--%>
 <!-- /footer -->
 
 </div>

@@ -2,6 +2,7 @@ package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.four.entity.Aop;
+import com.four.entity.Metro;
 import com.four.entity.Tree;
 import com.four.entity.User;
 import com.four.service.LfqService;
@@ -52,6 +53,7 @@ public class LfqController {
         return JSON.toJSONString(list);
     }
 
+
     //查询日志
     @RequestMapping("queryloginrz")
     @ResponseBody
@@ -61,7 +63,7 @@ public class LfqController {
         List<Aop> aops = mongoTemplate.find(query,Aop.class,"login");
 /*         request.getSession().setAttribute("aops",aops);
         Object aops1 = request.getSession().getAttribute("aops");*/
-        System.err.println(aops+"mmmmmmmm");
+        /*System.err.println(aops+"mmmmmmmm");*/
      /*   model.addAttribute("aops",aops);*/
         return JSON.toJSONString(aops);
     }
@@ -79,7 +81,7 @@ public class LfqController {
     }*/
 
 
-    @RequestMapping("aopList")
+    @RequestMapping("queryaopList")
     @ResponseBody
     public Map<String,Object>  AopList(int  page,int  rows){
         Map<String,Object> map=new HashMap<>();
@@ -87,7 +89,7 @@ public class LfqController {
         query.skip((page-1)*rows);
         query.limit(rows);
         List<Aop> list =mongoTemplate.find(query,Aop.class,"login");
-        System.err.println(list+"wwwwwwwwwwwwww");
+       /* System.err.println(list+"wwwwwwwwwwwwww");*/
         /*int  total=list.size();*/
         map.put("rows", list);
         map.put("total",mongoTemplate.findAll(Aop.class).size());
@@ -96,4 +98,60 @@ public class LfqController {
     }
 
 
+    //查询地铁
+    @RequestMapping("queryMetro")
+    @ResponseBody
+    public String queryMetro(){
+        List<Metro> list = lfqService.queryMetro();
+        return JSON.toJSONString(list);
+    }
+
+    //查询序号
+    @RequestMapping("queryxuhao")
+    @ResponseBody
+    public String queryxuhao(){
+        Integer asd = lfqService.queryxuhao();
+        System.err.println(asd+"00000000000000");
+        return asd.toString();
+    }
+
+    //新增地铁
+    @RequestMapping("addditiexianlu")
+    @ResponseBody
+    public String addditiexianlu(Metro metro){
+         lfqService.addditiexianlu(metro);
+        return "addsuccess";
+    }
+
+
+    //删除地铁
+    @RequestMapping("deleteditie")
+    @ResponseBody
+    public String deleteditie(Integer id){
+         lfqService.deleteditie(id);
+        return "delsuccess";
+    }
+    //批量删除地铁
+    @RequestMapping("deleteidspishan")
+    @ResponseBody
+    public String deleteidspishan(String id){
+         lfqService.deleteidspishan(id);
+        return "delsuccess";
+    }
+
+    //修改地铁回显
+    @RequestMapping("updateditiehui")
+    @ResponseBody
+    public String updateditiehui(Integer id){
+        Metro list =  lfqService.updateditiehui(id);
+        return JSON.toJSONString(list);
+    }
+
+    //修改地铁
+    @RequestMapping("updateditiegai")
+    @ResponseBody
+    public String updateditiegai(Metro metro){
+         lfqService.updateditiegai(metro);
+        return "updsuccess";
+    }
 }

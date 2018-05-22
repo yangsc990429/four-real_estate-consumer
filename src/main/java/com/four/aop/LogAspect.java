@@ -23,11 +23,10 @@ public class LogAspect {
 
     private  static  String url="";
 
-
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @Pointcut("execution(public * com.four.controller.*.*(..))")
+    @Pointcut("execution(public * com.four.aop.*.*(..))")
     public void webLog(){
     }
 
@@ -39,11 +38,11 @@ public class LogAspect {
         HttpServletRequest request = attributes.getRequest();
         // 记录下请求内容
         url= request.getRequestURL().toString();
-        System.out.println("URL : " + request.getRequestURL().toString());
+     /*   System.out.println("URL : " + request.getRequestURL().toString());
         System.out.println("HTTP_METHOD : " + request.getMethod());
         System.out.println("IP : " + request.getRemoteAddr());
         System.out.println("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        System.out.println("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+        System.out.println("ARGS : " + Arrays.toString(joinPoint.getArgs()));*/
     }
 
     @AfterReturning(returning = "ret", pointcut = "webLog()")
@@ -52,11 +51,9 @@ public class LogAspect {
         String url = request.getRequestURL().toString().substring(request.getRequestURL().toString().lastIndexOf("/"));
 
         /*mongoTemplate.save(aop);*/
-        System.err.println(url+"llllllllllllll");
+        System.err.println(url+"日志访问方法");
        if ("/queryuser".equals(url)&&url!=null) {
-
            User user = (User) request.getSession().getAttribute("user");
-
            Aop aop = new Aop();
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
            aop.setUserid(user.getUserid());

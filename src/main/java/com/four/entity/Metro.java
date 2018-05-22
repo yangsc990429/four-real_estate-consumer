@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Metro {
+import java.io.Serializable;
+
+public class Metro implements Serializable{
+    private static final long serialVersionUID = -8597285739954738447L;
     //地铁
     private Integer id;
     private String name;
