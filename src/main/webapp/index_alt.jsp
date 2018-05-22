@@ -41,7 +41,7 @@
 
 <section>
     <!-- left side start-->
-    <div class="left-side sticky-left-side">
+    <div  class="left-side sticky-left-side">
 
         <!--logo and iconic logo start-->
         <div class="logo">
