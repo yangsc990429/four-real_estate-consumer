@@ -6,9 +6,13 @@ import com.four.entity.Metro;
 import com.four.entity.Tree;
 import com.four.entity.User;
 import com.four.service.LfqService;
+import com.four.service.YangscService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+/*
+import org.springframework.data.redis.core.RedisTemplate;
+*/
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,16 +22,20 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 @Controller
 @RequestMapping("lfq")
 public class LfqController {
 
     @Autowired
     private LfqService lfqService;
+    @Autowired
+    private YangscService yangscService;
+
 
     @Autowired
     private MongoTemplate mongoTemplate;
+  /*  @Autowired
+    private RedisTemplate redisTemplate;*/
 
     //登陆
     @RequestMapping("queryuser")
@@ -38,6 +46,8 @@ public class LfqController {
         if (Integer.valueOf(usjsp.substring(0,1))==1){
             user.setUserid(Integer.valueOf(usjsp.substring(1)));
             request.getSession().setAttribute("user",user);
+            List list=yangscService.queryQuxan(user.getUserid());
+            request.getSession().setAttribute("quanxian",list);
             return 1+"";
         }else{
             return usjsp;
@@ -52,6 +62,16 @@ public class LfqController {
         List<Tree> list = lfqService.querytree(id);
         return JSON.toJSONString(list);
     }
+    //查询树
+    @RequestMapping("addmokuai")
+    @ResponseBody
+    public String querytree(Integer id,HttpServletRequest request){
+      request.getSession().setAttribute("mokuaiid",id);
+
+      /*  System.err.println("杀杀杀"+request.getSession().getAttribute("mokuaiid"));*/
+        return "sadas";
+    }
+
 
 
     //查询日志

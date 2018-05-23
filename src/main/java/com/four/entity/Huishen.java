@@ -3,7 +3,7 @@ package com.four.entity;
 public class Huishen {
 
 
-//会员管理审核
+    //会员管理审核
     private int huishenid;
     private String huishenztai;
 
@@ -31,4 +31,7 @@ public class Huishen {
                 ", huishenztai='" + huishenztai + '\'' +
                 '}';
     }
+
+
+
 }

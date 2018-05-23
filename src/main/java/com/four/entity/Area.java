@@ -10,7 +10,7 @@ public class Area implements Serializable{
     private Integer id;
     private String name;
     private String pid;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
     private String shouzimu;
     private String zuobiao;
@@ -40,11 +40,11 @@ public class Area implements Serializable{
         this.pid = pid;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

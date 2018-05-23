@@ -1,12 +1,15 @@
 package com.four.entity;
 
-public class Apartment {
+import java.io.Serializable;
 
+public class Apartment implements Serializable {
+
+    private static final long serialVersionUID = -5111326784606333670L;
     //物业类型
     private int id;
     private String yuanname;
     private String zhanname;
-    private String xuhao;
+    private Integer xuhao;
     private String xiaozu;
     private String statusup;
     private String photoimg;
@@ -36,11 +39,11 @@ public class Apartment {
         this.zhanname = zhanname;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

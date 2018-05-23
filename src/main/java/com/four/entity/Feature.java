@@ -9,7 +9,7 @@ public class Feature {
     private String sell;
     private String rendout;
     private String programa;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
 
@@ -45,11 +45,20 @@ public class Feature {
         this.programa = programa;
     }
 
-    public String getXuhao() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getXuhao() {
+
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

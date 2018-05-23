@@ -4,7 +4,7 @@ public class Officelevel {
     //写字楼级别
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -13,10 +13,6 @@ public class Officelevel {
 
     public String getName() {
         return name;
-    }
-
-    public String getXuhao() {
-        return xuhao;
     }
 
     public String getCreatedate() {
@@ -31,7 +27,11 @@ public class Officelevel {
         this.name = name;
     }
 
-    public void setXuhao(String xuhao) {
+    public Integer getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

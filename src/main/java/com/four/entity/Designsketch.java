@@ -6,7 +6,7 @@ public class Designsketch {
 //效果图
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -25,11 +25,11 @@ public class Designsketch {
         this.name = name;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

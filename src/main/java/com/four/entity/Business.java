@@ -1,7 +1,10 @@
 package com.four.entity;
 
-public class Business {
+import java.io.Serializable;
 
+public class Business implements Serializable{
+
+    private static final long serialVersionUID = -1920086820272673627L;
     //s商圈
     private Integer id;
     private String name;
@@ -10,6 +13,30 @@ public class Business {
     private String areaid;
     private String photo;
     private String textarea;
+
+    private String areaname;
+
+    @Override
+    public String toString() {
+        return "Business{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", guancount='" + guancount + '\'' +
+                ", createdate='" + createdate + '\'' +
+                ", areaid='" + areaid + '\'' +
+                ", photo='" + photo + '\'' +
+                ", textarea='" + textarea + '\'' +
+                ", areaname='" + areaname + '\'' +
+                '}';
+    }
+
+    public String getAreaname() {
+        return areaname;
+    }
+
+    public void setAreaname(String areaname) {
+        this.areaname = areaname;
+    }
 
     public Integer getId() {
         return id;
@@ -68,16 +95,4 @@ public class Business {
     }
 
 
-    @Override
-    public String toString() {
-        return "Business{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", guancount='" + guancount + '\'' +
-                ", createdate='" + createdate + '\'' +
-                ", areaid='" + areaid + '\'' +
-                ", photo='" + photo + '\'' +
-                ", textarea='" + textarea + '\'' +
-                '}';
-    }
 }

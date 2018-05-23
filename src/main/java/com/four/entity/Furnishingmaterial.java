@@ -5,7 +5,7 @@ public class Furnishingmaterial {
 //家装建材
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
     private String photoimg;
 
@@ -25,11 +25,11 @@ public class Furnishingmaterial {
         this.name = name;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

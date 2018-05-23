@@ -1,10 +1,13 @@
 package com.four.entity;
 
-public class Public {
+import java.io.Serializable;
+
+public class Public implements Serializable{
+    private static final long serialVersionUID = 2300933196238507860L;
     //公交
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -13,10 +16,6 @@ public class Public {
 
     public String getName() {
         return name;
-    }
-
-    public String getXuhao() {
-        return xuhao;
     }
 
     public String getCreatedate() {
@@ -31,7 +30,11 @@ public class Public {
         this.name = name;
     }
 
-    public void setXuhao(String xuhao) {
+    public Integer getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

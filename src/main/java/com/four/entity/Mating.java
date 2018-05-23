@@ -6,7 +6,7 @@ public class Mating {
     private String name;
     private String sell;
     private String rentout;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -23,10 +23,6 @@ public class Mating {
 
     public String getRentout() {
         return rentout;
-    }
-
-    public String getXuhao() {
-        return xuhao;
     }
 
     public String getCreatedate() {
@@ -49,7 +45,11 @@ public class Mating {
         this.rentout = rentout;
     }
 
-    public void setXuhao(String xuhao) {
+    public Integer getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

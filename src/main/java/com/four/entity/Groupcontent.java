@@ -5,7 +5,7 @@ public class Groupcontent {
     private Integer id;
     private String name;
     private Integer pid;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -20,8 +20,12 @@ public class Groupcontent {
         return pid;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
+        this.xuhao = xuhao;
     }
 
     public String getCreatedate() {
@@ -38,10 +42,6 @@ public class Groupcontent {
 
     public void setPid(Integer pid) {
         this.pid = pid;
-    }
-
-    public void setXuhao(String xuhao) {
-        this.xuhao = xuhao;
     }
 
     public void setCreatedate(String createdate) {
