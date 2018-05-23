@@ -61,4 +61,16 @@ public class Tree implements Serializable{
     public void setNodes(List<Tree> nodes) {
         Nodes = nodes;
     }
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", pid=" + pid +
+                ", url='" + url + '\'' +
+                ", ids=" + ids +
+                ", Nodes=" + Nodes +
+                '}';
+    }
 }

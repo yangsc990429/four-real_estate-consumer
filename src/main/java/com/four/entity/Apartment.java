@@ -1,7 +1,10 @@
 package com.four.entity;
 
-public class Apartment {
+import java.io.Serializable;
 
+public class Apartment implements Serializable {
+
+    private static final long serialVersionUID = -5111326784606333670L;
     //物业类型
     private int id;
     private String yuanname;

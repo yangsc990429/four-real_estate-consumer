@@ -1,9 +1,12 @@
 package com.four.entity;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable{
 
 
-//区域
+    private static final long serialVersionUID = 8298740350905801986L;
+    //区域
     private Integer id;
     private String name;
     private String pid;

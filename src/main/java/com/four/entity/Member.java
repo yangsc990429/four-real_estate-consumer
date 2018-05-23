@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
+    private static final long serialVersionUID = -1554061681140926392L;
     //会员
     private Integer id;
     private String name;

@@ -33,6 +33,12 @@ public class User implements Serializable {
         this.userpass = userpass;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", userpass='" + userpass + '\'' +
+                '}';
+    }
 }

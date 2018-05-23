@@ -121,9 +121,7 @@ function userlogin(){
         }
     })
 }
-function aa() {
-    location.href="index.jsp";
-}
+
 
 </script>
 
