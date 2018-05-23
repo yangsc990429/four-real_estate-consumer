@@ -4,8 +4,16 @@ public class Knowledge {
     //家装知识
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
+
+    public Integer getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
+        this.xuhao = xuhao;
+    }
 
     public Integer getId() {
         return id;
@@ -13,10 +21,6 @@ public class Knowledge {
 
     public String getName() {
         return name;
-    }
-
-    public String getXuhao() {
-        return xuhao;
     }
 
     public String getCreatedate() {
@@ -29,10 +33,6 @@ public class Knowledge {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setXuhao(String xuhao) {
-        this.xuhao = xuhao;
     }
 
     public void setCreatedate(String createdate) {

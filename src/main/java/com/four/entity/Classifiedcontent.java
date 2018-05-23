@@ -6,7 +6,7 @@ public class Classifiedcontent {
     private Integer id;
     private String name;
     private Integer pid;
-    private String xuhao;
+    private Integer xuhao;
     private String createdate;
 
     public Integer getId() {
@@ -33,11 +33,11 @@ public class Classifiedcontent {
         this.pid = pid;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

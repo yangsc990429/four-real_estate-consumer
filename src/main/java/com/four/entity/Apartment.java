@@ -9,7 +9,7 @@ public class Apartment implements Serializable {
     private int id;
     private String yuanname;
     private String zhanname;
-    private String xuhao;
+    private Integer xuhao;
     private String xiaozu;
     private String statusup;
     private String photoimg;
@@ -39,11 +39,11 @@ public class Apartment implements Serializable {
         this.zhanname = zhanname;
     }
 
-    public String getXuhao() {
+    public Integer getXuhao() {
         return xuhao;
     }
 
-    public void setXuhao(String xuhao) {
+    public void setXuhao(Integer xuhao) {
         this.xuhao = xuhao;
     }
 

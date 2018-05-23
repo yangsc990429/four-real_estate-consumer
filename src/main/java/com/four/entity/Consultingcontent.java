@@ -7,7 +7,7 @@ public class Consultingcontent {
     private Integer id;
     private String name;
     private Integer pid;
-    private String xuaho;
+    private Integer xuaho;
     private Integer fanshi;
     private String weizhi;
     private String createdate;
@@ -36,11 +36,11 @@ public class Consultingcontent {
         this.pid = pid;
     }
 
-    public String getXuaho() {
+    public Integer getXuaho() {
         return xuaho;
     }
 
-    public void setXuaho(String xuaho) {
+    public void setXuaho(Integer xuaho) {
         this.xuaho = xuaho;
     }
 

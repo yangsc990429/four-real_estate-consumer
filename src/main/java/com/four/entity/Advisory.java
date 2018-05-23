@@ -5,9 +5,17 @@ public class Advisory {
     //咨询父级分类
     private Integer id;
     private String name;
-    private String xuhao;
+    private Integer xuhao;
     private Integer fanshi;
     private String createdate;
+
+    public Integer getXuhao() {
+        return xuhao;
+    }
+
+    public void setXuhao(Integer xuhao) {
+        this.xuhao = xuhao;
+    }
 
     public Integer getId() {
         return id;
@@ -23,14 +31,6 @@ public class Advisory {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getXuhao() {
-        return xuhao;
-    }
-
-    public void setXuhao(String xuhao) {
-        this.xuhao = xuhao;
     }
 
     public Integer getFanshi() {
