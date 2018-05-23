@@ -42,10 +42,13 @@
     </form>--%>
   <%--
 </div>--%>
-        <center>
+
          <form  id="addqvyv">
            <table>
             <tr>
+                <td width="100px"height="20px">
+                    &nbsp;
+                </td>
                 <td width="100px"height="20px">
                     <span>&nbsp;&nbsp;&nbsp;区域名称:</span>
                 </td>
@@ -60,6 +63,9 @@
                 </td>
             </tr>
                <tr>
+                   <td width="100px"height="20px">
+                       &nbsp;
+                   </td>
                    <td>
                        &nbsp;
                    </td>
@@ -72,6 +78,9 @@
                    </td>
                </tr>
             <tr>
+                <td width="100px"height="20px">
+                    &nbsp;
+                </td>
                 <td  width="100px"height="20px">
                     <span>拼音首字母:</span>
                 </td>
@@ -86,6 +95,9 @@
                 </td>
             </tr>
                <tr>
+                   <td width="100px"height="20px">
+                       &nbsp;
+                   </td>
                    <td>
                        &nbsp;
                    </td>
@@ -98,6 +110,9 @@
                    </td>
                </tr>
            <tr>
+               <td width="100px"height="20px">
+                   &nbsp;
+               </td>
                 <td  width="100px"height="20px">
 
                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序:</span>
@@ -114,6 +129,9 @@
                 </td>
             </tr>
                <tr>
+                   <td width="100px"height="20px">
+                       &nbsp;
+                   </td>
                    <td>
                        &nbsp;
                    </td>
@@ -127,6 +145,9 @@
                </tr>
             <tr>
                 <td width="100px"height="20px">
+                    &nbsp;
+                </td>
+                <td width="100px"height="20px">
                     <span>&nbsp;&nbsp;&nbsp;坐标信息:</span>
                 </td>
                 <td  height="20px">
@@ -139,6 +160,9 @@
                 </td>
             </tr>
                <tr>
+                   <td width="100px"height="20px">
+                       &nbsp;
+                   </td>
                    <td>
                        &nbsp;
                    </td>
@@ -151,6 +175,9 @@
                    </td>
                </tr>
             <tr>
+                <td width="100px"height="20px">
+                    &nbsp;
+                </td>
                 <td width="100px"height="20px">
                     <span>&nbsp;&nbsp;&nbsp;是否热门:</span>
                 </td>
@@ -165,6 +192,9 @@
                 </td>
             </tr>
                <tr>
+                   <td width="100px"height="20px">
+                       &nbsp;
+                   </td>
                    <td>
                        &nbsp;
                    </td>
@@ -178,6 +208,9 @@
                </tr>
             <tr>
                 <td width="100px"height="20px">
+                    &nbsp;
+                </td>
+                <td width="100px"height="20px">
                 </td>
                 <td  height="20px">
                     <button type="button" class="btn btn-success" onclick="addqvyv()">成功按钮</button>
@@ -188,18 +221,18 @@
             </table>
 
           </form>
-        </center>
+
 <script type="text/javascript">
     $("#dasda").buttonset();
     function addqvyv() {
-        alert($("#addqvyv").serialize())
+  /*  alert($("#addqvyv").serialize())*/
         $.ajax({
             url:"<%=request.getContextPath()%>/yangsc/addqvyv",
             type:"post",
             data:$("#addqvyv").serialize(),
             dataType:"text",
             success:function (data) {
-                alert(data)
+             location.href="<%=request.getContextPath()%>/yangsc/queryqvyv.jsp";
             },
             error:function () {
                 alert("出现错误")
