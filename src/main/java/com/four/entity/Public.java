@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Public {
+import java.io.Serializable;
+
+public class Public implements Serializable{
+    private static final long serialVersionUID = 2300933196238507860L;
     //公交
     private Integer id;
     private String name;
