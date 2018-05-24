@@ -1,3 +1,4 @@
+/*
 package com.four.controller;
 
 import com.four.entity.Area;
@@ -78,3 +79,4 @@ public class YangscController {
         return "success";
     }
 }
+*/

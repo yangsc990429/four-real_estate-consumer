@@ -1,3 +1,4 @@
+/*
 package com.four.LoginInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,6 @@ import java.util.List;
 
 public class LoginInterceptor implements HandlerInterceptor {
     @Autowired
-    private YangscService yangscService;
     private Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
 
@@ -71,3 +71,4 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     }
 }
+*/

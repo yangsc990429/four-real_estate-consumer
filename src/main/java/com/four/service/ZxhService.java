@@ -1,3 +1,4 @@
+/*
 package com.four.service;
 
 import com.four.entity.Member;
@@ -18,3 +19,5 @@ public interface ZxhService {
 
     String updateHuiId(Member member);
 }
+
+*/

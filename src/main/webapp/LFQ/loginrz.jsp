@@ -45,7 +45,7 @@
 
     $(function(){
         $("#aoplist").bootstrapTable({
-            url:"<%=request.getContextPath()%>/lfq/aopList",
+            url:"<%=request.getContextPath()%>/lfq/queryaopList",
             striped: true,//隔行变色
             showPaginationSwitch:true,//是否显示 数据条数选择框
             minimumCountColumns:1,//最小留下一个

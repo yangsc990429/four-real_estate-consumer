@@ -1,3 +1,4 @@
+/*
 package com.four.service;
 
 import com.four.entity.Apartment;
@@ -20,3 +21,4 @@ public interface GbyService {
 
     void updateApartment(Apartment apartment);
 }
+*/

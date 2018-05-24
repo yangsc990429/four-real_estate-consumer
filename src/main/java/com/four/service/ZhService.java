@@ -1,3 +1,4 @@
+/*
 package com.four.service;
 
 import com.four.entity.Public;
@@ -20,3 +21,4 @@ public interface ZhService {
 
     void deleteAllBus(String id);
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.four.LoginInterceptor;
 
 import org.springframework.context.annotation.Configuration;
@@ -50,4 +51,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 "/Images/**","/Fc/**","/bootstrap/**","/assets/**","/css/**");
         super.addInterceptors(registry);
     }
-}
+}*/

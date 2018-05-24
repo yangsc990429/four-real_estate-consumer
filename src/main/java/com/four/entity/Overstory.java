@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Overstory {
+import java.io.Serializable;
+
+public class Overstory implements Serializable{
+    private static final long serialVersionUID = -7807988637402973898L;
     //楼层
     private Integer id;
     private String name;

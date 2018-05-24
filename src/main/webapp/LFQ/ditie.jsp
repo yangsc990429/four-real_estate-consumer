@@ -101,9 +101,6 @@
     </div>
 </div>
 
-
-
-
 </div>
 
 
@@ -247,7 +244,6 @@
             dataType:"text",
             async:false,
             success:function(del){
-                alert(del)
                 if(del == "delsuccess"){
                     location.reload();
                 }
@@ -262,7 +258,6 @@
             idsp+=","+a[i].id;
         }
         var id = idsp.substring(1);
-        alert(id);
         $.ajax({
             url:"<%=request.getContextPath()%>/lfq/deleteidspishan",
             type:"post",
@@ -302,7 +297,6 @@
             dataType:"text",
             async:false,
             success:function (date){
-                alert(date);
                location.reload();
             }
         });
