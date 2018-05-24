@@ -85,9 +85,6 @@
     function bao(){
         var chong = $("#chong").val();
         var pass = $("#userpass").val();
-        alert($("[name='yuan']").val())
-        alert(chong)
-        alert(pass)
         if (chong != pass){
             $("#msg").html("<font color='red'>两次密码不同哦</font>");
         }else{
