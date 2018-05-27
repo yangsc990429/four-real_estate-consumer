@@ -38,7 +38,7 @@
 <body>
 
 <!-- wrap_left -->
-<div class="wrap_left" id="frmTitle" name="fmTitle">
+<div class="wrap_left" id="frmTitle" name="fmTitle" style="width: 200px">
 <!-- Logo -->
 <div id="Logo"><span>人单合一</span></div>
 <!-- /Logo -->
@@ -291,8 +291,8 @@ $(function(){
 
    function querytreess(aass) {
 
-        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:600px;width:1200px">\n' +
-            '                    <div   style="height:600px;width:1200px" class="span10" id="mainFrameTabs1">\n' +
+        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:100%;width:100%">\n' +
+            '                    <div   style="height:100%;width:100%" class="span10" id="mainFrameTabs1">\n' +
             '                        <ul class="nav nav-tabs" role="tablist">\n' +
             '                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>\n' +
             '                        </ul>\n' +

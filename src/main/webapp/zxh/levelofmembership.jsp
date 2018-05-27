@@ -365,21 +365,25 @@
             ++count;
         }
         var id = idsp.substring(1);
-        if(confirm("确定要删除这 "+count+"</font> 条数据吗?")){
-            $.ajax({
-                url:"<%=request.getContextPath()%>/zxh/deleteAllIds",
-                type:"post",
-                data:{"ids":id},
-                dataType:"text",
-                success:function (data){
-                    if(data == "success"){
-                        $("#myModaldelsucc").modal({
-                            keyboard:false,
-                            backdrop:false,
-                        })
+        if(count >= 1){
+            if(confirm("确定要删除这 "+count+"</font> 条数据吗?")){
+                $.ajax({
+                    url:"<%=request.getContextPath()%>/zxh/deleteAllIds",
+                    type:"post",
+                    data:{"ids":id},
+                    dataType:"text",
+                    success:function (data){
+                        if(data == "success"){
+                            $("#myModaldelsucc").modal({
+                                keyboard:false,
+                                backdrop:false,
+                            })
+                        }
                     }
-                }
-            })
+                })
+            }
+        }else{
+            alert("请至少选择一条数据");
         }
     }
 

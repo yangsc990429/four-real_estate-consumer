@@ -1,9 +1,6 @@
 package com.four.service;
 
-import com.four.entity.Area;
-import com.four.entity.Business;
-import com.four.entity.Member;
-import com.four.entity.User;
+import com.four.entity.*;
 
 import java.util.List;
 import java.util.Map;
@@ -38,4 +35,24 @@ public interface ZxhService {
     Business selectBusId(Integer id);
 
     String updateBusId(Business business);
+
+    List<Map<String,Object>> selectZiXun();
+
+    String deleteZiId(String id);
+
+    String insertZixun(Consultinglist consultinglist);
+
+    List<Consultingcontent> selectConsultall();
+
+    List<Advisory> selectAdvall();
+
+    String deleteZixall(String ids);
+
+    String updateShenz(Integer flag, String ids);
+
+    Consultinglist selectQueryId(Integer id);
+
+    String updateZiId(Consultinglist consultinglist);
+
+    List<Map<String,Object>> selectShenZiXun();
 }

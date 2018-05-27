@@ -1,10 +1,7 @@
 package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.four.entity.Area;
-import com.four.entity.Business;
-import com.four.entity.Member;
-import com.four.entity.User;
+import com.four.entity.*;
 import com.four.service.ZxhService;
 import com.four.util.AliyunOSSClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -228,10 +225,130 @@ public class ZxhController {
         return JSON.toJSONString(business);
     }
 
+    /**
+     * 修改商圈
+     * @param business
+     * @return
+     */
     @RequestMapping("updateBusId")
     @ResponseBody
     public String updateBusId(Business business){
         String flag = zxhservice.updateBusId(business);
         return flag;
+    }
+
+    /**
+     * 查询咨询
+     * @return
+     */
+    @RequestMapping("selectZiXun")
+    @ResponseBody
+    public List<Map<String,Object>> selectZiXun(){
+        List<Map<String,Object>> list = zxhservice.selectZiXun();
+        return list;
+    }
+
+    /**
+     * 删除咨询
+     * @param id
+     * @return
+     */
+    @RequestMapping("deleteZiId")
+    @ResponseBody
+    public String deleteZiId(String id){
+        String flag = zxhservice.deleteZiId(id);
+        return flag;
+    }
+
+    /**
+     * 新增咨询
+     * @param consultinglist
+     * @return
+     */
+    @RequestMapping("insertZixun")
+    @ResponseBody
+    public String insertZixun(Consultinglist consultinglist){
+        System.err.println(consultinglist);
+        consultinglist.setShenhe(2);
+        String flag = zxhservice.insertZixun(consultinglist);
+        return flag;
+    }
+
+    /**
+     * 查询咨询分组
+     * @return
+     */
+    @RequestMapping("selectConsultall")
+    @ResponseBody
+    public String selectConsultall(){
+        List<Consultingcontent> list = zxhservice.selectConsultall();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询咨询分组对应的内容
+     * @return
+     */
+    @RequestMapping("selectAdvall")
+    @ResponseBody
+    public String selectAdvall(){
+        List<Advisory> lisst = zxhservice.selectAdvall();
+        return JSON.toJSONString(lisst);
+    }
+
+    /**
+     * 批量删除咨询
+     * @param ids
+     * @return
+     */
+    @RequestMapping("deleteZixall")
+    @ResponseBody
+    public String deleteZixall(String ids){
+        String flag = zxhservice.deleteZixall(ids);
+        return flag;
+    }
+
+    /**
+     * 修改审核状态
+     * @param flag
+     * @param ids
+     * @return
+     */
+    @RequestMapping("updateShenz")
+    @ResponseBody
+    public String updateShenz(Integer flag,String ids){
+        String as = zxhservice.updateShenz(flag,ids);
+        return as;
+    }
+
+    /**
+     * 修改咨询回显
+     * @param id
+     * @return
+     */
+    @RequestMapping("selectQueryId")
+    @ResponseBody
+    public String selectQueryId(Integer id){
+        Consultinglist consultinglist = zxhservice.selectQueryId(id);
+        return JSON.toJSONString(consultinglist);
+    }
+
+    /**
+     * 修改咨询
+     * @param consultinglist
+     * @return
+     */
+    @RequestMapping("updateZiId")
+    @ResponseBody
+    public String updateZiId(Consultinglist consultinglist){
+        String cx = zxhservice.updateZiId(consultinglist);
+        return cx;
+    }
+
+    @RequestMapping("selectShenZiXun")
+    @ResponseBody
+    public List<Map<String,Object>> selectShenZiXun(){
+        List<Map<String,Object>> list = zxhservice.selectShenZiXun();
+        return list;
     }
 }
