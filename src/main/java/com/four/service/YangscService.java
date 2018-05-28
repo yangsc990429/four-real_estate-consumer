@@ -1,4 +1,3 @@
-/*
 package com.four.service;
 
 import com.four.entity.Area;
@@ -27,4 +26,3 @@ public interface YangscService {
 
  List<Map<String,Object>> queryQuxan(Integer userid);
 }
-*/

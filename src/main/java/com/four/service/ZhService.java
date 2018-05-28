@@ -1,4 +1,3 @@
-/*
 package com.four.service;
 
 import com.four.entity.*;
@@ -52,4 +51,3 @@ public interface ZhService {
 
     Huirenshen renzhengByIdjc(Integer huirenshenid);
 }
-*/

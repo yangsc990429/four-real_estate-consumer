@@ -1,21 +1,20 @@
-/*
 package com.four.controller;
 
-        import com.four.entity.Apartment;
-        import com.four.entity.Feature;
-        import com.four.service.GbyService;
-        import com.four.util.AliyunOSSClientUtil;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Controller;
-        import org.springframework.web.bind.annotation.RequestMapping;
-        import org.springframework.web.bind.annotation.RequestMethod;
-        import org.springframework.web.bind.annotation.RequestParam;
-        import org.springframework.web.bind.annotation.ResponseBody;
-        import org.springframework.web.multipart.MultipartFile;
+import com.four.entity.Apartment;
+import com.four.entity.Feature;
+import com.four.service.GbyService;
+import com.four.util.AliyunOSSClientUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
-        import java.util.HashMap;
-        import java.util.List;
-        import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("gby")
@@ -147,4 +146,3 @@ public class GbyController {
     }
 
 }
-*/

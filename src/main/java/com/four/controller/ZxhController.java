@@ -1,4 +1,3 @@
-/*
 package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -56,14 +55,12 @@ public class ZxhController {
         return aa;
     }
 
-*/
-/**
- * 跳页面
- * @return
- *//*
-
-@RequestMapping("tiao")
-public String tiao(){
+    /**
+     * 跳页面
+     * @return
+     *//*
+    @RequestMapping("tiao")
+    public String tiao(){
         return "redirect:four-real_estate-consumer/login";
     }
 
@@ -416,5 +413,3 @@ public String insertMem(Member member){
     }
 
 }
-
-*/

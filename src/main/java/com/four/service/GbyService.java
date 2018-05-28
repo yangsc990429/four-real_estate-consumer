@@ -1,4 +1,3 @@
-/*
 package com.four.service;
 
 import com.four.entity.Apartment;
@@ -43,4 +42,3 @@ public interface GbyService {
 
     List<Map<String,Object>> queryjingji();
 }
-*/
