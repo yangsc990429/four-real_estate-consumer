@@ -1,7 +1,10 @@
 package com.four.entity;
 
-public class Advisory {
+import java.io.Serializable;
 
+public class Advisory implements Serializable{
+
+    private static final long serialVersionUID = 7525042587052155739L;
     //咨询父级分类
     private Integer id;
     private String name;

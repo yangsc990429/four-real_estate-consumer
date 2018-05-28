@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Consultinglist {
+import java.io.Serializable;
 
-//咨询
+public class Consultinglist implements Serializable{
+
+    private static final long serialVersionUID = -6310561242670089866L;
+    //咨询
     private Integer id;
     private String name;
     private Integer zid;

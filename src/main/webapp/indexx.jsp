@@ -38,7 +38,7 @@
 <body>
 
 <!-- wrap_left -->
-<div class="wrap_left" id="frmTitle" name="fmTitle">
+<div class="wrap_left" id="frmTitle" name="fmTitle" style="width: 200px">
 <!-- Logo -->
 <div id="Logo"><span>人单合一</span></div>
 <!-- /Logo -->

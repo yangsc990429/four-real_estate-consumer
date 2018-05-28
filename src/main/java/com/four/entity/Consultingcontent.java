@@ -1,9 +1,12 @@
 package com.four.entity;
 
-public class Consultingcontent {
+import java.io.Serializable;
+
+public class Consultingcontent implements Serializable{
 
 
-//咨询内容
+    private static final long serialVersionUID = 6088504323558491324L;
+    //咨询内容
     private Integer id;
     private String name;
     private Integer pid;
