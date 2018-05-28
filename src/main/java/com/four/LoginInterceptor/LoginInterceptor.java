@@ -21,7 +21,6 @@ import java.util.List;
 
 public class LoginInterceptor implements HandlerInterceptor {
     @Autowired
-    private YangscService yangscService;
     private Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 
 

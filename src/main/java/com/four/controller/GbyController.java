@@ -1,3 +1,4 @@
+/*
 package com.four.controller;
 
         import com.four.entity.Apartment;
@@ -146,3 +147,4 @@ public class GbyController {
     }
 
 }
+*/

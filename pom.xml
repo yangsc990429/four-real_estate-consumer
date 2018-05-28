@@ -187,6 +187,11 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
+		<!--redis-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis-data</artifactId>
+		</dependency>
 
 		<!--
 
@@ -226,7 +231,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--Aop-->
+		<!--
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-aop</artifactId>
+                </dependency>
+        -->
 
+		<!--&lt;!&ndash;redis&ndash;&gt;
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+		</dependency>-->
 		<!--提供AMQP协议的支持 Rabbitmq-->
 
 		<dependency>
@@ -282,6 +299,11 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
 		</dependency>
+
+
+
+
+
 		<!--solr strat-->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -333,5 +355,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

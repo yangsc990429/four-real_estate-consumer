@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Huizcxz {
+import java.io.Serializable;
+
+public class Huizcxz implements Serializable {
 
 
+    private static final long serialVersionUID = -6602240944239282069L;
     //会员管理注册性质
     private Integer huizcxzid;
     private String huizcxzname;

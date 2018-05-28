@@ -347,12 +347,7 @@ $(function(){
                    page_width: 475,
                    page_height: 482
                });*/
-
-
    }
-
-
-
    /*$(function (){*/
     function getTreeDatasss() {
         $.ajax({

@@ -8,6 +8,9 @@ import com.four.util.AliyunOSSClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+/*
+import org.springframework.data.redis.core.RedisTemplate;
+*/
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,9 +31,14 @@ public class LfqController {
 
     @Autowired
     private LfqService lfqService;
+    @Autowired
+    private YangscService yangscService;
+
 
     @Autowired
     private MongoTemplate mongoTemplate;
+  /*  @Autowired
+    private RedisTemplate redisTemplate;*/
 
     //登陆
     @RequestMapping("queryuser")
@@ -61,7 +69,7 @@ public class LfqController {
     @RequestMapping("addmokuai")
     @ResponseBody
     public String querytree(Integer id,HttpServletRequest request){
-        request.getSession().setAttribute("mokuaiid",id);
+      request.getSession().setAttribute("mokuaiid",id);
 
       /*  System.err.println("杀杀杀"+request.getSession().getAttribute("mokuaiid"));*/
         return "sadas";
@@ -117,9 +125,7 @@ public class LfqController {
     @RequestMapping("queryMetro")
     @ResponseBody
     public String queryMetro(){
-        System.err.println("地铁设置");
         List<Metro> list = lfqService.queryMetro();
-        System.err.println(list+"地铁设置");
         return JSON.toJSONString(list);
     }
 
@@ -128,36 +134,33 @@ public class LfqController {
     @ResponseBody
     public String queryxuhao(){
         Integer asd = lfqService.queryxuhao();
+        System.err.println(asd+"00000000000000");
         return asd.toString();
     }
-
 
     //新增地铁
     @RequestMapping("addditiexianlu")
     @ResponseBody
     public String addditiexianlu(Metro metro){
-        lfqService.addditiexianlu(metro);
+         lfqService.addditiexianlu(metro);
         return "addsuccess";
     }
-
 
 
     //删除地铁
     @RequestMapping("deleteditie")
     @ResponseBody
     public String deleteditie(Integer id){
-        lfqService.deleteditie(id);
+         lfqService.deleteditie(id);
         return "delsuccess";
     }
-
     //批量删除地铁
     @RequestMapping("deleteidspishan")
     @ResponseBody
     public String deleteidspishan(String id){
-        lfqService.deleteidspishan(id);
+         lfqService.deleteidspishan(id);
         return "delsuccess";
     }
-
 
     //修改地铁回显
     @RequestMapping("updateditiehui")
@@ -167,12 +170,11 @@ public class LfqController {
         return JSON.toJSONString(list);
     }
 
-
     //修改地铁
     @RequestMapping("updateditiegai")
     @ResponseBody
     public String updateditiegai(Metro metro){
-        lfqService.updateditiegai(metro);
+         lfqService.updateditiegai(metro);
         return "updsuccess";
     }
 

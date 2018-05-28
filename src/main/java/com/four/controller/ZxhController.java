@@ -1,3 +1,4 @@
+/*
 package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -55,12 +56,14 @@ public class ZxhController {
         return aa;
     }
 
-    /**
-     * 跳页面
-     * @return
-     */
-    @RequestMapping("tiao")
-    public String tiao(){
+*/
+/**
+ * 跳页面
+ * @return
+ *//*
+
+@RequestMapping("tiao")
+public String tiao(){
         return "redirect:four-real_estate-consumer/login";
     }
 
@@ -80,15 +83,15 @@ public class ZxhController {
      * @param member
      * @return
      */
-    @RequestMapping("insertMem")
-    @ResponseBody
-    public String insertMem(Member member){
+@RequestMapping("insertMem")
+@ResponseBody
+public String insertMem(Member member){
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         member.setCreatedate(sim.format(new Date()));
         System.err.println(member);
         String aa = zxhservice.insertMem(member);
         return aa;
-    }
+        }
 
     /**
      * 修改回显
@@ -100,7 +103,7 @@ public class ZxhController {
     public String selectMemId(Integer id){
         Member member = zxhservice.selectMemId(id);
         return JSON.toJSONString(member);
-    }
+        }
 
     /**
      * 修改会员等级
@@ -114,7 +117,7 @@ public class ZxhController {
         member.setCreatedate(sim.format(new Date()));
         String fan = zxhservice.updateHuiId(member);
         return fan;
-    }
+        }
 
     /**
      * 删除会员等级
@@ -413,3 +416,5 @@ public class ZxhController {
     }
 
 }
+
+*/
