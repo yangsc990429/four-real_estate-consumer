@@ -263,10 +263,7 @@
 <script type="text/javascript">
 
     var id = <%=request.getParameter("id")%>;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
+    alert(id)
     $(function(){
 
             $.ajax({

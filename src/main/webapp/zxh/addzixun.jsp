@@ -111,7 +111,7 @@
         </tr>
         <tr><td colspan="5">&nbsp;</td></tr>
         <tr>
-            <td width="130px" align="right"><font size="4"><strong>SEO关键词:</strong></font>&nbsp;</td>
+            <td width="130px" align="right"><font size="4"><strong>SEO描述:</strong></font>&nbsp;</td>
             <td width="220px" colspan="4">
                 <textarea name="seodescription" rows="10" cols="50"></textarea>
             </td>
