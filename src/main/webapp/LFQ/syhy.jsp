@@ -90,13 +90,13 @@
                     }
                 },
                 {field:'huizcxzname',title:'注册性质',width:230},
-                {field:'huijinicheng',title:'会员昵称',width:230},
+                {field:'huijilianxiren',title:'会员昵称',width:230},
                 {field:'huijinkymoney',title:'余额',width:230},
                 {field:'huijindate',title:'时间',width:230},
                 {field:'huijinip',title:'IP',width:230},
                 {field:'act',title:'操作',width:300,
                     formatter: function(value,row,index){
-                        return "<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='updateditie("+row.id+")'>编辑</button>&nbsp;&nbsp;<button type='button' onclick='deletekhglss("+row.id+")' class='btn btn-danger'>删除</button>";
+                        return "<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='updatehybianjiym("+row.huijiid+")'>编辑</button>&nbsp;&nbsp;<button type='button' onclick='hyrenzhengbt("+row.huijiid+")' class='btn btn-warning'>认证</button>";
                     }
                 }]
         })
@@ -209,6 +209,16 @@
                 location.reload();
             }
         });
+    }
+    
+    //认证页面
+    function hyrenzhengbt(id) {
+   location.href="<%=request.getContextPath()%>/LFQ/rzshhy.jsp?id="+id;
+    }
+
+    //编辑页面
+    function updatehybianjiym(id) {
+        location.href="<%=request.getContextPath()%>/LFQ/addsyhy.jsp?id="+id;
     }
 
 

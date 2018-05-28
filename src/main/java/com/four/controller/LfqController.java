@@ -4,6 +4,7 @@ package com.four.controller;
 import com.alibaba.fastjson.JSON;
 import com.four.entity.*;
 import com.four.service.LfqService;
+import com.four.util.AliyunOSSClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
@@ -11,12 +12,15 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.four.entity.Overstory;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("lfq")
@@ -230,7 +234,7 @@ public class LfqController {
     }
 
 
-    //-------------------------------所有会员
+    //---------------Huiji----------------所有会员
     //查询所有会员
     @RequestMapping("queryHuiji")
     @ResponseBody
@@ -242,11 +246,65 @@ public class LfqController {
     //查询回显所有会员
     @RequestMapping("updatesyhyhuicha")
     @ResponseBody
-    public String updatesyhyhuicha(Integer id){
-        System.err.println(id+"11111111166");
-        List<Map<Object,String>> list = lfqService.updatesyhyhuicha(id);
-        System.err.println(list+"33333333333333");
+    public String updatesyhyhuicha(String id){
+        Huiji list = lfqService.updatesyhyhuicha(id);
         return JSON.toJSONString(list);
     }
+
+    //查询所有会员等级
+    @RequestMapping("queryhydj")
+    @ResponseBody
+    public String queryhydj(){
+        List<Huideng> list = lfqService.queryhydj();
+        return JSON.toJSONString(list);
+    }
+
+    //查询所有会员地区
+    @RequestMapping("querydrea")
+    @ResponseBody
+    public String querydrea(){
+        List<Area> list = lfqService.querydrea();
+        return JSON.toJSONString(list);
+    }
+
+    //查询所有会员地区地方
+    @RequestMapping("querydreadifangid")
+    @ResponseBody
+    public String querydreadifangid(String id){
+        List<Area> list = lfqService.querydreadifangid(id);
+        return JSON.toJSONString(list);
+    }
+
+
+    //修改所有会员
+    @RequestMapping("updatesyhysyhygai")
+    @ResponseBody
+    public String updatesyhysyhygai(Huiji hj){
+        System.err.println(hj+"修改内容");
+       lfqService.updatesyhygai(hj);
+        return "updsuccess";
+    }
+
+
+
+ //图片上传
+    @RequestMapping(value="insertPicture",method = RequestMethod.POST, produces = "application/json;charset=utf8")
+    @ResponseBody
+    public Object insertPicture(@RequestParam("file") MultipartFile... files){
+        String greatBeauty = AliyunOSSClientUtil.GreatBeauty(files[0], files[0].getOriginalFilename());
+        Map map = new HashMap(1);
+        map.put("a",greatBeauty);
+        return map;
+    }
+
+
+    //认证审核
+/*    @RequestMapping("queryhuiyuanrenzhneg")
+    @ResponseBody
+    public String queryhuiyuanrenzhneg(String id){
+        lfqService.queryhuiyuanrenzhneg(id);
+        return "updsuccess";
+    }*/
+
 
 }

@@ -43,5 +43,13 @@ public interface LfqService {
 
     List queryQuxan(Integer userid);
 
-    List<Map<Object,String>> updatesyhyhuicha(Integer id);
+    Huiji updatesyhyhuicha(String id);
+
+    List<Huideng> queryhydj();
+
+    List<Area> querydrea();
+
+    List<Area> querydreadifangid(String id);
+
+    void updatesyhygai(Huiji hj);
 }
