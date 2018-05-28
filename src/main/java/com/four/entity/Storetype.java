@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Storetype {
+import java.io.Serializable;
+
+public class Storetype implements Serializable {
+    private static final long serialVersionUID = 7378783857988927060L;
     //商铺类型
     private Integer id;
     private String name;

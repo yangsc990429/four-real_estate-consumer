@@ -98,9 +98,10 @@
                     if(data == "error"){
                         $("#msg2").html("<font color='red'>修改错误，旧密码错误</font>");
                     }else{
-                        if(confirm("修改成功!!!是否重新登陆？")){
-                            location.href="<%=request.getContextPath()%>/zxh/tiao";
-                        }
+                        alert("修改成功！！！");
+                        /*if(confirm("修改成功!!!是否重新登陆？")){
+                            location.href="<%=request.getContextPath()%>/login.jsp";
+                        }*/
                     }
                 }
             })

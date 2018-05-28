@@ -1,12 +1,15 @@
 package com.four.controller;
 
 import com.four.entity.Area;
+import com.four.entity.Metro;
+import com.four.entity.User;
 import com.four.service.YangscService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +25,7 @@ public class YangscController {
     public String addqvyv(Area area){
 
         yangscService.addqvyv(area);
+
         return "success";
     }
     @RequestMapping("queryqvyvList")
@@ -55,10 +59,10 @@ public class YangscController {
     //修改
     @RequestMapping("updateqvyv")
     @ResponseBody
-    public String updateqvyv(Area area){
-
+    public String updateqvyv(Area area,HttpServletRequest request){
         yangscService.updateqvyv(area);
-        return "success";
+
+        return  request.getSession().getAttribute("quanxianid").toString();
     }
     //回显子
     @RequestMapping("queryqvyvzi")
@@ -74,7 +78,17 @@ public class YangscController {
     public String updatezi(Area area){
         area.setPid(area.getPid().split(",")[0].toString());
         System.out.println(area);
-     yangscService.updatezi(area);
+        yangscService.updatezi(area);
         return "success";
+    }
+    @RequestMapping("querymokuai")
+    @ResponseBody
+    public String querymokuai(Metro metro, HttpServletRequest request){
+        User user= (User) request.getSession().getAttribute("user");
+        List<Map<String,Object>> list=yangscService.queryQuxan(user.getUserid());
+        request.getSession().setAttribute("quanxian",list);
+        List<Map<String,Object>> list1= (List<Map<String, Object>>) request.getSession().getAttribute("quanxian");
+            System.err.println(list1);
+        return "updsuccess";
     }
 }

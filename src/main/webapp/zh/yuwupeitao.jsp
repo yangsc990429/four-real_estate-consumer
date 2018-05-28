@@ -31,10 +31,10 @@
 </head>
 <body>
 
-<button type="button" class="btn btn-default" onclick="addrole()">新增</button>
-<button type="button" class="btn btn-default" onclick="delallbus()">批量删除</button>
+<button type="button" class="btn btn-default" onclick="addpeitao()">新增配套</button>
+<button type="button" class="btn btn-default" onclick="delallpeitao()">批量删除</button>
 
-<table class="table" id="querybus" border="1" ></table>
+<table class="table" id="querypeitao" border="1" ></table>
 
 <!-- 模态提示框（Modal） -->
 
@@ -70,8 +70,8 @@
 
     $(function(){
 
-        $("#querybus").bootstrapTable({
-            url:"<%=request.getContextPath()%>/zh/queryBus",
+        $("#querypeitao").bootstrapTable({
+            url:"<%=request.getContextPath()%>/zh/queryPeiTao",
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
             sortable: true,                     //是否启用排序
@@ -93,13 +93,13 @@
             detailView: false,
             columns:[[
                 {field:'che',checkbox:true},
-                {field:'id',title:'编号',width:100 ,hidden:'true'},
+                {field:'id',title:'编号',width:100,hidden:'true'},
                 {field:'name',title:'名称',width:100},
                 {field:'xuhao',title:'序号',width:100},
                 {field:'createdate',title:'时间',width:100},
                 {field:'act',title:'操作',width:100,
                     formatter: function(value,row,index){
-                        return "<span onclick='delbus("+row.id+")' ><a>删除</a></span>    <span onclick='updateHx("+row.id+")' ><a>编辑</a></span>";
+                        return "<span onclick='delpeitao("+row.id+")' ><a>删除</a></span>  <span>|</span>  <span onclick='updateHxPeiTao("+row.id+")' ><a>编辑</a></span>";
                     }
                 },
             ]]
@@ -107,10 +107,10 @@
     })
 
 
-function delbus(id){
-alert(id)
+    function delpeitao(id){
+        alert(id)
         $.ajax({
-            url:"<%=request.getContextPath()%>/zh/delbus?id="+id,
+            url:"<%=request.getContextPath()%>/zh/delpeitao?id="+id,
             type:"post",
             dataType:"text",
             async:false,
@@ -119,39 +119,39 @@ alert(id)
             }
         })
 
-}
-        function delallbus(){
+    }
+    function delallpeitao(){
 
-            var a = $('#querybus').bootstrapTable('getSelections');
-            var idsp = "";
-            for (var i = 0; i < a.length; i++) {
-                idsp+=","+a[i].id;
-            }
-            var id = idsp.substring(1);
-            alert(id);
-            $.ajax({
-                url:"<%=request.getContextPath()%>/zh/deleteAllBus",
-                type:"post",
-                data:{"id":id},
-                dataType:"text",
-                async:false,
-                success:function (delsuccess){
-                    $("#querybus").bootstrapTable('refresh')
-                }
-            });
+        var a = $('#querypeitao').bootstrapTable('getSelections');
+        var idsp = "";
+        for (var i = 0; i < a.length; i++) {
+            idsp+=","+a[i].id;
         }
+        var id = idsp.substring(1);
+        alert(id);
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zh/delallpeitao",
+            type:"post",
+            data:{"id":id},
+            dataType:"text",
+            async:false,
+            success:function (delsuccess){
+                $("#querypeitao").bootstrapTable('refresh')
+            }
+        });
+    }
 
 
 
-function updateHx(id){
+    function updateHxPeiTao(id){
 
-        location.href="<%=request.getContextPath()%>/zh/updatebus.jsp?id="+id;
-}
+        location.href="<%=request.getContextPath()%>/zh/updatepeitao.jsp?id="+id;
+    }
 
-function addrole(){
+    function addpeitao(){
 
-        location.href="<%=request.getContextPath()%>/zh/addbus.jsp";
-}
+        location.href="<%=request.getContextPath()%>/zh/addpeitao.jsp";
+    }
 
 
 

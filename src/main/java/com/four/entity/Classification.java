@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Classification {
+import java.io.Serializable;
 
-//效果图分类
+public class Classification implements Serializable {
+
+    private static final long serialVersionUID = -6030736928658056977L;
+    //效果图分类
     private Integer id;
     private String name;
     private Integer pid;

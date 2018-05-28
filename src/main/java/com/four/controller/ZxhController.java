@@ -11,10 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -51,6 +50,8 @@ public class ZxhController {
     public String updatePass(@RequestParam("yuan") String yuan, @RequestParam("userpass") String userpass, HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
         String aa = zxhservice.updatePass(yuan,userpass,user);
+        /*ModelAndView model=new ModelAndView();
+        model.setView();*/
         return aa;
     }
 
@@ -345,10 +346,70 @@ public class ZxhController {
         return cx;
     }
 
+    /**
+     * 查询需要审核的咨询
+     * @return
+     */
     @RequestMapping("selectShenZiXun")
     @ResponseBody
     public List<Map<String,Object>> selectShenZiXun(){
         List<Map<String,Object>> list = zxhservice.selectShenZiXun();
         return list;
     }
+
+    @RequestMapping("selectFangyuan")
+    @ResponseBody
+    public List<Map<String,Object>> selectFangyuan(){
+        List<Map<String,Object>> list = zxhservice.selectFangyuan();
+        return list;
+    }
+
+    /**
+     * 删除房源出售
+     * @param id
+     * @return
+     */
+    @RequestMapping("deleteYuanId")
+    @ResponseBody
+    public String deleteYuanId(Integer id){
+        String flag = zxhservice.deleteYuanId(id);
+        return flag;
+    }
+
+    /**
+     * 批量删除出售房源
+     * @param ids
+     * @return
+     */
+    @RequestMapping("deleteIdAll")
+    @ResponseBody
+    public String deleteIdAll(String ids){
+        String flag = zxhservice.deleteIdAll(ids);
+        return flag;
+    }
+
+    /**
+     * 设置为橱窗推荐
+     * @param ids
+     * @return
+     */
+    @RequestMapping("updateYuanChuId")
+    @ResponseBody
+    public String updateYuanChuId(String ids){
+        String falg = zxhservice.updateYuanChuId(ids);
+        return falg;
+    }
+
+    /**
+     * 从橱窗中取消推荐
+     * @param ids
+     * @return
+     */
+    @RequestMapping("updateDownChuId")
+    @ResponseBody
+    public String updateDownChuId(String ids){
+        String flag = zxhservice.updateDownChuId(ids);
+        return flag;
+    }
+
 }

@@ -1,9 +1,12 @@
 package com.four.entity;
 
-public class Feature {
+import java.io.Serializable;
+
+public class Feature implements Serializable {
 
 
-//特色
+    private static final long serialVersionUID = -3495396893550653397L;
+    //特色
     private Integer id;
     private String name;
     private String sell;

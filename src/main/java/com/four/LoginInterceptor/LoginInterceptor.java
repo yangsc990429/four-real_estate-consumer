@@ -1,3 +1,4 @@
+/*
 package com.four.LoginInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -71,3 +72,4 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     }
 }
+*/

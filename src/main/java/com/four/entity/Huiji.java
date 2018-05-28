@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Huiji {
+import java.io.Serializable;
+
+public class Huiji implements Serializable{
+    private static final long serialVersionUID = -7096173997585690197L;
 
 //会员管理基础资料
 
@@ -16,7 +19,8 @@ public class Huiji {
     private String huijidianhua;
     private String huijiqq;
     private String huijiquyu;
-    private String uijitouxiang;
+    private String huijiquyudf;
+    private String huijitouxiang;
     private String huijizhucexz;
     private String huijierweima;
     private String huijimendiandz;
@@ -24,7 +28,32 @@ public class Huiji {
     private String huijizwojsgc;
     private String huijidituzb;
     private String huijidpgjc;
+    private Integer huijinid;
+    private String huisysxl;
+    private String huiquanxian;
+    private String huidjdqdate;
 
+
+    //会员管理注册性质
+    private Integer huizcxzid;
+    private String huizcxzname;
+
+    //会员管理金钱管理
+
+    private String huijinzhanghao;
+    private String huijinkymoney;
+    private String huijinshuiming;
+    private String huijinmoneysl;
+    private String huijindate;
+    private String huijinip;
+
+    //会员管理会员等级表
+    private Integer huidengid;
+    private String huidengname;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getHuijiid() {
         return huijiid;
@@ -122,12 +151,20 @@ public class Huiji {
         this.huijiquyu = huijiquyu;
     }
 
-    public String getUijitouxiang() {
-        return uijitouxiang;
+    public String getHuijiquyudf() {
+        return huijiquyudf;
     }
 
-    public void setUijitouxiang(String uijitouxiang) {
-        this.uijitouxiang = uijitouxiang;
+    public void setHuijiquyudf(String huijiquyudf) {
+        this.huijiquyudf = huijiquyudf;
+    }
+
+    public String getHuijitouxiang() {
+        return huijitouxiang;
+    }
+
+    public void setHuijitouxiang(String huijitouxiang) {
+        this.huijitouxiang = huijitouxiang;
     }
 
     public String getHuijizhucexz() {
@@ -186,6 +223,118 @@ public class Huiji {
         this.huijidpgjc = huijidpgjc;
     }
 
+    public Integer getHuijinid() {
+        return huijinid;
+    }
+
+    public void setHuijinid(Integer huijinid) {
+        this.huijinid = huijinid;
+    }
+
+    public String getHuisysxl() {
+        return huisysxl;
+    }
+
+    public void setHuisysxl(String huisysxl) {
+        this.huisysxl = huisysxl;
+    }
+
+    public String getHuiquanxian() {
+        return huiquanxian;
+    }
+
+    public void setHuiquanxian(String huiquanxian) {
+        this.huiquanxian = huiquanxian;
+    }
+
+    public String getHuidjdqdate() {
+        return huidjdqdate;
+    }
+
+    public void setHuidjdqdate(String huidjdqdate) {
+        this.huidjdqdate = huidjdqdate;
+    }
+
+    public Integer getHuizcxzid() {
+        return huizcxzid;
+    }
+
+    public void setHuizcxzid(Integer huizcxzid) {
+        this.huizcxzid = huizcxzid;
+    }
+
+    public String getHuizcxzname() {
+        return huizcxzname;
+    }
+
+    public void setHuizcxzname(String huizcxzname) {
+        this.huizcxzname = huizcxzname;
+    }
+
+    public String getHuijinzhanghao() {
+        return huijinzhanghao;
+    }
+
+    public void setHuijinzhanghao(String huijinzhanghao) {
+        this.huijinzhanghao = huijinzhanghao;
+    }
+
+    public String getHuijinkymoney() {
+        return huijinkymoney;
+    }
+
+    public void setHuijinkymoney(String huijinkymoney) {
+        this.huijinkymoney = huijinkymoney;
+    }
+
+    public String getHuijinshuiming() {
+        return huijinshuiming;
+    }
+
+    public void setHuijinshuiming(String huijinshuiming) {
+        this.huijinshuiming = huijinshuiming;
+    }
+
+    public String getHuijinmoneysl() {
+        return huijinmoneysl;
+    }
+
+    public void setHuijinmoneysl(String huijinmoneysl) {
+        this.huijinmoneysl = huijinmoneysl;
+    }
+
+    public String getHuijindate() {
+        return huijindate;
+    }
+
+    public void setHuijindate(String huijindate) {
+        this.huijindate = huijindate;
+    }
+
+    public String getHuijinip() {
+        return huijinip;
+    }
+
+    public void setHuijinip(String huijinip) {
+        this.huijinip = huijinip;
+    }
+
+    public Integer getHuidengid() {
+        return huidengid;
+    }
+
+    public void setHuidengid(Integer huidengid) {
+        this.huidengid = huidengid;
+    }
+
+    public String getHuidengname() {
+        return huidengname;
+    }
+
+    public void setHuidengname(String huidengname) {
+        this.huidengname = huidengname;
+    }
+
     @Override
     public String toString() {
         return "Huiji{" +
@@ -201,7 +350,8 @@ public class Huiji {
                 ", huijidianhua='" + huijidianhua + '\'' +
                 ", huijiqq='" + huijiqq + '\'' +
                 ", huijiquyu='" + huijiquyu + '\'' +
-                ", uijitouxiang='" + uijitouxiang + '\'' +
+                ", huijiquyudf='" + huijiquyudf + '\'' +
+                ", huijitouxiang='" + huijitouxiang + '\'' +
                 ", huijizhucexz='" + huijizhucexz + '\'' +
                 ", huijierweima='" + huijierweima + '\'' +
                 ", huijimendiandz='" + huijimendiandz + '\'' +
@@ -209,6 +359,20 @@ public class Huiji {
                 ", huijizwojsgc='" + huijizwojsgc + '\'' +
                 ", huijidituzb='" + huijidituzb + '\'' +
                 ", huijidpgjc='" + huijidpgjc + '\'' +
+                ", huijinid=" + huijinid +
+                ", huisysxl='" + huisysxl + '\'' +
+                ", huiquanxian='" + huiquanxian + '\'' +
+                ", huidjdqdate='" + huidjdqdate + '\'' +
+                ", huizcxzid=" + huizcxzid +
+                ", huizcxzname='" + huizcxzname + '\'' +
+                ", huijinzhanghao='" + huijinzhanghao + '\'' +
+                ", huijinkymoney='" + huijinkymoney + '\'' +
+                ", huijinshuiming='" + huijinshuiming + '\'' +
+                ", huijinmoneysl='" + huijinmoneysl + '\'' +
+                ", huijindate='" + huijindate + '\'' +
+                ", huijinip='" + huijinip + '\'' +
+                ", huidengid=" + huidengid +
+                ", huidengname='" + huidengname + '\'' +
                 '}';
     }
 }

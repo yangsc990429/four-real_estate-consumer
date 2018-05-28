@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class School {
+import java.io.Serializable;
+
+public class School implements Serializable {
+    private static final long serialVersionUID = -8964634604273803991L;
     //学校
     private Integer id;
     private String name;

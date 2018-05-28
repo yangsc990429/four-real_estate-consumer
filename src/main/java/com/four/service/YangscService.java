@@ -24,5 +24,5 @@ public interface YangscService {
 
   void updatezi(Area area);
 
-  List queryQuxan(Integer userid);
+ List<Map<String,Object>> queryQuxan(Integer userid);
 }

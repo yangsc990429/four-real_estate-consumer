@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Situation {
+import java.io.Serializable;
+
+public class Situation implements Serializable {
+    private static final long serialVersionUID = 2639698999732879643L;
     //情况
     private Integer id;
     private String name;

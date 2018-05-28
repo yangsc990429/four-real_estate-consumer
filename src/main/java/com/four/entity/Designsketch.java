@@ -1,9 +1,12 @@
 package com.four.entity;
 
-public class Designsketch {
+import java.io.Serializable;
+
+public class Designsketch implements Serializable {
 
 
-//效果图
+    private static final long serialVersionUID = 3662739216680697213L;
+    //效果图
     private Integer id;
     private String name;
     private Integer xuhao;

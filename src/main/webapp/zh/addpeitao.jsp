@@ -31,9 +31,9 @@
 </head>
 <body>
 
-<form class="form-horizontal"  id="addFormBus">
+<form class="form-horizontal"  id="addFormPeiTao">
 
-    <font color="#660066"><h2>录入公交信息</h2></font>
+    <font color="#660066"><h2>录入配套信息</h2></font>
 
     <div class="panel panel-default">
 
@@ -44,6 +44,18 @@
                     <input type="text" name="name" class="form-control" id="inputWarning">
                 </div>
             </div>
+            <div class="form-group has-warning">
+                <label class="col-sm-2 control-label" for="inputWarning">出售栏目</label>
+                <div class="col-sm-10" style="width:500px">
+                   <input type="checkbox" id="parent" > 全选<span id="chushou"></span>
+                </div>
+            </div>
+            <div class="form-group has-warning">
+                <label class="col-sm-2 control-label" for="inputWarning">出租栏目</label>
+                <div class="col-sm-10" style="width:500px">
+                    <input type="checkbox" id="parent1" >全选<span id="chuzu"></span>
+                </div>
+            </div>
 
             <div class="form-group has-warning">
                 <label class="col-sm-2 control-label" for="inputWarning">序号</label>
@@ -52,20 +64,18 @@
 
                 </div>
             </div>
-            </div>
-
         </div>
 
-        <div class="panel-footer" style="padding-left:300px">
+    </div>
 
-            <button type="button" class="btn btn-success" onclick="add()">新&nbsp;&nbsp;增</button>&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info" onclick="fanh()">返&nbsp;&nbsp;回</button>
+    <div class="panel-footer" style="padding-left:300px">
 
-        </div>
+        <button type="button" class="btn btn-success" onclick="addpeitao()">新&nbsp;&nbsp;增</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-info" onclick="fanh()">返&nbsp;&nbsp;回</button>
+
+    </div>
     </div>
 </form>
-
-
 
 
 
@@ -82,40 +92,98 @@
 <script type="text/javascript">
 
     //===========================================新增=================================
-$(function(){
 
-    $.ajax({
-        url:"<%=request.getContextPath()%>/zh/queryxuhao",
-        type:"post",
-        dataType:"json",
-        success:function(aa){
-            console.info(aa)
-
-            $("[name='xuhao']").val(aa);
-
-        }
-    });
-})
-
-    function add(){
+    $(function(){
 
         $.ajax({
-            url:"<%=request.getContextPath()%>/zh/addbus",
+            url:"<%=request.getContextPath()%>/zh/queryxuhaoP",
             type:"post",
-            data:$("#addFormBus").serialize(),
-            async:false,
-            dataType:"text",
-            success:function (){
-                alert("新增成功")
-                location.href="<%=request.getContextPath()%>/zh/buslist.jsp"
+            dataType:"json",
+            success:function(aa){
 
-            },
-            error:function (){
-                alert("程序错误");
+                $("[name='xuhao']").val(aa);
+
             }
         })
+    })
 
+    //全选反选
+    $("#parent1").on("click",function(){
+        var parent =$(this).prop("checked");
+        $("[name='rentout']").each(function(){
+            $(this).prop("checked",parent);
+        });
+    });
+    $("#parent").on("click",function(){
+        var parent1 =$(this).prop("checked");
+        $("[name='sell']").each(function(){
+            $(this).prop("checked",parent1);
+        });
+    });
+    $(function(){
+
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zh/queryxuhaochushou",
+            type:"post",
+            dataType:"json",
+            success:function(list){
+                console.info(list)
+                var check="";
+                var aid ="";
+                var yn="";
+                for (var i=0;i<list.length;i++){
+                    aid=list[i].id;
+                    yn=list[i].yuanname;
+                    check+=" <button type=\"button\" ><input type='checkbox'  name='sell' value='"+aid+"'>"+yn+"</button>";
+                }
+                $("#chushou").html(check);
+
+
+            }
+        });
+    })
+    $(function(){
+
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zh/queryxuhaochuzu",
+            type:"post",
+            dataType:"json",
+            success:function(list){
+
+                var check="";
+                var aid ="";
+                var yn="";
+                for (var i=0;i<list.length;i++){
+                    zid=list[i].id;
+                    yny=list[i].yuanname;
+                    check+=" <button type=\"button\" ><input type='checkbox'  name='rentout' value='"+zid+"'>"+yny+"</button>";
+                }
+                $("#chuzu").html(check);
+            }
+        });
+    })
+
+    function addpeitao(){
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zh/addpeitao",
+            type:"post",
+            data:$("#addFormPeiTao").serialize(),
+            dateType:"text",
+            success:function (addsuccess){
+                location.href="<%=request.getContextPath()%>/zh/yuwupeitao.jsp"
+            },
+            error:function(){
+                alert("新增出错");
+            }
+        })
     }
+
+
+function fanh(){
+        location.href="<%=request.getContextPath()%>/zh/yuwupeitao.jsp";
+}
+
+
 
 </script>
 

@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Orientation {
+import java.io.Serializable;
+
+public class Orientation implements Serializable {
+    private static final long serialVersionUID = 5788791874964022558L;
     //房屋朝向
     private Integer id;
     private String name;

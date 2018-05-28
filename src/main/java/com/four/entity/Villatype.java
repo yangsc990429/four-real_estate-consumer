@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Villatype {
+import java.io.Serializable;
+
+public class Villatype implements Serializable {
+    private static final long serialVersionUID = -8765706421668212384L;
     //别墅类型
     private Integer id;
     private String name;

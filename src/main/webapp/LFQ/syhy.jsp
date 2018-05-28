@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 随风
+  Date: 2018-05-23
+  Time: 下午 04:52
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,90 +26,11 @@
 </head>
 <body>
 
-<!-- 模态框（Modal） -->
-
-<div class="modal fade" id="modelete2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title">
-                    新增
-                </h4>
-            </div>
-            <div class="modal-body" align="center">
-                <form id="addtitieform2">
-                    <table>
-                        <tr>
-                            <td align="center"><h3>装修情况:</h3></td>
-                            <td  width="280px"><input type="text" name="name" class="form-control" size="5px"></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td align="center"><h3>排序:</h3></td>
-                            <td><input type="text" name="xuhao" class="form-control" placeholder="必填" size="5px">
-                            </td>
-                            <td><font color="#a52a2a">序号越小，越靠前</font></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-default" onclick="addesuccess()" data-dismiss="modal">确定</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-
-<!-- 模态修改框（Modal） -->
-
-<div class="modal fade" id="moupdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title">
-                    修改
-                </h4>
-            </div>
-            <div class="modal-body" align="center">
-                <form id="updatetitieform2"method="post">
-                    <input type="hidden" name="id">
-                    <table>
-                        <tr>
-                            <td align="center"><h3>房屋朝向:</h3></td>
-                            <td  width="280px"><input type="text" name="name" class="form-control" size="5px"></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td align="center"><h3>排序:</h3></td>
-                            <td><input type="text" name="xuhao" class="form-control" size="5px"></td>
-                            <td><font color="#a52a2a">序号越小，越靠前</font></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-default" onclick="updatessgai2()" data-dismiss="modal">修改</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-
-
-
-<table class="table table-bordered" id="ditirtit" align="center">
-    <caption><button type="button" class="btn btn-primary" onclick="addkhgllxxrgl3()">新增</button>
-        <button type='button' onclick='deletekhglssssids2()' class='btn btn-danger'>删除</button>
-    </caption>
+<table class="table table-bordered" id="syhytitle" align="center">
+<%--    <caption>
+        <button type="button" class="btn btn-primary" onclick="addkhgllouceng()">新增楼层</button>
+        <button type='button' onclick='deletekhgfwcxpishan()' class='btn btn-danger'>删除</button>
+    </caption>--%>
 </table>
 
 <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
@@ -117,8 +45,8 @@
 <script type="text/javascript">
 
     $(function(){
-        $("#ditirtit").bootstrapTable({
-            url:"<%=request.getContextPath()%>/SunController/querySituation",
+        $("#syhytitle").bootstrapTable({
+            url:"<%=request.getContextPath()%>/lfq/queryHuiji",
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
             sortable: true,                     //是否启用排序
@@ -143,25 +71,55 @@
             detailView: false,
             method:'post',
             contentType:"application/x-www-form-urlencoded",
+            /*queryParams:function(param){
+                return {
+                    'crm.c_customerid':$("#gong").val(),
+                    'crm.c_name':$("#lian").val(),
+                    'crm.c_qq':$("#qq").val(),
+                    'crm.startdate':$("#kai").val(),
+                    'crm.enddate':$("#jie").val(),
+                    'crm.c_mob':$("#shou").val(),
+
+                }
+            },*/
             columns:[
                 {checkbox:true},
-                {field:'name',title:'房屋朝向列表',width:230},
-                {field:'xuhao',title:'序号',width:230},
-                {field:'createdate',title:'编辑时间',width:230},
+                {field:'huijizhanghao',title:'会员账号',width:230,
+                    formatter:function(volue,row,index){
+                    return "<a href='javascript:dianjizhanghao("+row.huijiid+")'>"+row.huijizhanghao+"</a>";
+                    }
+                },
+                {field:'huizcxzname',title:'注册性质',width:230},
+                {field:'huijilianxiren',title:'会员昵称',width:230},
+                {field:'huijinkymoney',title:'余额',width:230},
+                {field:'huidjdqdate',title:'时间',width:230},
+                {field:'huijinip',title:'IP',width:230},
                 {field:'act',title:'操作',width:300,
                     formatter: function(value,row,index){
-                        return "<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='updateqingkuang("+row.id+")'>修改</button>&nbsp;&nbsp;<button type='button' onclick='deletekhglss2("+row.id+")' class='btn btn-danger'>删除</button>";
+                        return "<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='updatehybianjiym("+row.huijiid+")'>编辑</button>&nbsp;&nbsp;<button type='button' onclick='hyrenzhengbt("+row.huijiid+")' class='btn btn-warning'>认证</button>";
                     }
                 }]
         })
     })
-  //查询序列号
-    function addkhgllxxrgl3(){
-        $('#modelete2').modal({
+
+
+
+    function dianjizhanghao(id) {
+
+        location.href="<%=request.getContextPath()%>/LFQ/addsyhy.jsp?id="+id;
+
+    }
+
+
+
+    function addkhgllouceng(){
+
+        $('#modelete').modal({
             keyboard:false,
         })
+
         $.ajax({
-            url:"<%=request.getContextPath()%>/SunController/queryxuhao2",
+            url:"<%=request.getContextPath()%>/lfq/queryfwlcxuhao",
             type:"post",
             dataType:"text",
             async:false,
@@ -170,61 +128,62 @@
             }
         })
     }
+
+
+
     function addesuccess() {
         $.ajax({
-            url:"<%=request.getContextPath()%>/SunController/addqingkuangSS",
+            url:"<%=request.getContextPath()%>/lfq/adddfanglcsz",
             type:"post",
-            data:$("#addtitieform2").serialize(),
+            data:$("#addtitieform").serialize(),
             dataType:"text",
             async:false,
             success:function (xu){
-                alert(xu);
                 alert("新增成功");
                 location.reload();
             }
         })
     }
-    //删除
-   function deletekhglss2(id){
-       $.ajax({
-           url:'<%=request.getContextPath()%>/SunController/deleteQingKuang?id='+id,
+
+    function deletekhglss(id){
+        $.ajax({
+            url:'<%=request.getContextPath()%>/lfq/deletefwcxsz?id='+id,
             type:"post",
             dataType:"text",
             async:false,
             success:function(del){
-                alert(del)
-                if(del == "delsuccess1"){
+                if(del == "delsuccess"){
                     location.reload();
                 }
             }
         })
     }
-    //批量删除
-    function deletekhglssssids2() {
-        var a = $('#ditirtit').bootstrapTable('getSelections');
+
+    function deletekhgfwcxpishan() {
+        var a = $('#fwlcsztit').bootstrapTable('getSelections');
         var idsp = "";
         for (var i = 0; i < a.length; i++) {
             idsp+=","+a[i].id;
         }
         var id = idsp.substring(1);
-        alert(id);
         $.ajax({
-            url:"<%=request.getContextPath()%>/SunController/deleteidspishan2",
+            url:"<%=request.getContextPath()%>/lfq/deletefwcxpishan",
             type:"post",
             data:{"id":id},
             dataType:"text",
             async:false,
             success:function (date){
-                $("#ditirtit").bootstrapTable('refresh')
+                $("#fwlcsztit").bootstrapTable('refresh')
             }
         });
     }
-   function updateqingkuang(id) {
-       $('#moupdate2').modal({
-           keyboard:false,
-       })
-       $.ajax({
-           url:"<%=request.getContextPath()%>/SunController/updateqingkuanghui",
+
+    function updateditie(id) {
+        $('#moupdate').modal({
+            keyboard:false,
+        })
+        $.ajax({
+            url:"<%=request.getContextPath()%>/lfq/updatefwcxhui",
             type:"post",
             data:{"id":id},
             dataType:"json",
@@ -237,20 +196,30 @@
         });
     }
 
-    function updatessgai2() {
-        alert(11)
+    function updatessgai() {
         $.ajax({
-            url:"<%=request.getContextPath()%>/SunController/updateqingkuanggai",
+            url:"<%=request.getContextPath()%>/lfq/updatefwcxszgai",
             type:"post",
-            data:$("#updatetitieform2").serialize(),
+            data:$("#updatetitieform").serialize(),
             dataType:"text",
             async:false,
             success:function (date){
-                alert(date);
                 location.reload();
             }
         });
     }
+    
+    //认证页面
+    function hyrenzhengbt(id) {
+   location.href="<%=request.getContextPath()%>/LFQ/rzshhy.jsp?id="+id;
+    }
+
+    //编辑页面
+    function updatehybianjiym(id) {
+        location.href="<%=request.getContextPath()%>/LFQ/addsyhy.jsp?id="+id;
+    }
+
+
 </script>
 
 </body>

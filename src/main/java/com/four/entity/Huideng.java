@@ -1,9 +1,11 @@
 package com.four.entity;
 
-public class Huideng {
+import java.io.Serializable;
+
+public class Huideng implements Serializable{
+    private static final long serialVersionUID = 4128077344931644282L;
 
     //会员管理会员等级表
-
     private Integer huidengid;
     private String huidengname;
 

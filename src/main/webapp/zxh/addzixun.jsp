@@ -2,16 +2,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="<%=request.getContextPath()%>/css/css/style.css" rel="stylesheet">
-    <link href="<%=request.getContextPath()%>/css/css/style-responsive.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -26,7 +17,16 @@
                 </select></td>
             <td width="220px"></td>
             <td width="220px"></td>
-            <td width="220px"></td>
+            <td width="220px"></td><link href="<%=request.getContextPath()%>/css/css/style.css" rel="stylesheet">
+            <link href="<%=request.getContextPath()%>/css/css/style-responsive.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootStrap-addTabs/bootstrap.addtabs.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap-dialog/dist/css/bootstrap-dialog.css" rel="stylesheet">
+            <link href="<%=request.getContextPath() %>/js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
         </tr>
         <tr><td colspan="5">&nbsp;</td></tr>
         <tr>
@@ -223,7 +223,6 @@
             async:false,
             dataType:"json",
             success:function (consult){
-                alert(consult);
                 cons = consult;
             }
         })
@@ -243,7 +242,6 @@
                         }
                     })
                 })
-                alert(option)
                 $("[name='zid']").html(option);
             }
         })

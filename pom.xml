@@ -41,6 +41,10 @@
 	<!--solr-->
 
 	<dependencies>
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -184,21 +188,6 @@
 		</dependency>
 
 
-		<!-- SpringBoot集成 mongodb -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-		</dependency>
-		<!--Aop-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-
 		<!--
 
                 &lt;!&ndash; SpringBoot集成 mongodb &ndash;&gt;
@@ -237,19 +226,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--Aop-->
-		<!--
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-aop</artifactId>
-                </dependency>
-        -->
 
-		<!--&lt;!&ndash;redis&ndash;&gt;
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-redis</artifactId>
-		</dependency>-->
 		<!--提供AMQP协议的支持 Rabbitmq-->
 
 		<dependency>
@@ -340,6 +317,11 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>&lt;!&ndash;依赖不会传递：如A——>B且B——>C ,C 中配置此项的依赖不会传递到A     &ndash;&gt;
+		</dependency>-->
 
 	</dependencies>
 
@@ -351,6 +333,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

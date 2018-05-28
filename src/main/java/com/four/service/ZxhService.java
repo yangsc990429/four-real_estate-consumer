@@ -55,4 +55,15 @@ public interface ZxhService {
     String updateZiId(Consultinglist consultinglist);
 
     List<Map<String,Object>> selectShenZiXun();
+
+    List<Map<String,Object>> selectFangyuan();
+
+    String deleteYuanId(Integer id);
+
+    String deleteIdAll(String ids);
+
+    String updateYuanChuId(String ids);
+
+    String updateDownChuId(String ids);
+
 }

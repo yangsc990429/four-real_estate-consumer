@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Retailindustry {
+import java.io.Serializable;
+
+public class Retailindustry implements Serializable {
+    private static final long serialVersionUID = -257144664945498366L;
     //商铺行业
     private Integer id;
     private String name;

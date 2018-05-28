@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Huiqu {
+import java.io.Serializable;
 
-//会员管理区域表
+public class Huiqu implements Serializable {
+
+    private static final long serialVersionUID = -5723434743962392431L;
+    //会员管理区域表
     private Integer huiquid;
     private String huiqushi;
     private Integer pid;

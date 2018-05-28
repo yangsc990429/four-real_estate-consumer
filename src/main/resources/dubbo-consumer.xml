@@ -5,16 +5,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://code.alibabatech.com/schema/dubbo
-    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+    default-lazy-init="false">
 <!-- 提供方应用信息，用于计算依赖关系 -->
 <dubbo:application name="dubbo-service-consumer" />
 <!-- 使用multicast广播注册中心暴露服务地址 -->
 <!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> 192.168.1.150-->
 <!-- 使用zookeeper注册中心暴露服务地址 -->
-<dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-<dubbo:registry address="zookeeper://127.0.0.1:2182"/>
-<dubbo:registry address="zookeeper://127.0.0.1:2183"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false"/>
+
+    <!--<dubbo:consumer timeout="5000"/>-->
+    <!--
+    interface调用的服务接口
+    check 启动时检查提供者是否存在，true报错，false忽略
+    registry 从指定注册中心注册获取服务列表，在多个注册中心时使用，值为<dubbo:registry>的id属性，多个注册中心ID用逗号分隔
+    loadbalance 负载均衡策略，可选值：random,roundrobin,leastactive，分别表示：随机，轮循，最少活跃调用
+     -->
 <!-- 声明需要暴露的服务接口 -->
-<dubbo:reference id="zxhService" interface="com.four.service.ZxhService"/>
+    <dubbo:reference id="zxhservice" interface="com.four.service.ZxhService"/>
+    <dubbo:reference id="lfqService" interface="com.four.service.LfqService"/>
+    <dubbo:reference id="yangscService"  interface="com.four.service.YangscService"/>
+    <dubbo:reference id="gbyService" interface="com.four.service.GbyService"/>
+    <dubbo:reference id="zhService" interface="com.four.service.ZhService"/>
+    <dubbo:reference id="sunService" interface="com.four.service.SunService"/>
 </beans>
 

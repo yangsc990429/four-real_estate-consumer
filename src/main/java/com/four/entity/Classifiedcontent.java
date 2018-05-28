@@ -1,7 +1,10 @@
 package com.four.entity;
 
-public class Classifiedcontent {
+import java.io.Serializable;
 
+public class Classifiedcontent implements Serializable {
+
+    private static final long serialVersionUID = -3426863510997032329L;
     //图分类内容
     private Integer id;
     private String name;

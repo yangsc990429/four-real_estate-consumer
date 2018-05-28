@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Mating {
+import java.io.Serializable;
+
+public class Mating implements Serializable {
+    private static final long serialVersionUID = 5982558724954588008L;
     //物业配套
     private Integer id;
     private String name;

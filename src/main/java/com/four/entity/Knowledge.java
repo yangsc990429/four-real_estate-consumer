@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Knowledge {
+import java.io.Serializable;
+
+public class Knowledge implements Serializable {
+    private static final long serialVersionUID = 8868535024470432879L;
     //家装知识
     private Integer id;
     private String name;

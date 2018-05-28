@@ -1,6 +1,9 @@
 package com.four.entity;
 
-public class Groupcontent {
+import java.io.Serializable;
+
+public class Groupcontent implements Serializable {
+    private static final long serialVersionUID = 719346976738882586L;
     //建材分组内容
     private Integer id;
     private String name;

@@ -1,12 +1,14 @@
 package com.four.entity;
 
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
 
 //如果不加document(collection="表名")默认为实体类名
 @Document(collection="login")
-public class Aop {
+public class Aop implements Serializable{
+	private static final long serialVersionUID = 8776983140861749669L;
 	private Integer userid;
 	private String username;
 	private String userpass;

@@ -15,13 +15,19 @@
 </head>
 <body>
 
-<button type="button" class="btn btn-info btn-sm" onclick="bian()">变更审核</button>
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(1)">橱窗推荐</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="button" class="btn btn-info btn-sm" onclick="pi()">删除</button>
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(2)">取消橱窗推荐</button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="button" class="btn btn-warning btn-sm" onclick="fa()">发布咨询</button>
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(3)">变更审核</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(4)">删除</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(5)">上架/下架</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-info btn-sm" onclick="upyuan(6)">需要审核</button>
 <div align="center">
-    <table id="xunlist" align="center"></table>
+    <table id="yuanlist" align="center"></table>
 </div>
 
 <div class="modal fade" id="modeletemem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,40 +59,20 @@
     </div>
 </div>
 
-<div class="modal fade" id="myModaldelsuccbian" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width:352px;height:100px">
-        <div class="modal-content">
-            <div class="modal-header" style="width:350px;height: 50px" align="center">
-                <font size="5px" color="#a52a2a">选择要审核的状态</font>
-            </div>
-            <div class="modal-footer"style="width:350px">
-                <div style="width: 33%;float: left;">
-                    <button type="button" class="btn btn-success" onclick="updateShenId(1)">设置为通过</button>
-                </div>
-                <div style="width: 33%;float: left;" align="center">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                </div>
-                <div style="width: 33%;float: left;">
-                    <button type="button" class="btn btn-warning" onclick="updateShenId(3)">设置为驳回</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="myModalupdatesucc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModalupsucc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:352px;height:100px">
         <div class="modal-content">
             <div class="modal-header" style="width:350px;height: 50px">
                 <h4 class="modal-title">最新消息</h4>
             </div>
-            <div class="modal-body" align="center" style="height:80px"><font size="5px">更改状态成功</font></div>
+            <div class="modal-body" align="center" style="height:80px"><font size="5px">更改成功</font></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="zhang()" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default" id="quedel" data-dismiss="modal">确定</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script>
 <script src="<%=request.getContextPath()%>/js/highcharts.js"></script>
@@ -106,8 +92,8 @@
 <script src="<%=request.getContextPath()%>/css/js/modernizr.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        $("#xunlist").bootstrapTable({
-            url:"<%=request.getContextPath()%>/zxh/selectZiXun",
+        $("#yuanlist").bootstrapTable({
+            url:"<%=request.getContextPath()%>/zxh/selectFangyuan",
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
             sortable: true,                     //是否启用排序
@@ -129,24 +115,9 @@
             columns:[
                 {checkbox:true},
                 {field:'name',title:'资讯信息'},
-                {field:'shenhe',title:'审核',
-                    formatter:function (value,row,index){
-                        if(row.shenhe == "1"){
-                            return "<font color='blue'>通过审核</font>";
-                        }
-                        if(row.shenhe == "2"){
-                            return "<font color='#336600'>正在审核</font>";
-                        }
-                        if(row.shenhe == "3"){
-                            return "<font color='red'>审核被拒</font>";
-                        }
-                    }
-                },
-                {field:'dianlu',title:'关注'},
-                {field:'createdate',title:'最后更新'},
                 {field:'cao',title:'操作',
                     formatter:function (value,row,index){
-                        return "<button type='button' class='btn btn-link' onclick='updateZi("+row.id+")'>修改信息</button>&nbsp;&nbsp;|&nbsp;&nbsp;<button type='button' class='btn btn-link' onclick='deleteZi("+row.id+")'>删除</button>";
+                        return "<button type='button' class='btn btn-link' onclick='selectKanYuan(\"+row.id+\")'>预览</button>&nbsp;|<button type='button' class='btn btn-link' onclick='updateYuan("+row.id+")'>修改信息</button>&nbsp;|&nbsp;<button type='button' class='btn btn-link' onclick='deleteYuan("+row.id+")'>删除</button>";
                     }
                 }
             ]
@@ -154,7 +125,7 @@
     })
 
     var ids;
-    function deleteZi(id){
+    function deleteYuan(){
         ids=id
         $("#modeletemem").modal({
             keyboard:false,
@@ -164,7 +135,7 @@
 
     function deletesuccess(){
         $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/deleteZiId",
+            url:"<%=request.getContextPath()%>/zxh/deleteYuanId",
             type:"post",
             data:{"id":ids},
             dataType:"text",
@@ -179,94 +150,81 @@
         })
     }
 
+    function upyuan(flag){
+        var a = $('#yuanlist').bootstrapTable('getSelections');
+        var idsp = "";
+        var count = 0;
+        for (var i = 0; i < a.length; i++) {
+            idsp+=","+a[i].id;
+            ++count;
+        }
+        var id = idsp.substring(1);
+        if(count >= 1){
+            if (flag == 4){
+                if(confirm("确定要删除这 "+count+"</font> 条数据吗?")){
+                    $.ajax({
+                        url:"<%=request.getContextPath()%>/zxh/deleteIdAll",
+                        type:"post",
+                        data:{"ids":id},
+                        dataType:"text",
+                        success:function (data){
+                            if(data == "success"){
+                                $("#myModaldelsucc").modal({
+                                    keyboard:false,
+                                    backdrop:false,
+                                })
+                            }
+                        }
+                    })
+                }
+            }else if(flag == 1){
+                if(confirm("确定要把这 "+count+"</font> 条加到橱窗推荐吗?")){
+                    $.ajax({
+                        url:"<%=request.getContextPath()%>/zxh/updateYuanChuId",
+                        type:"post",
+                        data:{"ids":id},
+                        dataType:"text",
+                        success:function (data){
+                            if(data == "success"){
+                                $("#myModalupsucc").modal({
+                                    keyboard:false,
+                                    backdrop:false,
+                                })
+                            }
+                        }
+                    })
+                }
+            }else if(flag == 2){
+                if(confirm("确定要把这 "+count+"</font> 条从橱窗推荐撤下来吗?")){
+                    $.ajax({
+                        url:"<%=request.getContextPath()%>/zxh/updateDownChuId",
+                        type:"post",
+                        data:{"ids":id},
+                        dataType:"text",
+                        success:function (data){
+                            if(data == "success"){
+                                $("#myModalupsucc").modal({
+                                    keyboard:false,
+                                    backdrop:false,
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+
+        }else{
+            alert("请至少选择一条数据");
+        }
+    }
+
     $("#quedelete").click(function (){
         location.reload();
     })
 
-    function fa(){
-        location.href="<%=request.getContextPath()%>/zxh/addzixun.jsp"
-    }
-
-    function pi(){
-        var a = $('#xunlist').bootstrapTable('getSelections');
-        var idsp = "";
-        var count = 0;
-        for (var i = 0; i < a.length; i++) {
-            idsp+=","+a[i].id;
-            ++count;
-        }
-        var id = idsp.substring(1);
-        if(count >= 1){
-            if(confirm("确定要删除这 "+count+" 条数据吗？")){
-                $.ajax({
-                    url:"<%=request.getContextPath()%>/zxh/deleteZixall",
-                    type:"post",
-                    data:{"ids":id},
-                    dataType:"text",
-                    success:function (data){
-                        if(data){
-                            $("#myModaldelsucc").modal({
-                                keyboard:false,
-                                backdrop:false,
-                            })
-                        }
-                    }
-                })
-            }
-        }else{
-            alert("请至少选择一条数据");
-        }
-    }
-
-    function bian(){
-        var a = $('#xunlist').bootstrapTable('getSelections');
-        console.info(a)
-        var count = 0;
-        var shen = "";
-        for (var i = 0; i < a.length; i++) {
-            shen+=","+a[i].shenhe;
-            ++count;
-        }
-        if(count >= 1){
-            $("#myModaldelsuccbian").modal({
-                keyboard:false,
-                backdrop:false,
-            })
-        }else{
-            alert("请至少选择一条数据");
-        }
-    }
-
-    function updateShenId(flag){
-        var a = $('#xunlist').bootstrapTable('getSelections');
-        var idsp = "";
-        for (var i = 0; i < a.length; i++) {
-            idsp+=","+a[i].id;
-        }
-        var id = idsp.substring(1);
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/updateShenz",
-            type:"post",
-            data:{"flag":flag,"ids":id},
-            dataType:"text",
-            success:function (data){
-                if(data == "success"){
-                    $("#myModalupdatesucc").modal({
-                        keyboard:false,
-                        backdrop:false,
-                    })
-                }
-            }
-        })
-    }
-
-    function zhang(){
+    $("#quedel").click(function () {
         location.reload();
-    }
-
-    function updateZi(id){
-        location.href="<%=request.getContextPath()%>/zxh/updatezi.jsp?flag=1&id="+id;
-    }
+    })
 
 </script>
 </body>

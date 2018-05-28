@@ -234,7 +234,6 @@
         async:false,
         dataType:"json",
         success:function (consult){
-            alert(consult);
             cons = consult;
         }
     })
@@ -254,7 +253,6 @@
                     }
                 })
             })
-            alert(option)
             $("[name='zid']").html(option);
         }
     })

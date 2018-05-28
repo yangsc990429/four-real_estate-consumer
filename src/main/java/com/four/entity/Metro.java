@@ -14,16 +14,12 @@ public class Metro implements Serializable{
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCreatedate() {
-        return createdate;
-    }
-
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
@@ -38,17 +34,21 @@ public class Metro implements Serializable{
         this.xuhao = xuhao;
     }
 
-    public void setCreatedate(String createdate) {
-        this.createdate = createdate;
-    }
-
     @Override
     public String toString() {
         return "Metro{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", xuhao='" + xuhao + '\'' +
+                ", xuhao=" + xuhao +
                 ", createdate='" + createdate + '\'' +
                 '}';
+    }
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
     }
 }

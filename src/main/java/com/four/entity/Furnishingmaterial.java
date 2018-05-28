@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Furnishingmaterial {
+import java.io.Serializable;
 
-//家装建材
+public class Furnishingmaterial implements Serializable {
+
+    private static final long serialVersionUID = 2730337571266204087L;
+    //家装建材
     private Integer id;
     private String name;
     private Integer xuhao;

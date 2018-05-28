@@ -1,8 +1,11 @@
 package com.four.entity;
 
-public class Huijin {
+import java.io.Serializable;
 
-//会员管理金钱管理
+public class Huijin implements Serializable {
+
+    private static final long serialVersionUID = -2535892003562853099L;
+    //会员管理金钱管理
     private Integer huijinid;
     private String huijinzhanghao;
     private String huijinkymoney;

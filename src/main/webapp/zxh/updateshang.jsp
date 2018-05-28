@@ -213,7 +213,7 @@
     $('#file-pic2').on("fileuploaded", function(event, data, previewId, index) {
         var result = data.response; //后台返回的json
         //alert(result);
-        $('#photo2').val(result.a);
+        $('#photo1').val(result.a);
     })
 </script>
 <script type="text/javascript">
@@ -256,7 +256,7 @@
     })
 
     function jia(aa){
-        UE.getEditor('content').(aa);setContent
+        UE.getEditor('content').setContent(aa);
     }
 
     function fan(){

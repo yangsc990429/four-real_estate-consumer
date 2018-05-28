@@ -31,10 +31,9 @@
 </head>
 <body>
 
-<button type="button" class="btn btn-default" onclick="addrole()">新增</button>
-<button type="button" class="btn btn-default" onclick="delallbus()">批量删除</button>
+<button type="button" class="btn btn-default" onclick="delallJIan()">批量删除</button>
 
-<table class="table" id="querybus" border="1" ></table>
+<table class="table" id="queryJianCai" border="1" ></table>
 
 <!-- 模态提示框（Modal） -->
 
@@ -70,8 +69,8 @@
 
     $(function(){
 
-        $("#querybus").bootstrapTable({
-            url:"<%=request.getContextPath()%>/zh/queryBus",
+        $("#queryJianCai").bootstrapTable({
+            url:"<%=request.getContextPath()%>/zh/queryJianCai",
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
             sortable: true,                     //是否启用排序
@@ -93,13 +92,16 @@
             detailView: false,
             columns:[[
                 {field:'che',checkbox:true},
-                {field:'id',title:'编号',width:100 ,hidden:'true'},
-                {field:'name',title:'名称',width:100},
-                {field:'xuhao',title:'序号',width:100},
-                {field:'createdate',title:'时间',width:100},
+                {field:'huijinid',title:'编号',width:100,hidden:'true'},
+                {field:'huijizhanghao',title:'会员账号',width:100},
+                {field:'huijizhucexz',title:'注册性质',width:100},
+                {field:'huijinicheng',title:'会员昵称',width:100},
+                {field:'huijinkymoney',title:'余额',width:100},
+                {field:'huijindate',title:'时间',width:100},
+                {field:'huijinip',title:'IP',width:100},
                 {field:'act',title:'操作',width:100,
                     formatter: function(value,row,index){
-                        return "<span onclick='delbus("+row.id+")' ><a>删除</a></span>    <span onclick='updateHx("+row.id+")' ><a>编辑</a></span>";
+                        return "<span onclick='Rzjiancai("+row.huijinid+")' ><a>认证</a></span>  <span>|</span>  <span onclick='updateHxJianCai("+row.huijinid+")' ><a>编辑</a></span>";
                     }
                 },
             ]]
@@ -107,51 +109,37 @@
     })
 
 
-function delbus(id){
-alert(id)
+
+    function delallJIan(){
+
+        var a = $('#queryJianCai').bootstrapTable('getSelections');
+        var idsp = "";
+        for (var i = 0; i < a.length; i++) {
+            idsp+=","+a[i].id;
+        }
+        var id = idsp.substring(1);
+        alert(id);
         $.ajax({
-            url:"<%=request.getContextPath()%>/zh/delbus?id="+id,
+            url:"<%=request.getContextPath()%>/zh/delallJIan",
             type:"post",
+            data:{"id":id},
             dataType:"text",
             async:false,
-            success:function(delsuccess){
-                location.reload();
+            success:function (delsuccess){
+                $("#querypeitao").bootstrapTable('refresh')
             }
-        })
+        });
+    }
 
-}
-        function delallbus(){
+    function updateHxJianCai(huijinid){
 
-            var a = $('#querybus').bootstrapTable('getSelections');
-            var idsp = "";
-            for (var i = 0; i < a.length; i++) {
-                idsp+=","+a[i].id;
-            }
-            var id = idsp.substring(1);
-            alert(id);
-            $.ajax({
-                url:"<%=request.getContextPath()%>/zh/deleteAllBus",
-                type:"post",
-                data:{"id":id},
-                dataType:"text",
-                async:false,
-                success:function (delsuccess){
-                    $("#querybus").bootstrapTable('refresh')
-                }
-            });
-        }
+        location.href="<%=request.getContextPath()%>/zh/updateJianCai.jsp?huijinid="+huijinid;
+    }
 
+    function Rzjiancai(huijinid){
 
-
-function updateHx(id){
-
-        location.href="<%=request.getContextPath()%>/zh/updatebus.jsp?id="+id;
-}
-
-function addrole(){
-
-        location.href="<%=request.getContextPath()%>/zh/addbus.jsp";
-}
+        location.href="<%=request.getContextPath()%>/zh/renzhengjc.jsp?huijinid="+huijinid;
+    }
 
 
 
