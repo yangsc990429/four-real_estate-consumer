@@ -457,11 +457,35 @@ public String insertMem(Member member){
         return JSON.toJSONString(list);
     }
 
+    /**
+     * 查询所选装修用户的信息
+     * @param id
+     * @return
+     */
     @RequestMapping("selectXiuId")
     @ResponseBody
     public String selectXiuId(Integer id){
         Huiji huiji = zxhservice.selectXiuId(id);
         return JSON.toJSONString(huiji);
+    }
+
+    /**
+     * 查询该用户的装修公司的认证
+     * @param id
+     * @return
+     */
+    @RequestMapping("selectQueRen")
+    @ResponseBody
+    public String selectQueRen(Integer id){
+        Huirenshen huirenshen = zxhservice.selectQueRen(id);
+        return JSON.toJSONString(huirenshen);
+    }
+
+    @RequestMapping("updateZhuYuanId")
+    @ResponseBody
+    public String updateZhuYuanId(Huiji huiji){
+        String flag = zxhservice.updateZhuYuanId(huiji);
+        return flag;
     }
 
 }

@@ -93,7 +93,7 @@
                 {field:'huijinip',title:'IP',width:230},
                 {field:'act',title:'操作',width:300,
                     formatter: function(value,row,index){
-                        return "<button type='button' onclick='hyrenzhengbt(\"+row.huijiid+\")' class='btn btn-warning'>认证</button>&nbsp;&nbsp;<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='updatehybianjiym("+row.huijiid+")'>编辑</button>";
+                        return "<button type='button' onclick='hyrenzhengbt(1,"+row.huijiid+")' class='btn btn-warning'>认证</button>&nbsp;&nbsp;<button type='button'  class='btn btn-success' href='#updateyhtck' class='btn cye-lm-tag' data-toggle='modal' onclick='hyrenzhengbt(2,"+row.huijiid+")'>编辑</button>";
                     }
                 }]
         })
@@ -126,8 +126,13 @@
         }
     }
 
-    function updatehybianjiym(id){
-        location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?id="+id;
+    function hyrenzhengbt(flag,id){
+        if(flag == 1){
+            location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?flag=2&id="+id;
+        }else{
+            location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?flag=1&id="+id;
+        }
+
     }
 
 </script>

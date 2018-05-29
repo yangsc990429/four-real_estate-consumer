@@ -29,7 +29,7 @@
         </div>
         <div class="panel-body">
             <div id="trtreeas">
-                <form id="addsyhyform">
+                <form id="updatechu">
                     <input type="hidden" name="huijiid">
                     <input type="hidden" name="huiquanxian">
                     <input type="hidden" name="huijinid">
@@ -50,7 +50,7 @@
                             <td width="240px">
                                 <input type="text" name="huijipass" class="form-control">
                             </td>
-                            <td width="240px"><font size="2">留空表示不修改</font></td>
+                            <td width="240px">&nbsp;&nbsp;为空时默认不修改</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -70,7 +70,7 @@
                             <td width="240px">
                                 <input type="text" name="huijiyouxiang" class="form-control">
                             </td>
-                            <td width="240px"><input type="checkbox" name="you" value="1">绑定邮箱</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="you" value="1">绑定邮箱</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -80,7 +80,7 @@
                             <td width="240px">
                                 <input type="text" name="huijishouji" class="form-control">
                             </td>
-                            <td width="240px"><input type="checkbox" name="shou" value="1">绑定手机</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="shou" value="1">绑定手机</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -244,12 +244,238 @@
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
                             <td width="150px" align="center" colspan="5">
-                                <button type="button" class="btn btn-success" onclick="insertZhu()">保存添加</button>
+                                <button type="button" class="btn btn-success" onclick="insertZhu()">保存修改</button>
                                 <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
                             </td>
                         </tr>
                     </table>
                 </form>
+                <form id="updateren">
+                    <input type="hidden" name="huirenshenid">
+                    <input type="hidden" name="huijiid">
+                    <table>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>认证状态:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huirenshenstruts"/>
+                                <div>
+                                    <input type="text" style="border:0" id="bkb" readonly>
+                                </div>
+                            </td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>会员账号:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huijizhanghao" class="form-control" disabled></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>身份证审核:</strong></font>&nbsp;</td>
+                            <td width="220px" colspan="3">
+                                <input type="radio" name="huirenshensfz" value="1">等待审核&nbsp;
+                                <input type="radio" name="huirenshensfz" value="2">通过认证&nbsp;
+                                <input type="radio" name="huirenshensfz" id="huirenshensfz" value="3">认证不通过&nbsp;
+                                <input type="radio" name="huirenshensfz" value="4">未提交认证&nbsp;
+                            </td>
+                            <td width="220px"></td>
+                        </tr>
+                    </table>
+                    <table id="bjyy">
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>被拒原因:</strong></font>&nbsp;</td>
+                            <td width="220px" colspan="2"><input type="text" name="huibeiju" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>真实姓名:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huirenshenname" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>身份证号:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huirenshensfzh" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>身份证正面:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huirenshenimgzhng" id="photo2">
+                                <input id="file-pic3" name="file" type="file" multiple data-min-file-count="1">
+                            </td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>身份证反面:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huirenshenimgfan" id="photo3">
+                                <input id="file-pic4" name="file" type="file" multiple data-min-file-count="1">
+                            </td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="center" colspan="5">
+                                <button type="button" class="btn btn-success" onclick="insertUpRen()">保存修改</button>
+                                <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <form id="updateyin">
+                    <input type="hidden" name="huirenshenid">
+                    <table>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="180px" align="right"><font size="4"><strong>营业执照认证:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huirenying" class="form-control">
+                                <input type="text" style="border:0" id="asd" readonly/>
+                            </td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>营业执照审核:</strong></font>&nbsp;</td>
+                            <td width="220px" colspan="3">
+                                <input type="radio" name="huirenshen" value="1">等待审核&nbsp;
+                                <input type="radio" name="huirenshen" value="2">通过认证&nbsp;
+                                <input type="radio" name="huirenshen" id="huirenshen" value="3">认证不通过&nbsp;
+                                <input type="radio" name="huirenshen" value="4">未提交认证&nbsp;
+                            </td>
+                            <td width="220px"></td>
+                        </tr>
+                    </table>
+                    <table id="yingye">
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>被拒原因:</strong></font>&nbsp;</td>
+                            <td width="220px" colspan="2"><input type="text" name="huirenjjyy" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司名称:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huirenming" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>营业执照号码:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huirennumber" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong> 营业执照:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huirenphoto" id="photo4">
+                                <input id="file-pic5" name="file" type="file" multiple data-min-file-count="1">
+                            </td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="center" colspan="5">
+                                <button type="button" class="btn btn-success" onclick="insertUpRenQian()">保存修改</button>
+                                <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <form id="updatejin">
+                    <input type="hidden" name="huijinid"/>
+                    <table>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>会员帐号:</strong></font>&nbsp;</td>
+                            <td width="220px"><input type="text" name="huijizhanghao" class="form-control" disabled></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>可用余额:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="hidden" name="huijinkymoney"/>
+                                <input type="text" name="huijinkymoney" class="form-control" disabled>
+                            </td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>金钱数量:</strong></font>&nbsp;</td>
+                            <td width="220px">
+                                <input type="text" name="huijinmoneysl" class="form-control">
+                            </td>
+                            <td width="220px" colspan="3">
+                                <font size="2">
+                                    &nbsp;&nbsp;正数表示增加，负数表示减少，如：100、+100表示加上100金钱，-100表示减去100金钱
+                                </font>
+                            </td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="right"><font size="4"><strong>说明:</strong></font>&nbsp;</td>
+                            <td width="220px" colspan="2"><input type="text" name="huijinshuiming" class="form-control"></td>
+                            <td width="220px"></td>
+                            <td width="220px"></td>
+                        </tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr><td colspan="5">&nbsp;</td></tr>
+                        <tr>
+                            <td width="150px" align="center" colspan="5">
+                                <button type="button" class="btn btn-success" onclick="insertUpJine()">保存修改</button>
+                                <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mymodalchu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:352px;height:100px">
+        <div class="modal-content">
+            <div class="modal-header" style="width:350px;height: 50px">
+                <h4 class="modal-title" id="myModaaa">最新消息</h4>
+            </div>
+            <div class="modal-body" align="center" style="height:80px"><font size="5px">保存成功,返回列表</font></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="shu()">确定</button>
             </div>
         </div>
     </div>
@@ -284,9 +510,9 @@
             dataType:"json",
             success:function (date){
                 aaa=date;
-                var option = "<input type='checkbox' id='q4' onclick='xuan()'>全选&nbsp;&nbsp;&nbsp;";
+                var option = "<label><input type='checkbox' id='q4' onclick='xuan()'>全选&nbsp;&nbsp;&nbsp;</label>";
                 $(date).each(function (){
-                    option+="<input type='checkbox' name='huiguanid' value="+this.huiquanid+">"+this.huiquanname+"&nbsp;&nbsp;&nbsp;";
+                    option+="<label><input type='checkbox' name='huiguanid' value="+this.huiquanid+">"+this.huiquanname+"&nbsp;&nbsp;&nbsp;</label>";
                 })
                 $("#quan").html(option);
             }
@@ -295,6 +521,19 @@
 </script>
 <script type="text/javascript">
     var id = <%=request.getParameter("id")%>
+    var flag = <%=request.getParameter("flag")%>
+    if(flag == 1 && flag != null){
+        $("#updatechu").show();
+        $("#updateren").hide();
+        $("#updateyin").hide();
+        $("#updatejin").hide();
+    }else{
+        $("#updatechu").hide();
+        $("#updateren").show();
+        $("#updateyin").show();
+        $("#updatejin").hide();
+    }
+    var pass = "";
     $(function (){
         $.ajax({
             url:"<%=request.getContextPath()%>/zxh/selectXiuId",
@@ -376,8 +615,8 @@
                     }
                 })
                 $("[name='huijiid']").val(date.huijiid);
+                pass = date.huijipass;
                 $("[name='huijizhanghao']").val(date.huijizhanghao);
-                $("[name='huijipass']").val(date.huijipass);
                 $("[name='huijilianxiren']").val(date.huijilianxiren);
                 $("[name='huijiyouxiang']").val(date.huijiyouxiang);
                 if(date.huijishifoubyx == "1"){
@@ -398,6 +637,7 @@
                 //图片
                 $("[name='huijitouxiang']").val(date.huijitouxiang);
                 $("#imgId").attr("src",date.huijitouxiang);
+
                 $("[name='huijinid']").val(date.huijinid);
                 $("[name='huijinkymoney']").val(date.huijinkymoney);
                 $("[name='huisysxl']").val(date.huisysxl);
@@ -409,6 +649,9 @@
                 $("[name='huijiquyudf']").val(date.huijiquyudf);
                 //权限
                 $("[name='huiquanxian']").val(date.huiquanxian);
+
+                //金额管理
+                $("[name='huijinkymoney']").val(date.huijinkymoney);
             }
         })
 
@@ -426,7 +669,83 @@
                 }
             })
         }
+
+        $(function (){
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectQueRen",
+                type:"post",
+                async:false,
+                data:{"id":id},
+                dataType:"json",
+                success:function (date){
+                    $("[name='huirenshenid']").val(date.huirenshenid);
+                    $("[name='huirenshensfz']").val([date.huirenshensfz]);
+                    $("#bkb").val(date.huirenshensfz);
+                    if(date.huirenshensfz != "3"){
+                        $("#bjyy").hide()
+                    }
+                    if (date.huirenshensfz==1){
+                        $("#bkb").val("等待审核");
+                    }else if (date.huirenshensfz==2){
+                        $("#bkb").val("通过审核");
+                    }else if(date.huirenshensfz==3){
+                        $("#bjyy").show();
+                        $("#bkb").val("认证不通过");
+                    }else {
+                        $("#bkb").val("未提交认证");
+                        alert($("#bkb").val())
+                    }
+                    $("[name='huirenshenname']").val(date.huirenshenname);
+                    $("[name='huirenshensfzh']").val(date.huirenshensfzh);
+                    $("[name='huirenshenimgzhng']").val(date.huirenshenimgzhng);
+                    $("#imgId2").attr("src",date.huirenshenimgzhng);
+                    $("[name='huirenshenimgfan']").val(date.huirenshenimgfan);
+                    $("#imgId3").attr("src",date.huirenshenimgfan);
+                    $("[name='huibeiju']").val(date.huibeiju)
+                    //营业执照
+                    $("[name='huirenshen']").val([date.huirenshen])
+                    $("#asd").val(date.huirenshen);
+                    if(date.huirenshen != "3"){
+                        $("#yingye").hide()
+                    }
+                    if (date.huirenshen==1){
+                        $("#asd").val("等待审核");
+                    }else if (date.huirenshen==2){
+                        $("#asd").val("通过审核");
+                    }else if(date.huirenshen==3){
+                        $("#yingye").show();
+                        $("#asd").val("认证不通过");
+                    }else {
+                        $("#asd").val("未提交认证");
+                    }
+                    $("[name='huirenming']").val(date.huirenming);
+                    $("[name='huirennumber']").val(date.huirennumber);
+                    $("[name='huirenphoto']").val(date.huirenphoto);
+                    $("#imgId4").attr("src",date.huirenphoto);
+                    $("[name='huirenjjyy']").val(date.huirenjjyy);
+                }
+            })
+        });
+
+        $("[name='huirenshensfz']").click(function () {
+            $("#bjyy").hide();
+        })
+        $("#huirenshensfz").click(function(){
+            $("#bjyy").show();
+        })
+
+        $("[name='huirenshen']").click(function () {
+            $("#yingye").hide();
+        })
+        $("#huirenshen").click(function(){
+            $("#yingye").show();
+        })
+
     })
+
+    function fan(){
+        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+    }
 
 </script>
 <script type="text/javascript">
@@ -463,6 +782,32 @@
             check[i].checked=q4.checked;
         }
     }
+
+    function insertZhu(){
+        if($("[name='huijipass']").val() == null){
+            $("[name='huijipass']").val(pass);
+        }
+        alert($("[name='huijipass']").val())
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zxh/updateZhuanId",
+            type:"post",
+            data:$("#updatechu").serialize(),
+            dataType:"text",
+            success:function (data){
+                if(data == "success"){
+                    $("#mymodalchu").modal({
+                        keyboard:false,
+                        backdrop:false,
+                    })
+                }
+            }
+        })
+    }
+
+    function shu(){
+        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+    }
+
 </script>
 <script type="text/javascript">
     $('#file-pic2').fileinput({//初始化上传文件框
@@ -509,6 +854,157 @@
         //alert(result);
         $('#photo1').val(result.a);
     })
+
+    $('#file-pic3').fileinput({//初始化上传文件框
+        showUpload : true,	//是否显示上传按钮
+        showRemove : true,	//是否显示移除按钮
+        uploadAsync: true,
+        uploadLabel: "上传",		//设置上传按钮的汉字
+        uploadClass: "btn btn-primary",//设置上传按钮样式
+        showCaption: true,		//是否显示标题
+        language: "zh",			//配置语言
+        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
+        initialPreview: [
+            "<img class='kv-preview-data file-preview-image' id='imgId2' width='150px' height='250px'>",
+        ],
+        maxFileSize : 0,
+        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
+        enctype: 'multipart/form-data',
+        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
+        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
+        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
+        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        dropZoneTitle: "请通过拖拽图片文件放到这里",
+        dropZoneClickTitle: "或者点击此区域添加图片",
+        //uploadExtraData: {"id": id},//这个是外带数据
+        uploadExtraData: function(previewId, index) {   //额外参数的关键点
+            var obj = {};
+            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
+            return obj;
+        },
+        showBrowse: false,
+        browseOnZoneClick: true,
+        slugCallback : function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+    });
+    $('#file-pic3').on('fileerror', function(event, data) {
+        alert("失败");
+    });
+    //上传文件成功，回调函数
+    $('#file-pic3').on("fileuploaded", function(event, data, previewId, index) {
+        var result = data.response; //后台返回的json
+        //alert(result);
+        $('#photo2').val(result.a);
+    })
+
+    $('#file-pic4').fileinput({//初始化上传文件框
+        showUpload : true,	//是否显示上传按钮
+        showRemove : true,	//是否显示移除按钮
+        uploadAsync: true,
+        uploadLabel: "上传",		//设置上传按钮的汉字
+        uploadClass: "btn btn-primary",//设置上传按钮样式
+        showCaption: true,		//是否显示标题
+        language: "zh",			//配置语言
+        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
+        initialPreview: [
+            "<img class='kv-preview-data file-preview-image' id='imgId3' width='150px' height='250px'>",
+        ],
+        maxFileSize : 0,
+        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
+        enctype: 'multipart/form-data',
+        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
+        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
+        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
+        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        dropZoneTitle: "请通过拖拽图片文件放到这里",
+        dropZoneClickTitle: "或者点击此区域添加图片",
+        //uploadExtraData: {"id": id},//这个是外带数据
+        uploadExtraData: function(previewId, index) {   //额外参数的关键点
+            var obj = {};
+            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
+            return obj;
+        },
+        showBrowse: false,
+        browseOnZoneClick: true,
+        slugCallback : function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+    });
+    $('#file-pic4').on('fileerror', function(event, data) {
+        alert("失败");
+    });
+    //上传文件成功，回调函数
+    $('#file-pic4').on("fileuploaded", function(event, data, previewId, index) {
+        var result = data.response; //后台返回的json
+        //alert(result);
+        $('#photo3').val(result.a);
+    })
+
+    $('#file-pic5').fileinput({//初始化上传文件框
+        showUpload : true,	//是否显示上传按钮
+        showRemove : true,	//是否显示移除按钮
+        uploadAsync: true,
+        uploadLabel: "上传",		//设置上传按钮的汉字
+        uploadClass: "btn btn-primary",//设置上传按钮样式
+        showCaption: true,		//是否显示标题
+        language: "zh",			//配置语言
+        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
+        initialPreview: [
+            "<img class='kv-preview-data file-preview-image' id='imgId4' width='150px' height='250px'>",
+        ],
+        maxFileSize : 0,
+        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
+        enctype: 'multipart/form-data',
+        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
+        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
+        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
+        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        dropZoneTitle: "请通过拖拽图片文件放到这里",
+        dropZoneClickTitle: "或者点击此区域添加图片",
+        //uploadExtraData: {"id": id},//这个是外带数据
+        uploadExtraData: function(previewId, index) {   //额外参数的关键点
+            var obj = {};
+            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
+            return obj;
+        },
+        showBrowse: false,
+        browseOnZoneClick: true,
+        slugCallback : function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+    });
+    $('#file-pic5').on('fileerror', function(event, data) {
+        alert("失败");
+    });
+    //上传文件成功，回调函数
+    $('#file-pic5').on("fileuploaded", function(event, data, previewId, index) {
+        var result = data.response; //后台返回的json
+        //alert(result);
+        $('#photo4').val(result.a);
+    })
+</script>
+<script type="text/javascript">
+    function jibenziliao(){
+        $("#updatechu").show();
+        $("#updateren").hide();
+        $("#updateyin").hide();
+        $("#updatejin").hide();
+    }
+
+    function renzhengshenhejsp(){
+        $("#updatechu").hide();
+        $("#updateren").show();
+        $("#updateyin").show();
+        $("#updatejin").hide();
+    }
+
+    function jinqianguanlijsp(){
+        $("#updatechu").hide();
+        $("#updateren").hide();
+        $("#updateyin").hide();
+        $("#updatejin").show();
+    }
 </script>
 </body>
 </html>
