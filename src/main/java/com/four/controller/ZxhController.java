@@ -412,4 +412,56 @@ public String insertMem(Member member){
         return flag;
     }
 
+    /**
+     * 查询出售类型
+     * @return
+     */
+    @RequestMapping("queryApart")
+    @ResponseBody
+    public String queryApart(){
+        List<Apartment> list = zxhservice.queryApart();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询会员性质为装修公司的
+     * @return
+     */
+    @RequestMapping("queryZhuang")
+    @ResponseBody
+    public List<Map<String,Object>> queryZhuang(){
+        List<Map<String,Object>> list = zxhservice.queryZhuang();
+        return list;
+    }
+
+    /**
+     * 删除所有选中的装修公司的信息
+     * @param ids
+     * @return
+     */
+    @RequestMapping("deleteZhuangIdAll")
+    @ResponseBody
+    public String deleteZhuangIdAll(String ids){
+        String flag = zxhservice.deleteZhuangIdAll(ids);
+        return flag;
+    }
+
+    /**
+     * 查询装修公司对应的权限
+     * @return
+     */
+    @RequestMapping("selectQuan")
+    @ResponseBody
+    public String selectQuan(){
+        List<Huiquan> list = zxhservice.selectQuan();
+        return JSON.toJSONString(list);
+    }
+
+    @RequestMapping("selectXiuId")
+    @ResponseBody
+    public String selectXiuId(Integer id){
+        Huiji huiji = zxhservice.selectXiuId(id);
+        return JSON.toJSONString(huiji);
+    }
+
 }

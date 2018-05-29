@@ -21,10 +21,12 @@
             <td width="150px" align="right"><font size="4"><strong>发布出售:</strong></font>&nbsp;</td>
             <td width="880px" colspan="4">
                 <div style="width:100%;height:300px" id="tu">
-                    <div style="width:15%;height:48%;border:solid red;fload:left"></div>
-                    <div style="width:15%;height:48%;border:solid yellow;fload:left"></div>
-                    <div style="width:15%;height:48%;border:solid blue;fload:left"></div>
-                    <div style="width:15%;height:48%;border:solid #ff33ff;fload:left"></div>
+                    <div style="width:15%;height:45%;border:solid red;float:left;margin-left: 6px;margin-top: 6px">
+                        <div style="width:100%;height:76%">
+                            <img src="" width="100%" height="100%"/>
+                        </div>
+                        <div align="center">阿三</div>
+                    </div>
                 </div>
             </td>
         </tr>
@@ -68,7 +70,7 @@
             type:"post",
             dataType:"json",
             success:function (apart){
-                var
+
             }
         })
     })

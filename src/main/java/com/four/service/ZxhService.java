@@ -66,4 +66,13 @@ public interface ZxhService {
 
     String updateDownChuId(String ids);
 
+    List<Apartment> queryApart();
+
+    List<Map<String,Object>> queryZhuang();
+
+    String deleteZhuangIdAll(String ids);
+
+    List<Huiquan> selectQuan();
+
+    Huiji selectXiuId(Integer id);
 }
