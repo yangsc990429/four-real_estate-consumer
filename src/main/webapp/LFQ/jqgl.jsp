@@ -170,15 +170,6 @@
         })
     })
 
-    $("[name='danxuan']").click(function () {
-        $("#bjyy").hide();
-    })
-
-    $("#danxuan").click(function(){
-        $("#bjyy").show();
-        /* $("#bjyy").hide();*/
-    })
-
 
     //认证审核
     function renzhengshenhejsp() {

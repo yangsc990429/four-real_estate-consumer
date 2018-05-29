@@ -52,4 +52,8 @@ public interface LfqService {
     List<Area> querydreadifangid(String id);
 
     void updatesyhygai(Huiji hj);
+
+    Huirenzhuang queryhuiyuanrenzhneg(String id);
+
+    void updatexiugairz(Huirenzhuang rz);
 }

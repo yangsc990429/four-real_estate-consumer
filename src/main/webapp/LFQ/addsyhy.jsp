@@ -263,7 +263,6 @@
 <script type="text/javascript">
 
     var id = <%=request.getParameter("id")%>;
-    alert(id)
     $(function(){
 
             $.ajax({
@@ -272,7 +271,6 @@
                 dataType:"json",
                 async:false,
                 success:function (date){
-                    console.info(date)
                     var diquv = date.huijiquyu
                     var difang = date.huijiquyudf
                     var dengji = date.huidengid
