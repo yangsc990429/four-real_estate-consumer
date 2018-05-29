@@ -37,16 +37,21 @@
         </div>
         <div class="panel-body">
             <div id="trtreeas">
-                <form id="addhui">
-                    <input type="hidden" name="huijiid">
+                <form id="rzform">
+
+                    <input type="hidden" name="huirenid">
+                    <!--状态-->
+                    <input type="hidden" name="huirenztai">
+                    <!--审核-->
+                    <%--<input type="hidden" name="huishenid">--%>
                     <table>
                         <tr>
                             <td>认证状态:</td>
                             <td>
-                                未提交认证资料
-                                <%--<div class="col-sm-8">
-                                    <input type="text" name="nianprice" class="form-control">
-                                </div>--%>
+                                <div class="col-sm-8">
+                                <input type="text" style="border:0" id="bkb" readonly>
+                                </div>
+
                             </td>
                         </tr>
                         <tr>
@@ -56,7 +61,7 @@
                             <td>会员账号:</td>
                             <td>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nianprice" class="form-control" disabled="disabled">
+                                    <input type="text" name="huijizhanghao" class="form-control" disabled="disabled">
                                 </div>
                             </td>
                         </tr>
@@ -82,7 +87,7 @@
                                 <td>
 
                                     <div class="col-sm-12">
-                                        <input type="text" name="nianprice" class="form-control">
+                                        <input type="text" name="huirenjjyy" class="form-control">
                                     </div>
 
                                 </td>
@@ -92,14 +97,12 @@
                             </tr>
                         </table>
 
-
-
                     <table>
                         <tr>
                             <td>真实姓名:</td>
                             <td>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nianprice" class="form-control">
+                                    <input type="text" name="huirenzsxm" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -110,7 +113,7 @@
                             <td>身份证号:</td>
                             <td>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nianprice" class="form-control">
+                                    <input type="text" name="huirensfzh" class="form-control">
                                 </div>
                             </td>
                         </tr>
@@ -119,14 +122,14 @@
                         </tr>
                         <tr>
                             <td>身份证正面:</td>
-                            <td><input type="file" name=""></td>
+                            <td><input type="file" name="huirensfzzm"></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
                         </tr>
                         <tr>
                             <td>身份证反面:</td>
-                            <td><input type="file" name=""></td>
+                            <td><input type="file" name="huirensfzfm"></td>
                         </tr>
                         <tr>
                             <td colspan="2">&nbsp;</td>
@@ -135,7 +138,7 @@
                             <td></td>
                             <td></br>
                                 <button type="button" class="btn btn-default" onclick="fanhuisyhy()">返回</button>&nbsp;&nbsp;
-                                <button type="button" class="btn btn-primary" onclick="updatesyhyxx()">保存修改</button>
+                                <button type="button" class="btn btn-primary" onclick="updaterenzheng()">保存修改</button>
                             </td>
                         </tr>
                     </table>
@@ -144,8 +147,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script>
@@ -176,41 +177,94 @@
         $("#bjyy").hide();
 
         $.ajax({
-            url:"<%=request.getContextPath()%>/lfq/updatehyrenzhengshenhe?id="+id,
+            url:"<%=request.getContextPath()%>/lfq/queryhuiyuanrenzhneg?id="+id,
             type:"post",
             dataType:"json",
             async:false,
             success:function (date){
-                /*$("[name='huijiid']").val(date.huijiid);
+
+                $("[name='huirenid']").val(date.huirenid);
                 $("[name='huijizhanghao']").val(date.huijizhanghao);
-                $("[name='huijipass']").val(date.huijipass);
-                $("[name='huijilianxiren']").val(date.huijilianxiren);
-                $("[name='huijiyouxiang']").val(date.huijiyouxiang);
-                $("[name='huijishouji']").val(date.huijishouji);
-                $("[name='huijidianhua']").val(date.huijidianhua);
-                $("[name='huijiqq']").val(date.huijiqq);
-                $("[name='huijitouxiang']").val(date.huijitouxiang);
-                $("[name='nianprice']").val(date.nianprice);
-                $("[name='huijinid']").val(date.huijinid);
-                $("[name='huijinkymoney']").val(date.huijinkymoney);*/
+                $("[name='huirenjjyy']").val(date.huirenjjyy);
+                $("[name='huirenzsxm']").val(date.huirenzsxm);
+                $("[name='huirenztai']").val(date.huirenztai);
+                $("#bkb").val(date.huirenztai);
+                $("[name='huirensfzh']").val(date.huirensfzh);
+                $("[name='huirensfzzm']").val(date.huirensfzzm);
+                $("[name='huirensfzfm']").val(date.huirensfzfm);
             }
         });
 
-        //查询等级
+
+        if ($("#bkb").val()==1){
+
+            $("#bkb").val("等待审核");
+
+        }else if ($("#bkb").val()==2){
+
+            $("#bkb").val("通过审核");
+
+        }else if($("#bkb").val()==3){
+
+            $("#bjyy").show();
+            $("#bkb").val("认证不通过");
+
+        }else {
+            $("#bkb").val("未提交认证");
+        }
+
+
+
+
+    var check =document.getElementsByName("danxuan");
+        for(var j=0; j< check.length; j++) {
+             if(check[j].value == $("[name='huirenztai']").val()){
+                 check[j].checked = true;
+               /*  if(check[j].checked = true){
+                     alert(check[j].value+"--这是指");
+                     /!*$("[name='huirenztai']").val(check[j].value);*!/
+                 }*/
+             }
+             }
+
+    /*if (check[j].value == qx[i].split(",")) {
+        check[j].checked = true;
+    }*/
+
+
+
+    })
+
+
+    //修改认证
+    function updaterenzheng() {
+
+
+        var check =document.getElementsByName("danxuan");
+        for(var j=0; j< check.length; j++) {
+                if(check[j].checked == true){
+                    $("[name='huirenztai']").val(check[j].value);
+                    if($("[name='huirenztai']").val()!=3){
+                        $("[name='huirenjjyy']").val("");
+                    }
+                }
+        }
+
+
         $.ajax({
-            url:"<%=request.getContextPath()%>/lfq/queryshenhe",
+            url:"<%=request.getContextPath()%>/lfq/updatexiugairz",
             type:"post",
-            dataType:"json",
+            data:$("#rzform").serialize(),
+            dataType:"text",
             async:false,
             success:function (da){
-                var option = "";
-                $(da).each(function(){
-                    option+="<option value='"+this.huidengid+"'>"+this.huidengname+"</option>";
-                })
-                $("[name='huidengid']").html(option);
+                location.href="<%=request.getContextPath()%>/LFQ/syhy.jsp";
             }
         })
-    })
+    }
+
+
+
 
     $("[name='danxuan']").click(function () {
             $("#bjyy").hide();
@@ -218,7 +272,6 @@
 
     $("#danxuan").click(function(){
             $("#bjyy").show();
-           /* $("#bjyy").hide();*/
     })
 
 
