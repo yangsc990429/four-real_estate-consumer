@@ -83,7 +83,7 @@
                 {checkbox:true},
                 {field:'huijizhanghao',title:'会员账号',width:230,
                     formatter:function(volue,row,index){
-                        return "<a href='javascript:dianjizhanghao("+row.huijiid+")'>"+row.huijizhanghao+"</a>";
+                        return "<a href='javascript:hyrenzhengbt(3,"+row.huijiid+")'>"+row.huijizhanghao+"</a>";
                     }
                 },
                 {field:'huizcxzname',title:'注册性质',width:230},
@@ -129,10 +129,11 @@
     function hyrenzhengbt(flag,id){
         if(flag == 1){
             location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?flag=2&id="+id;
+        }else if(flag == 2){
+            location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?flag=1&id="+id;
         }else{
             location.href="<%=request.getContextPath()%>/zxh/updatezhuang.jsp?flag=1&id="+id;
         }
-
     }
 
 </script>

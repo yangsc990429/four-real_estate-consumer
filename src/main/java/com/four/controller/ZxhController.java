@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -481,10 +483,48 @@ public String insertMem(Member member){
         return JSON.toJSONString(huirenshen);
     }
 
+    /**
+     * 修改装修公司的基本信息
+     * @param huiji
+     * @return
+     */
     @RequestMapping("updateZhuYuanId")
     @ResponseBody
     public String updateZhuYuanId(Huiji huiji){
         String flag = zxhservice.updateZhuYuanId(huiji);
+        return flag;
+    }
+
+    /**
+     * 修改装修公司的认证信息
+     * @param huirenshen
+     * @return
+     */
+    @RequestMapping("updateRenZhenId")
+    @ResponseBody
+    public String updateRenZhenId(Huirenshen huirenshen){
+        String flag = zxhservice.updateRenZhenId(huirenshen);
+        return flag;
+    }
+
+    /**
+     * 修改装修公司营业认证信息
+     * @param huirenshen
+     * @return
+     */
+    @RequestMapping("updateRenQuanId")
+    @ResponseBody
+    public String updateRenQuanId(Huirenshen huirenshen){
+        String flag = zxhservice.updateRenQuanId(huirenshen);
+        return flag;
+    }
+
+    @RequestMapping("updateJineId")
+    @ResponseBody
+    public String updateJineId(Huijin huijin){
+        HttpServletRequest request= ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        String addr = request.getRemoteAddr();
+        String flag = zxhservice.updateJineId(huijin,addr);
         return flag;
     }
 

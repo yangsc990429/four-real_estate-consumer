@@ -33,6 +33,7 @@
                     <input type="hidden" name="huijiid">
                     <input type="hidden" name="huiquanxian">
                     <input type="hidden" name="huijinid">
+                    <input type="hidden" name="huijizhanghao">
                     <table>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
@@ -50,7 +51,7 @@
                             <td width="240px">
                                 <input type="text" name="huijipass" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;为空时默认不修改</td>
+                            <td width="240px">&nbsp;&nbsp;</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -70,7 +71,7 @@
                             <td width="240px">
                                 <input type="text" name="huijiyouxiang" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="you" value="1">绑定邮箱</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="huijishifoubyx" value="1">绑定邮箱</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -80,7 +81,7 @@
                             <td width="240px">
                                 <input type="text" name="huijishouji" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="shou" value="1">绑定手机</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="huijishifoubsj" value="1">绑定手机</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -533,7 +534,7 @@
         $("#updateyin").show();
         $("#updatejin").hide();
     }
-    var pass = "";
+
     $(function (){
         $.ajax({
             url:"<%=request.getContextPath()%>/zxh/selectXiuId",
@@ -565,7 +566,6 @@
                         $("[name='huijiquyu']").html(option);
                     }
                 })
-                alert(difang)
                 //二级回显
                 var ids = $("[name='huijiquyu']").val();
                 if ($("[name='huijiquyu']").val()!=-1){
@@ -615,18 +615,19 @@
                     }
                 })
                 $("[name='huijiid']").val(date.huijiid);
-                pass = date.huijipass;
+                $("[name='huijipass']").val(date.huijipass);
                 $("[name='huijizhanghao']").val(date.huijizhanghao);
                 $("[name='huijilianxiren']").val(date.huijilianxiren);
                 $("[name='huijiyouxiang']").val(date.huijiyouxiang);
+                $("[name='huijishifoubyx']").val(date.huijishifoubyx)
                 if(date.huijishifoubyx == "1"){
-                    $("[name='you']").attr("checked",true);
+                    $("[name='huijishifoubyx']").attr("checked",true);
                 }
                 $("[name='huijishouji']").val(date.huijishouji);
-                if(date.huijishouji == "1"){
-                    $("[name='shou']").attr("checked",true);
+                $("[name='huijishifoubsj']").val(date.huijishifoubsj)
+                if(date.huijishifoubsj == "1"){
+                    $("[name='huijishifoubsj']").attr("checked",true);
                 }
-
                 $("[name='huijidianhua']").val(date.huijidianhua);
                 $("[name='huijiqq']").val(date.huijiqq);
                 $("[name='huizhi']").val(date.huizhi);
@@ -634,6 +635,8 @@
                 $("[name='huisidis']").val(date.huisidis);
                 $("[name='dpguanjianc']").val(date.dpguanjianc);
                 $("[name='dpmiaoshu']").val(date.dpmiaoshu);
+                $("[name='huiguantuipai']").val(date.huiguantuipai);
+                $("[name='huiguandian']").val(date.huiguandian);
                 //图片
                 $("[name='huijitouxiang']").val(date.huijitouxiang);
                 $("#imgId").attr("src",date.huijitouxiang);
@@ -693,7 +696,6 @@
                         $("#bkb").val("认证不通过");
                     }else {
                         $("#bkb").val("未提交认证");
-                        alert($("#bkb").val())
                     }
                     $("[name='huirenshenname']").val(date.huirenshenname);
                     $("[name='huirenshensfzh']").val(date.huirenshensfzh);
@@ -784,17 +786,64 @@
     }
 
     function insertZhu(){
-        if($("[name='huijipass']").val() == null){
-            $("[name='huijipass']").val(pass);
-        }
-        alert($("[name='huijipass']").val())
         $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/updateZhuanId",
+            url:"<%=request.getContextPath()%>/zxh/updateZhuYuanId",
             type:"post",
             data:$("#updatechu").serialize(),
             dataType:"text",
             success:function (data){
                 if(data == "success"){
+                    $("#mymodalchu").modal({
+                        keyboard:false,
+                        backdrop:false,
+                    })
+                }
+            }
+        })
+    }
+
+    function insertUpRen(){
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zxh/updateRenZhenId",
+            type:"post",
+            data:$("#updateren").serialize(),
+            dataType:"text",
+            success:function (date){
+                if(date == "success"){
+                    $("#mymodalchu").modal({
+                        keyboard:false,
+                        backdrop:false,
+                    })
+                }
+            }
+        })
+    }
+
+    function insertUpRenQian(){
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zxh/updateRenQuanId",
+            type:"post",
+            data:$("#updateyin").serialize(),
+            dataType:"text",
+            success:function (date){
+                if(date == "success"){
+                    $("#mymodalchu").modal({
+                        keyboard:false,
+                        backdrop:false,
+                    })
+                }
+            }
+        })
+    }
+
+    function insertUpJine(){
+        $.ajax({
+            url:"<%=request.getContextPath()%>/zxh/updateJineId",
+            type:"post",
+            data:$("#updatejin").serialize(),
+            dataType:"text",
+            success:function (date){
+                if(date == "success"){
                     $("#mymodalchu").modal({
                         keyboard:false,
                         backdrop:false,
@@ -820,9 +869,7 @@
         language: "zh",			//配置语言
         uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
         initialPreview: [
-
             "<img class='kv-preview-data file-preview-image' id='imgId' width='150px' height='250px'>",
-
         ],
         maxFileSize : 0,
         maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
@@ -855,49 +902,8 @@
         $('#photo1').val(result.a);
     })
 
-    $('#file-pic3').fileinput({//初始化上传文件框
-        showUpload : true,	//是否显示上传按钮
-        showRemove : true,	//是否显示移除按钮
-        uploadAsync: true,
-        uploadLabel: "上传",		//设置上传按钮的汉字
-        uploadClass: "btn btn-primary",//设置上传按钮样式
-        showCaption: true,		//是否显示标题
-        language: "zh",			//配置语言
-        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
-        initialPreview: [
-            "<img class='kv-preview-data file-preview-image' id='imgId2' width='150px' height='250px'>",
-        ],
-        maxFileSize : 0,
-        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
-        enctype: 'multipart/form-data',
-        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
-        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
-        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
-        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
-        dropZoneTitle: "请通过拖拽图片文件放到这里",
-        dropZoneClickTitle: "或者点击此区域添加图片",
-        //uploadExtraData: {"id": id},//这个是外带数据
-        uploadExtraData: function(previewId, index) {   //额外参数的关键点
-            var obj = {};
-            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
-            return obj;
-        },
-        showBrowse: false,
-        browseOnZoneClick: true,
-        slugCallback : function(filename) {
-            return filename.replace('(', '_').replace(']', '_');
-        }
-    });
-    $('#file-pic3').on('fileerror', function(event, data) {
-        alert("失败");
-    });
-    //上传文件成功，回调函数
-    $('#file-pic3').on("fileuploaded", function(event, data, previewId, index) {
-        var result = data.response; //后台返回的json
-        //alert(result);
-        $('#photo2').val(result.a);
-    })
-
+</script>
+<script type="text/javascript">
     $('#file-pic4').fileinput({//初始化上传文件框
         showUpload : true,	//是否显示上传按钮
         showRemove : true,	//是否显示移除按钮
@@ -940,7 +946,52 @@
         //alert(result);
         $('#photo3').val(result.a);
     })
-
+</script>
+<script type="text/javascript">
+    $('#file-pic3').fileinput({//初始化上传文件框
+        showUpload : true,	//是否显示上传按钮
+        showRemove : true,	//是否显示移除按钮
+        uploadAsync: true,
+        uploadLabel: "上传",		//设置上传按钮的汉字
+        uploadClass: "btn btn-primary",//设置上传按钮样式
+        showCaption: true,		//是否显示标题
+        language: "zh",			//配置语言
+        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
+        initialPreview: [
+            "<img class='kv-preview-data file-preview-image' id='imgId2' width='150px' height='250px'>",
+        ],
+        maxFileSize : 0,
+        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
+        enctype: 'multipart/form-data',
+        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
+        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
+        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
+        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        dropZoneTitle: "请通过拖拽图片文件放到这里",
+        dropZoneClickTitle: "或者点击此区域添加图片",
+        //uploadExtraData: {"id": id},//这个是外带数据
+        uploadExtraData: function(previewId, index) {   //额外参数的关键点
+            var obj = {};
+            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
+            return obj;
+        },
+        showBrowse: false,
+        browseOnZoneClick: true,
+        slugCallback : function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+    });
+    $('#file-pic3').on('fileerror', function(event, data) {
+        alert("失败");
+    });
+    //上传文件成功，回调函数
+    $('#file-pic3').on("fileuploaded", function(event, data, previewId, index) {
+        var result = data.response; //后台返回的json
+        //alert(result);
+        $('#photo2').val(result.a);
+    })
+</script>
+<script type="text/javascript">
     $('#file-pic5').fileinput({//初始化上传文件框
         showUpload : true,	//是否显示上传按钮
         showRemove : true,	//是否显示移除按钮

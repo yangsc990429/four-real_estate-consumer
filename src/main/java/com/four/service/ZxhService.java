@@ -79,4 +79,10 @@ public interface ZxhService {
     Huirenshen selectQueRen(Integer id);
 
     String updateZhuYuanId(Huiji huiji);
+
+    String updateRenZhenId(Huirenshen huirenshen);
+
+    String updateRenQuanId(Huirenshen huirenshen);
+
+    String updateJineId(Huijin huijin, String addr);
 }
