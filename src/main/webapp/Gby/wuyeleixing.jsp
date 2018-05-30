@@ -162,7 +162,15 @@
                 field:'yuanname', title:'类型原始名称', idField:true, width:10},
                 {field:'zhanname', title:'展示名称', width:10},
                 {field:'xuhao', title:'序号', width:10},
-                {field:'statusup', title:'是否启用', width:10},
+                {field:'statusup', title:'是否启用', width:10,
+                    formatter:function (value,row,index){
+                        if(row.statusup == "1"){
+                            return "<font color='blue'>启用</font>";
+                        }else{
+                            return "<font color='red'>禁用</font>";
+                        }
+                    }
+                },
                 {field:'cz',title:'操作',width:100,
                     formatter: function(value,row,index){
                         return '<button class="btn btn-primary" data-toggle="modal" data-target="#myModal1" onclick="updatewuyeleixing('+row.id+')">编辑</button><button type="button" class="btn btn-danger" onclick="deletewuyeleixing('+row.id+')" >删除</button>';

@@ -519,6 +519,11 @@ public String insertMem(Member member){
         return flag;
     }
 
+    /**
+     * 修改该用户的可用资金，并新增资金状态和说明
+     * @param huijin
+     * @return
+     */
     @RequestMapping("updateJineId")
     @ResponseBody
     public String updateJineId(Huijin huijin){
@@ -526,6 +531,13 @@ public String insertMem(Member member){
         String addr = request.getRemoteAddr();
         String flag = zxhservice.updateJineId(huijin,addr);
         return flag;
+    }
+
+    @RequestMapping("queryzijin")
+    @ResponseBody
+    public List<Map<String,Object>> queryziji(String jindis,String jinnumber){
+        List<Map<String,Object>> list =  zxhservice.queryzijin(jindis,jinnumber);
+        return  list;
     }
 
 }
