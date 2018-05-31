@@ -33,10 +33,10 @@
 <body>
 <table>
     <tr>
-        <td width="150px" ><button type="button" class="btn btn-danger" onclick="deletes()" >批量删除</button></td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <td width="150px" ><button type="button" class="btn btn-warning btn-sm" onclick="deletes()" >删除</button></td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <td > 关键词:</td>
         <td> <input type="text" name="jindis" id="dis"   class="form-control"style="width:100px"  ></td>
-        <td> <button type="button" class="btn btn-success" onclick="serach1()">搜索</button></td>
+        <td>&nbsp;&nbsp;<button type="button" class="btn btn-warning btn-sm" onclick="serach1()">搜索</button></td>
     </tr>
 </table>
 
@@ -77,11 +77,11 @@
                   $("#ZiJinys").bootstrapTable({
                       url:"<%=request.getContextPath()%>/zxh/queryzijin",
                       striped: true,//隔行变色
-                      showPaginationSwitch:true,//是否显示 数据条数选择框
+                      /*showPaginationSwitch:true,//是否显示 数据条数选择框*/
                       minimumCountColumns:1,//最小留下一个
-                      showRefresh:true,//显示刷新按钮
-                      showToggle:true,//显示切换视图
-                      search:true,//是否显示搜索框
+                      /*showRefresh:true,//显示刷新按钮*/
+                      /*showToggle:true,//显示切换视图*/
+                      /*search:true,//是否显示搜索框*/
                       searchOnEnterKey:true,//设置为 true时，按回车触发搜索方法，否则自动触发搜索方法
                       sidePagination:"client",
                       pagination:true,//开启分页
@@ -94,39 +94,24 @@
                       queryParams:function(param){
                           return {
                               jindis:$("[name='jindis']").val(),
-                              jinnumber:$("[name='jinnumber']").val(),
-
                           }
                       },
-                      columns:[{
-                          field:'ce',
-                          width:1,
-                          checkbox:true
-
-                      },{
-                          field:'jindis',
-                          title:'说明',
-                          idField:true,
-                          width:10,
-
-
-                      },{
-                          field:'jinnumber',
-                          title:'资金',
-                          width:10
-                      },{
-                          field:'jinip',
-                          title:'操作ip',
-                          width:10
-                      },{
-                          field:'jindate',
-                          title:'操作时间',
-                          width:10
-                      },{
-                          field:'huijinzhanghao',
-                          title:'会员账号',
-                          width:10
-                      }]
+                      columns:[
+                          {field:'ce',width:1,checkbox:true},
+                          {field:'jindis',title:'说明',idField:true,width:10,},
+                          {field:'jinnumber',title:'资金',width:10,
+                            formatter:function (value,row,index){
+                              if(row.jinnumber <= 0){
+                                  return "<font color='red'>"+row.jinnumber+"</font>";
+                              }else{
+                                return "<font color='blue'>"+row.jinnumber+"</font>";
+                              }
+                            }
+                          },
+                          {field:'jinip',title:'操作ip',width:10},
+                          {field:'jindate',title:'操作时间', width:10},
+                          {field:'huijizhanghao',title:'会员账号', width:10}
+                      ]
 
                   })
 
@@ -147,36 +132,22 @@
                   ids = ids.substring(0, ids.length - 1);
                   if(confirm("确认删除吗?")){
                       $.ajax({
-                          url:"<%=request.getContextPath()%>/wddcontroller/deletezijin",
+                          url:"<%=request.getContextPath()%>/zxh/deletezijin",
                           type:"post",
                           data:{"id":ids},
                           dataType:"text",
                           success:function (delFlag){
                               $("#ZiJinys").bootstrapTable('refresh');
 
-                          },
-                          error:function (){
-                              alert("删除失败");
-                              location.reload();
                           }
                       })
                   }
 
               }
-              
-              
+
               function serach1() {
-                  var strExp=/^[A-Za-z0-9]+$/;
-                  var reg = /^[\u4E00-\u9FA5]+$/;
-                  var ys=$("#dis").val();
-                  if(strExp.test(ys)){
-                      $("#dis").attr("name","jinnumber")
-                  }else if(reg.test(ys)){
-                      $("#dis").attr("name","jindis")
-                  }
                   searchzijin()
               }
-
 
           </script>
 

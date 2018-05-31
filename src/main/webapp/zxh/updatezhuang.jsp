@@ -236,7 +236,7 @@
                             <td width="240px">
                                 <input type="text" class="form-control" name="huijinkymoney" disabled>
                             </td>
-                            <td width="240px">&nbsp;&nbsp;[<a href="">改变金额</a>]</td>
+                            <td width="240px">&nbsp;&nbsp;[<a href="javaScript:bian()">改变金额</a>]</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -1051,6 +1051,13 @@
     }
 
     function jinqianguanlijsp(){
+        $("#updatechu").hide();
+        $("#updateren").hide();
+        $("#updateyin").hide();
+        $("#updatejin").show();
+    }
+
+    function bian(){
         $("#updatechu").hide();
         $("#updateren").hide();
         $("#updateyin").hide();

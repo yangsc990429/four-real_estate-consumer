@@ -361,8 +361,9 @@ public String insertMem(Member member){
 
     @RequestMapping("selectFangyuan")
     @ResponseBody
-    public List<Map<String,Object>> selectFangyuan(){
-        List<Map<String,Object>> list = zxhservice.selectFangyuan();
+    public List<Map<String,Object>> selectFangyuan(Integer auditstatus){
+        List<Map<String,Object>> list = zxhservice.selectFangyuan(auditstatus);
+        System.err.println(list);
         return list;
     }
 
@@ -533,11 +534,101 @@ public String insertMem(Member member){
         return flag;
     }
 
+    /**
+     * 查询详细资金清单
+     * @param jindis
+     * @return
+     */
     @RequestMapping("queryzijin")
     @ResponseBody
-    public List<Map<String,Object>> queryziji(String jindis,String jinnumber){
-        List<Map<String,Object>> list =  zxhservice.queryzijin(jindis,jinnumber);
+    public List<Map<String,Object>> queryziji(String jindis){
+        List<Map<String,Object>> list =  zxhservice.queryzijin(jindis);
         return  list;
+    }
+
+    /**
+     * 删除详细资金清单
+     * @param id
+     * @return
+     */
+    @RequestMapping("deletezijin")
+    @ResponseBody
+    public String deletezijin(String id){
+        String falg = zxhservice.deletezijin(id);
+        return falg;
+    }
+
+    /**
+     * 修改出售房源的审核状态
+     * @param flag
+     * @param ids
+     * @return
+     */
+    @RequestMapping("updateFangListIds")
+    @ResponseBody
+    public String updateFangListIds(Integer flag,String ids){
+        String str = zxhservice.updateFangListIds(flag,ids);
+        return str;
+    }
+
+    /**
+     * 修改出售房源的上架下架
+     * @param flag
+     * @param ids
+     * @return
+     */
+    @RequestMapping("updateFangJiaIds")
+    @ResponseBody
+    public String updateFangJiaIds(Integer flag,Integer ids){
+        String str = zxhservice.updateFangJiaIds(flag,ids);
+        return str;
+    }
+
+    /**
+     * 查询最近的用户
+     * @return
+     */
+    @RequestMapping("queryHuijiDate")
+    @ResponseBody
+    public String queryHuijiDate(){
+        List<Huiji> list = zxhservice.queryHuijiDate();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询使用的用户
+     * @param id
+     * @return
+     */
+    @RequestMapping("selectRenMingId")
+    @ResponseBody
+    public String selectRenMingId(Integer id){
+        Huiji huiji = zxhservice.selectRenMingId(id);
+        return JSON.toJSONString(huiji);
+    }
+
+    /**
+     * 查询选中类型所对应的名称
+     * @param id
+     * @return
+     */
+    @RequestMapping("selectTypeLeid")
+    @ResponseBody
+    public String selectTypeLeid(Integer id){
+        Apartment apartment = zxhservice.selectTypeLeid(id);
+        return JSON.toJSONString(apartment);
+    }
+
+    /**
+     * 发布出售的房源
+     * @param housing
+     * @return
+     */
+    @RequestMapping("insertFangChuShou")
+    @ResponseBody
+    public String insertFangChuShou(Housing housing){
+        String flag = zxhservice.insertFangChuShou(housing);
+        return flag;
     }
 
 }
