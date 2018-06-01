@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.four.entity.*;
 import com.four.service.LfqService;
 import com.four.util.AliyunOSSClientUtil;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
@@ -312,10 +313,50 @@ public class LfqController {
     @RequestMapping("updatexiugairz")
     @ResponseBody
     public String updatexiugairz(Huirenzhuang rz){
-        System.err.println(rz+"认证");
          lfqService.updatexiugairz(rz);
         return "updsuccess";
     }
 
+    //报表展示
+    @RequestMapping("queryshoukuan")
+    @ResponseBody
+    public String queryshoukuan(){
+        Map<String , Object> list = lfqService.queryshoukuan();
+        return JSON.toJSONString(list);
+    }
 
+
+
+
+//---------------------------------------------孙博
+    //queryWTMZ
+    @RequestMapping("queryWTMZ")
+    @ResponseBody
+    public String queryWTMZ(){
+        List<t_sellzu> list=lfqService.queryWTMZ();
+        System.err.println(list+"===========================");
+        return JSON.toJSONString(list);
+    }
+    //批量删除 deleteMZ
+    @ResponseBody
+    @RequestMapping("deleteMZ")
+    public void deleteMZ(String ids){
+
+        lfqService.deleteMZ(ids);
+    }
+    //---找房委托查询 queryWTZF
+
+    @RequestMapping("queryWTZF")
+    @ResponseBody
+    public  List<Map<String,Object>> queryWTZF(){
+        List<Map<String,Object>> list =lfqService.queryWTZF();
+        return list;
+    }
+    //删除  delallZF
+    @ResponseBody
+    @RequestMapping("deleteZF")
+    public void deleteZF(String idse){
+
+        lfqService.deleteZF(idse);
+    }
 }

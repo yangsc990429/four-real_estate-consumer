@@ -84,6 +84,8 @@ public class Huirenzhuang implements Serializable {
     public void setHuijizhanghao(String huijizhanghao) {
         this.huijizhanghao = huijizhanghao;
     }
+
+    @Override
     public String toString() {
         return "Huirenzhuang{" +
                 "huirenid=" + huirenid +
