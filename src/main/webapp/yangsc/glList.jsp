@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: lenovo
-  Date: 2018/5/22
-  Time: 11:42
+  Date: 2018/5/31
+  Time: 10:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -27,9 +27,8 @@
     <link href="<%=request.getContextPath()%>/js/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet">
 </head>
 <body>
-
-<button type="button" class="btn btn-success" onclick="adduser()">新增区域</button>
-<button type="button" class="btn btn-danger" onclick="deleteqvyv()">删除</button>
+<button type="button" class="btn btn-success" onclick="adduser()">新增</button>
+<button type="button" class="btn btn-danger" onclick="deleteqvyv()">删除管理员</button>
 <table id="aaa" class="table table-bordered"></table>
 <script src="<%=request.getContextPath()%>/css/js/jquery-1.10.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/highcharts.js"></script>
@@ -47,7 +46,8 @@
 <script src="<%=request.getContextPath() %>/assets/js/chart-master/Chart.js"></script>
 <script src="<%=request.getContextPath()%>/css/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/css/js/modernizr.min.js"></script>
-<script>
+<script type="text/javascript">
+
 
     $.ajaxSetup( {
         //设置ajax请求结束后的执行动作
@@ -69,7 +69,7 @@
 
 
     function  adduser() {
-        location.href="<%=request.getContextPath()%>/yangsc/addQvyv.jsp";
+        location.href="<%=request.getContextPath()%>/yangsc/glAdd.jsp";
     }
     $(function(){
         serachSy();
@@ -81,7 +81,7 @@
     //-】===========================查询==================================
     function serachSy(){
         $("#aaa").bootstrapTable({
-            url:"<%=request.getContextPath()%>/yangsc/queryqvyvList",
+            url:"<%=request.getContextPath()%>/yangsc/queryguanList",
             /*    striped: true,//隔行变色*/
             showPaginationSwitch:true,//是否显示 数据条数选择框
             minimumCountColumns:1,//最小留下一个
@@ -126,115 +126,58 @@
             columns:[
                 {
                     checkbox:true,
-                    value:"id",
-                },
-                {
-                    field:'a',
-                    title:'区域列表',
-                    idField:true,
-                    width:100,formatter: function(value,row,index){
-                    if (row.pid==0){
-                        return "["+row.shouzimu+"]"+row.name;
-                    }else{
-                        return row.shouzimu+"_"+row.name;
-                    }
-                }
+                    value:"userid",
                 },{
-                    field:'xuhao',
-                    title:'序号',
+                    field:'username',
+                    title:'管理员账号',
                     width:100
                 },{
-                    field:'createdate',
-                    title:'编辑时间',
+                    field:'name',
+                    title:'称呼',
                     width:100
                 },{
                     field:'aa',
                     title:'操作',
                     width:100,formatter: function(value,row,index){
-                        var a='<a href="javascript:updatefu('+row.id+')">修改信息</a>&nbsp;|&nbsp;'
-                        var b="<a href='javascript:addzi("+row.id+",\""+row.name+"\")'>添加子类</a>&nbsp;|&nbsp;"
-                        var c='<a href="javascript:deleteqv('+row.id+')">删除</a>';
-                        var d='<a href="javascript:updatezi('+row.id+')">修改信息</a>&nbsp;|&nbsp;';
-                        var e='<a href="javascript:deletezi('+row.id+')">删除</a>';
-                        if (row.pid==0){
-                            return a+b+c;
-                        }else{
-                            return d+e;
-                        }
+                        var d='<a href="javascript:updateqx('+row.userid+')">编辑</a>';
+
+                            return d;
 
                     }
                 }]
         })
     }
-</script>
-<script type="text/javascript">
 
-    function deleteqvyv(){
+
+    function deleteqvyv() {
         var a = $('#aaa').bootstrapTable('getSelections');
+
+        if (a!=null &&a!=""){
         var idsp = "";
         for (var i = 0; i < a.length; i++) {
-            idsp+=","+a[i].id;
+            idsp+=","+a[i].userid;
         }
         var id = idsp.substring(1);
         $.ajax({
-            url:"<%=request.getContextPath()%>/yangsc/deleteqvyv",
-            type:"post",
-            data:{ids:id},
-          //  dataType:"text",
-            async:false,
-           /* success:function (data) {
-                location.reload();
-            },*/
-            error:function () {
-                alert("代码错误");
-            }
-        })
-
-       /* alert(id);*/
-    }
-function addzi(id,name) {
-        var arr="";
-    arr =id+","+'"'+name+'"';
-       location.href="<%=request.getContextPath()%>/yangsc/addzi.jsp?arr="+arr;
-}
-function deleteqv(id) {
-    $.ajax({
-        url:"<%=request.getContextPath()%>/yangsc/deleteqvyv",
-        type:"post",
-        data:{ids:id},
-
-        async:false,
-        success:function (data) {
-
-                location.reload();
-        },
-        error:function () {
-            alert("代码错误");
-        }
-    })
-
-}
-    function deletezi(id){
-        $.ajax({
-            url:"<%=request.getContextPath()%>/yangsc/deleteqvyv",
-            type:"post",
+            url:"<%=request.getContextPath()%>/yangsc/deleteGl",
             data:{ids:id},
             dataType:"text",
             success:function (data) {
                 location.reload();
+
             },
             error:function () {
-                alert("代码错误");
             }
         })
+        }else{
+            alert("最少选择一条数据")
+        }
+    }
+    function updateqx(userid){
 
-    }
-    function updatefu(id){
-        location.href="<%=request.getContextPath()%>/yangsc/updateqvyv.jsp?id="+id;
-    }
-    function updatezi(id) {
-        location.href="<%=request.getContextPath()%>/yangsc/updatezi.jsp?id="+id;
+        location.href="<%=request.getContextPath()%>/yangsc/updateQx.jsp?userid="+userid;
     }
 </script>
+
 </body>
 </html>
