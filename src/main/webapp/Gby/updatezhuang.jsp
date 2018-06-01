@@ -122,7 +122,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司地址:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>门店地址:</strong>&nbsp;</font></td>
                             <td width="240px" colspan="2">
                                 <input type="text" name="huizhi" class="form-control">
                             </td>
@@ -131,7 +131,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司名称:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>中介名称:</strong>&nbsp;</font></td>
                             <td width="240px">
                                 <input type="text" name="huisicheng" class="form-control">
                             </td>
@@ -141,7 +141,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font size="4"><strong>公司形象图:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font size="4"><strong>个人头像:</strong>&nbsp;</font></td>
                             <td width="240px">
                                 <input type="hidden" name="huijitouxiang" id="photo1">
                                 <input id="file-pic2" name="file" type="file" multiple data-min-file-count="1">
@@ -152,25 +152,9 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font size="4"><strong>公司简介:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font size="4"><strong>自我介绍:</strong>&nbsp;</font></td>
                             <td width="240px" colspan="4">
                                 <textarea name="huisidis" rows="10" cols="80" class="form-control"></textarea>
-                            </td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font size="4"><strong>店铺关键字:</strong>&nbsp;</font></td>
-                            <td width="240px" colspan="2">
-                                <input type="text" name="dpguanjianc" class="form-control">
-                            </td>
-                            <td width="240px"></td>
-                            <td width="240px"></td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font size="4"><strong>店铺描述:</strong>&nbsp;</font></td>
-                            <td width="240px" colspan="4">
-                                <textarea name="dpmiaoshu" rows="10" class="form-control" cols="60"></textarea>
                             </td>
                         </tr>
                     </table>
@@ -236,7 +220,7 @@
                             <td width="240px">
                                 <input type="text" class="form-control" name="huijinkymoney" disabled>
                             </td>
-                            <td width="240px">&nbsp;&nbsp;[<a href="javaScript:bian()">改变金额</a>]</td>
+                            <td width="240px">&nbsp;&nbsp;[<a href="">改变金额</a>]</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -336,76 +320,6 @@
                         <tr>
                             <td width="150px" align="center" colspan="5">
                                 <button type="button" class="btn btn-success" onclick="insertUpRen()">保存修改</button>
-                                <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-                <form id="updateyin">
-                    <input type="hidden" name="huirenshenid">
-                    <table>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="180px" align="right"><font size="4"><strong>营业执照认证:</strong></font>&nbsp;</td>
-                            <td width="220px">
-                                <input type="hidden" name="huirenying" class="form-control">
-                                <input type="text" style="border:0" id="asd" readonly/>
-                            </td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font size="4"><strong>营业执照审核:</strong></font>&nbsp;</td>
-                            <td width="220px" colspan="3">
-                                <input type="radio" name="huirenshen" value="1">等待审核&nbsp;
-                                <input type="radio" name="huirenshen" value="2">通过认证&nbsp;
-                                <input type="radio" name="huirenshen" id="huirenshen" value="3">认证不通过&nbsp;
-                                <input type="radio" name="huirenshen" value="4">未提交认证&nbsp;
-                            </td>
-                            <td width="220px"></td>
-                        </tr>
-                    </table>
-                    <table id="yingye">
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>被拒原因:</strong></font>&nbsp;</td>
-                            <td width="220px" colspan="2"><input type="text" name="huirenjjyy" class="form-control"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司名称:</strong></font>&nbsp;</td>
-                            <td width="220px"><input type="text" name="huirenming" class="form-control"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>营业执照号码:</strong></font>&nbsp;</td>
-                            <td width="220px"><input type="text" name="huirennumber" class="form-control"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                            <td width="220px"></td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong> 营业执照:</strong></font>&nbsp;</td>
-                            <td width="220px">
-                                <input type="hidden" name="huirenphoto" id="photo4">
-                                <input id="file-pic5" name="file" type="file" multiple data-min-file-count="1">
-                            </td>
-                        </tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr><td colspan="5">&nbsp;</td></tr>
-                        <tr>
-                            <td width="150px" align="center" colspan="5">
-                                <button type="button" class="btn btn-success" onclick="insertUpRenQian()">保存修改</button>
                                 <button type="button" class="btn btn-default" onclick="fan()">返回列表</button>
                             </td>
                         </tr>
@@ -746,7 +660,7 @@
     })
 
     function fan(){
-        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+        location.href="<%=request.getContextPath()%>/Gby/jingjiren.jsp";
     }
 
 </script>
@@ -854,7 +768,7 @@
     }
 
     function shu(){
-        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+        location.href="<%=request.getContextPath()%>/Gby/jingjiren.jsp";
     }
 
 </script>
@@ -1051,13 +965,6 @@
     }
 
     function jinqianguanlijsp(){
-        $("#updatechu").hide();
-        $("#updateren").hide();
-        $("#updateyin").hide();
-        $("#updatejin").show();
-    }
-
-    function bian(){
         $("#updatechu").hide();
         $("#updateren").hide();
         $("#updateyin").hide();

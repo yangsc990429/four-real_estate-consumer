@@ -1,11 +1,13 @@
 package com.four.controller;
 
-import com.four.entity.Apartment;
-import com.four.entity.Feature;
+import com.alibaba.fastjson.JSON;
+import com.four.entity.*;
 import com.four.service.GbyService;
 import com.four.util.AliyunOSSClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -140,9 +142,193 @@ public class GbyController {
     //查询经纪人
     @RequestMapping("queryjingji")
     @ResponseBody
-    public List<Map<String,Object>> queryjingji(){
-        List<Map<String,Object>>list=gbyService.queryjingji();
-        return  list;
+    public String queryjingji(){
+        List<Map<Object,String>> list = gbyService.queryjingji();
+        return JSON.toJSONString(list);
     }
 
+    //查询回显所有会员
+    @RequestMapping("updatesyhyhuicha")
+    @ResponseBody
+    public String updatesyhyhuicha(String id){
+        Huiji list = gbyService.updatesyhyhuicha(id);
+        return JSON.toJSONString(list);
+    }
+
+    //查询所有会员等级
+    @RequestMapping("queryhydj")
+    @ResponseBody
+    public String queryhydj(){
+        List<Huideng> list = gbyService.queryhydj();
+        return JSON.toJSONString(list);
+    }
+
+    //查询所有会员地区
+    @RequestMapping("querydrea")
+    @ResponseBody
+    public String querydrea(){
+        List<Area> list = gbyService.querydrea();
+        return JSON.toJSONString(list);
+    }
+
+    //查询所有会员地区地方
+    @RequestMapping("querydreadifangid")
+    @ResponseBody
+    public String querydreadifangid(String id){
+        List<Area> list = gbyService.querydreadifangid(id);
+        return JSON.toJSONString(list);
+    }
+
+    //修改所有会员
+    @RequestMapping("updatesyhysyhygai")
+    @ResponseBody
+    public String updatesyhysyhygai(Huiji hj){
+        gbyService.updatesyhygai(hj);
+        return "updsuccess";
+    }
+
+    //图片上传
+    @RequestMapping(value="insertPicture",method = RequestMethod.POST, produces = "application/json;charset=utf8")
+    @ResponseBody
+    public Object insertPicture(@RequestParam("file") MultipartFile... files){
+        String greatBeauty = AliyunOSSClientUtil.GreatBeauty(files[0], files[0].getOriginalFilename());
+        Map map = new HashMap(1);
+        map.put("a",greatBeauty);
+        return map;
+    }
+    //-----------------------------------------------------
+    //出租管理
+    //跳页面
+    @RequestMapping("chuzu")
+    public String chuzu(){
+        return "Gby/chuzu";
+    }
+    //查询
+    @RequestMapping("querychuzu")
+    @ResponseBody
+    public  List<Map<String,Object>> querychuzu(Integer wuyeid,String chuzuname){
+        List<Map<String,Object>> list =gbyService.querychuzu(wuyeid,chuzuname);
+        return list;
+    }
+    //出租信息
+    @RequestMapping("querychuzuxx")
+    public String querychuzuxx(Integer id,Model model){
+        List<Map<String,Object>> list =  gbyService.querychuzuxx(id);
+        model.addAttribute("list",list);
+        System.err.println(list);
+        return  "dw/chuzuxx";
+    }
+    //遍历公交信息
+    @RequestMapping("querygongjiao")
+    @ResponseBody
+    public List<Public> querygongjiao(){
+        List<Public> list=gbyService.querygongjiao();
+        return list;
+    }
+    //遍历地铁信息
+    @RequestMapping("queryditie")
+    @ResponseBody
+    public List<Metro> queryditie(){
+        List<Metro> list=gbyService.queryditie();
+        return list;
+    }
+    //遍历物业特色
+    @RequestMapping("querywuye")
+    @ResponseBody
+    public List<Feature> querywuye(){
+        List<Feature> list=gbyService.querywuye();
+        return list;
+    }
+    //遍历配套设施
+    @RequestMapping("querypeitao")
+    @ResponseBody
+    public List<Mating> querypeitao(){
+        List<Mating> list=gbyService.querypeitao();
+        return list;
+    }
+    //下拉行业类型
+    @RequestMapping("queryhangye")
+    @ResponseBody
+    public List<Retailindustry> queryhangye(){
+        List<Retailindustry> list=gbyService.queryhangye();
+        return list;
+    }
+    //铺面类型二级联动
+    @RequestMapping("querypumian")
+    @ResponseBody
+    public List<Storetype> querypumian(){
+        List<Storetype> list =gbyService.querypumian();
+        return  list;
+    }
+    @RequestMapping("querypumian1")
+    @ResponseBody
+    public List<Pavenmenttype> querypumian1(){
+        List<Pavenmenttype> list =gbyService.querypumian1();
+        return  list;
+    }
+    //查房屋情况
+    @RequestMapping("queryfangwu")
+    @ResponseBody
+    public List<Situation> queryfangwu(){
+        List<Situation> list =gbyService.queryfangwu();
+        return  list;
+    }
+    @RequestMapping("querychaoxiang")
+    @ResponseBody
+    public List<Orientation> querychaoxiang(){
+        List<Orientation> list =gbyService.querychaoxiang();
+        return  list;
+    }
+    //回显出租
+    @RequestMapping("queryByIdchuzu")
+    @ResponseBody
+    public t_chuzugl queryByIdchuzu(Integer id){
+        t_chuzugl dw = gbyService.queryByIdchuzu(id);
+        return dw;
+    }
+
+    //修改出租
+    @RequestMapping("updatechuzu")
+    @ResponseBody
+    public String updatechuzu(t_chuzugl chuzugl){
+        System.out.println(chuzugl);
+        gbyService.updatechuzu(chuzugl);
+        return "3213";
+    }
+
+    @RequestMapping("updateShangX")
+    @ResponseBody
+    public String updateShangX(String id){
+        gbyService.updateShangX(id);
+        return "w";
+    }
+    //变更审核
+    @RequestMapping("updateBinG1")
+    @ResponseBody
+    public String updateBinG(@Param("ids") String ids, @Param("zt")Integer zt, Map map){
+
+        gbyService.updateBinG(ids,zt);
+        return "w";
+    }
+    //批量删除
+    @RequestMapping("deleteschuzu")
+    @ResponseBody
+    public String deleteschuzu(String ids){
+        gbyService.deleteschuzu(ids);
+        return "updatesuccess";
+    }
+    //橱窗推荐  取消
+    @RequestMapping("/updatechutuidw")
+    @ResponseBody
+    public String updatechutuidw(String ids){
+        gbyService.updatechutuidw(ids);
+        return "updatesuccess";
+    }
+
+    @RequestMapping("/updateqxchutuidw")
+    @ResponseBody
+    public String updateqxchutuidw(String ids){
+        gbyService.updateqxchutuidw(ids);
+        return "updatesuccess";
+    }
 }

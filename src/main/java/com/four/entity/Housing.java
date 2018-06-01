@@ -40,9 +40,9 @@ public class Housing implements Serializable{
     private String introduction;
     private Integer putaway;
     private Integer recommended;
-    private String _linkman;
-    private String _contactnumber;
-    private String _release;
+    private String linkman;
+    private String contactnumber;
+    private String release;
     private Integer serialnumber;
     private Integer sticknumber;
     private String expirationtime;
@@ -91,9 +91,9 @@ public class Housing implements Serializable{
                 ", introduction='" + introduction + '\'' +
                 ", putaway=" + putaway +
                 ", recommended=" + recommended +
-                ", _linkman='" + _linkman + '\'' +
-                ", _contactnumber='" + _contactnumber + '\'' +
-                ", _release='" + _release + '\'' +
+                ", linkman='" + linkman + '\'' +
+                ", contactnumber='" + contactnumber + '\'' +
+                ", release='" + release + '\'' +
                 ", serialnumber=" + serialnumber +
                 ", sticknumber=" + sticknumber +
                 ", expirationtime='" + expirationtime + '\'' +
@@ -379,28 +379,28 @@ public class Housing implements Serializable{
         this.recommended = recommended;
     }
 
-    public String get_linkman() {
-        return _linkman;
+    public String getLinkman() {
+        return linkman;
     }
 
-    public void set_linkman(String _linkman) {
-        this._linkman = _linkman;
+    public void setLinkman(String linkman) {
+        this.linkman = linkman;
     }
 
-    public String get_contactnumber() {
-        return _contactnumber;
+    public String getContactnumber() {
+        return contactnumber;
     }
 
-    public void set_contactnumber(String _contactnumber) {
-        this._contactnumber = _contactnumber;
+    public void setContactnumber(String contactnumber) {
+        this.contactnumber = contactnumber;
     }
 
-    public String get_release() {
-        return _release;
+    public String getRelease() {
+        return release;
     }
 
-    public void set_release(String _release) {
-        this._release = _release;
+    public void setRelease(String release) {
+        this.release = release;
     }
 
     public Integer getSerialnumber() {
