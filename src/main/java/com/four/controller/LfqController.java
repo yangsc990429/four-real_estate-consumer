@@ -42,8 +42,8 @@ public class LfqController {
         if (Integer.valueOf(usjsp.substring(0,1))==1){
             user.setUserid(Integer.valueOf(usjsp.substring(1)));
             request.getSession().setAttribute("user",user);
-            List list=lfqService.queryQuxan(user.getUserid());
-            request.getSession().setAttribute("quanxian",list);
+            /*List list=lfqService.queryQuxan(user.getUserid());
+            request.getSession().setAttribute("quanxian",list);*/
             return 1+"";
         }else{
             return usjsp;
@@ -63,12 +63,8 @@ public class LfqController {
     @ResponseBody
     public String querytree(Integer id,HttpServletRequest request){
         request.getSession().setAttribute("mokuaiid",id);
-
-      /*  System.err.println("杀杀杀"+request.getSession().getAttribute("mokuaiid"));*/
         return "sadas";
     }
-
-
 
     //查询日志
     @RequestMapping("queryloginrz")

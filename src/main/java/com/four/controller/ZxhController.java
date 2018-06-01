@@ -87,7 +87,6 @@ public class ZxhController {
 public String insertMem(Member member){
         SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         member.setCreatedate(sim.format(new Date()));
-        System.err.println(member);
         String aa = zxhservice.insertMem(member);
         return aa;
         }
@@ -161,7 +160,6 @@ public String insertMem(Member member){
     @ResponseBody
     public String queryAreall(){
         List<Area> list = zxhservice.queryAreall();
-        System.err.println(list);
         return JSON.toJSONString(list);
     }
 
@@ -224,7 +222,6 @@ public String insertMem(Member member){
     @ResponseBody
     public String selectBusId(Integer id){
         Business business =zxhservice.selectBusId(id);
-        System.err.println(business);
         return JSON.toJSONString(business);
     }
 
@@ -271,7 +268,6 @@ public String insertMem(Member member){
     @RequestMapping("insertZixun")
     @ResponseBody
     public String insertZixun(Consultinglist consultinglist){
-        System.err.println(consultinglist);
         consultinglist.setShenhe(2);
         String flag = zxhservice.insertZixun(consultinglist);
         return flag;
@@ -363,7 +359,6 @@ public String insertMem(Member member){
     @ResponseBody
     public List<Map<String,Object>> selectFangyuan(Integer auditstatus){
         List<Map<String,Object>> list = zxhservice.selectFangyuan(auditstatus);
-        System.err.println(list);
         return list;
     }
 
@@ -628,6 +623,156 @@ public String insertMem(Member member){
     @ResponseBody
     public String insertFangChuShou(Housing housing){
         String flag = zxhservice.insertFangChuShou(housing);
+        return flag;
+    }
+
+    /**
+     * 查询pid为0的学校类型
+     * @return
+     */
+    @RequestMapping("selectSchoolPid")
+    @ResponseBody
+    public String selectSchoolPid(){
+        List<School> list = zxhservice.selectSchoolPid();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询装修情况
+     * @return
+     */
+    @RequestMapping("selectSituaAll")
+    @ResponseBody
+    public String selectSituaAll(){
+        List<Situation> list = zxhservice.selectSituaAll();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询年代
+     * @return
+     */
+    @RequestMapping("selectTimeAll")
+    @ResponseBody
+    public String selectTimeAll(){
+        List<Time> list = zxhservice.selectTimeAll();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询朝向
+     * @return
+     */
+    @RequestMapping("selectOrienAll")
+    @ResponseBody
+    public String selectOrienAll(){
+        List<Orientation> list = zxhservice.selectOrienAll();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询行业类型pid为0的
+     * @return
+     */
+    @RequestMapping("selectRetaPid")
+    @ResponseBody
+    public String selectRetaPid(){
+        List<Retailindustry> list = zxhservice.selectRetaPid();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询商铺类型
+     * @return
+     */
+    @RequestMapping("selectShangType")
+    @ResponseBody
+    public String selectShangType(){
+        List<Storetype> list = zxhservice.selectShangType();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询铺面类型
+     * @return
+     */
+    @RequestMapping("selectPaveTypeAll")
+    @ResponseBody
+    public String selectPaveTypeAll(){
+        List<Pavenmenttype> list = zxhservice.selectPaveTypeAll();
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询物业特色
+     * @param pid
+     * @return
+     */
+    @RequestMapping("selectSchoolTypeCount")
+    @ResponseBody
+    public String selectSchoolTypeCount(Integer pid){
+        List<School> list = zxhservice.selectSchoolTypeCount(pid);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询物业特色
+     * @param sel
+     * @return
+     */
+    @RequestMapping("selectFeatureAll")
+    @ResponseBody
+    public String selectFeatureAll(Integer sel){
+        List<Feature> list = zxhservice.selectFeatureAll(sel);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询配套设施
+     * @param sel
+     * @return
+     */
+    @RequestMapping("selectMatingAll")
+    @ResponseBody
+    public String selectMatingAll(Integer sel){
+        List<Mating> list = zxhservice.selectMatingAll(sel);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 查询行业类型对应的id
+     * @param id
+     * @return
+     */
+    @RequestMapping("queryReadPidsid")
+    @ResponseBody
+    public String queryReadPidsid(Integer id){
+        List<Retailindustry> list = zxhservice.queryReadPidsid(id);
+        return JSON.toJSONString(list);
+    }
+
+    /**
+     * 修改回显房源
+     * @param id
+     * @return
+     */
+    @RequestMapping("selectChuFangYuanId")
+    @ResponseBody
+    public String selectChuFangYuanId(Integer id){
+        Housing housing = zxhservice.selectChuFangYuanId(id);
+        System.err.println(housing);
+        return JSON.toJSONString(housing);
+    }
+
+    /**
+     *修改出售房源星系
+     * @param housing
+     * @return
+     */
+    @RequestMapping("updateFangChuShouId")
+    @ResponseBody
+    public String updateFangChuShouId(Housing housing){
+        String flag = zxhservice.updateFangChuShouId(housing);
         return flag;
     }
 

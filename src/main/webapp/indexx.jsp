@@ -290,8 +290,16 @@ $(function(){
 
 
    function querytreess(aass) {
-
-        $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:100%;width:100%">\n' +
+       $.ajax({
+           url:"<%=request.getContextPath()%>/lfq/addmokuai",
+           type:"post",
+           data:{id:aass},
+           dataType:"text",
+           async:false,
+           success:function (data) {
+           }
+       })
+       $("#xxkdiv").html('<div class="col-lg-9 main-chart" style="height:100%;width:100%">\n' +
             '                    <div   style="height:100%;width:100%" class="span10" id="mainFrameTabs1">\n' +
             '                        <ul class="nav nav-tabs" role="tablist">\n' +
             '                            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>\n' +

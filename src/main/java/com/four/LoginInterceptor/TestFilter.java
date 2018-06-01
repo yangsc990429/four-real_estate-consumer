@@ -31,11 +31,17 @@ public class TestFilter implements Filter {
     public void init(FilterConfig arg0) throws ServletException {
         System.out.println("过滤器初始化");
     }
-   */
+   *//*
+
+*/
 /* @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
       *//*
+*/
+/*
+*//*
+
 */
 /*  Integer zt = 0;
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
@@ -43,8 +49,13 @@ public class TestFilter implements Filter {
         System.err.println(httpRequest.getSession().getAttribute("user"));*//*
 */
 /*
+*//*
+
+*/
+/*
 
     }*//*
+
 
    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)throws ServletException, IOException {
        HttpServletRequest request = (HttpServletRequest)servletRequest;

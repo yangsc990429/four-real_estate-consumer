@@ -1,16 +1,20 @@
-/*
 package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.four.entity.*;
 import com.four.service.SunService;
+import com.four.util.AliyunOSSClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,9 +25,7 @@ public class SunController {
    @Autowired
     private SunService sunService;
 
-  */
-/*private Orientation Orientation;*//*
-
+  /*private Orientation Orientation;*/
    @RequestMapping("queryOrientation")
     @ResponseBody
     public String queryOrientation(){
@@ -127,6 +129,71 @@ public String updateqingkuanggai(Situation situation){
     sunService.updateqingkuanggai(situation);
     return "updsuccess1";
 }
+//----------------中介
+    //查询  queryzhongjie
+@RequestMapping("queryzhongjie")
+@ResponseBody
+public String queryzhongjie(){
+    List<Map<Object,String>> list = sunService.queryzhongjie();
+    return JSON.toJSONString(list);
+}/*
+//查询回显所有会员 updatesyhyhuicha1
+@RequestMapping("updatesyhyhuicha1")
+@ResponseBody
+public String updatesyhyhuicha1(String id){
+    Huiji list = sunService.updatesyhyhuicha1(id);
+    return JSON.toJSONString(list);
+}
+//查询地区querydrea
+@RequestMapping("querydrea")
+@ResponseBody
+public String querydrea(){
+    List<Area> list = sunService.querydrea();
+    return JSON.toJSONString(list);
+}
+//查询地区地方  querydreadifangid
+@RequestMapping("querydreadifangid1")
+@ResponseBody
+public String querydreadifangid1(String id){
+    List<Area> list = sunService.querydreadifangid1(id);
+    return JSON.toJSONString(list);
+}
+//
+//查询等级 queryhydj
+@RequestMapping("queryhydj")
+@ResponseBody
+public String queryhydj(){
+    List<Huideng> list = sunService.queryhydj();
+    return JSON.toJSONString(list);
+}
+//修改  updatesyhysyhygai
+@RequestMapping("updatesyhysyhygai")
+@ResponseBody
+public String updatesyhysyhygai(Huiji hj){
+    System.err.println(hj+"修改内容");
+    sunService.updatesyhygai(hj);
+    return "updsuccess";
+}*/
+//图片上传
+/*
+@RequestMapping(value="insertPicture",method = RequestMethod.POST, produces = "application/json;charset=utf8")
+@ResponseBody
+public Object insertPicture(@RequestParam("file") MultipartFile... files){
+    String greatBeauty = AliyunOSSClientUtil.GreatBeauty(files[0], files[0].getOriginalFilename());
+    Map map = new HashMap(1);
+    map.put("a",greatBeauty);
+    return map;
+}*/
+//认证queryhuiyuanrenzhneg
+/*
+@RequestMapping("queryhuiyuanrenzhneg")
+@ResponseBody
+public String queryhuiyuanrenzhneg(String id){
+    Huirenzhuang list =  sunService.queryhuiyuanrenzhneg(id);
 
+    return JSON.toJSONString(list);
 }
 */
+
+
+}

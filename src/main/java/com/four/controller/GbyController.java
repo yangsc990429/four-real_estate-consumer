@@ -109,7 +109,7 @@ public class GbyController {
     @RequestMapping("addFeature")
     @ResponseBody
     public  void addFeature(Feature feature){
-
+        System.err.println(feature);
         gbyService.addFeature(feature);
     }
     //删除

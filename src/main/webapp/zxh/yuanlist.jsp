@@ -363,6 +363,10 @@
         location.reload();
     })
 
+    function updateYuan(id){
+        location.href="<%=request.getContextPath()%>/zxh/updateyuan.jsp?id="+id;
+    }
+
 </script>
 </body>
 </html>

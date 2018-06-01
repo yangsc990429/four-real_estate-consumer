@@ -14,7 +14,6 @@
     <link href="<%=request.getContextPath() %>/js/bootstrap-fileinput/css/fileinput.css" rel="stylesheet">
 </head>
 <body>
-
 <div class="col-md-4 column" style="width: 100%;height: 100%">
     <div class="panel panel-success">
         <div class="panel-heading">
@@ -22,9 +21,6 @@
                 <button type="button" onclick="jibenziliao()" class="btn btn-default btn-lg ">基本资料</button>
                 <button type="button" onclick="renzhengshenhejsp()" class="btn btn-default btn-lg ">认证审核</button>
                 <button type="button" onclick="jinqianguanlijsp()" class="btn btn-default btn-lg ">金钱管理</button>
-
-                <%-- <button type="button" class="btn btn-warning" onclick="daochu()">导出数据</button>
-                 <button type="button" class="btn btn-primary" onclick="addkhgllxxrgl()">新增</button>--%>
             </h3>
         </div>
         <div class="panel-body">
@@ -51,7 +47,7 @@
                             <td width="240px">
                                 <input type="text" name="huijipass" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;</td>
+                            <td width="240px">&nbsp;&nbsp;为空时默认不修改</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -71,7 +67,7 @@
                             <td width="240px">
                                 <input type="text" name="huijiyouxiang" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="huijishifoubyx" value="1">绑定邮箱</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="you" value="1">绑定邮箱</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -81,7 +77,7 @@
                             <td width="240px">
                                 <input type="text" name="huijishouji" class="form-control">
                             </td>
-                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="huijishifoubsj" value="1">绑定手机</td>
+                            <td width="240px">&nbsp;&nbsp;<input type="checkbox" name="shou" value="1">绑定手机</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -122,7 +118,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司地址:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>门店地址:</strong>&nbsp;</font></td>
                             <td width="240px" colspan="2">
                                 <input type="text" name="huizhi" class="form-control">
                             </td>
@@ -131,7 +127,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司名称:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>中介名称:</strong>&nbsp;</font></td>
                             <td width="240px">
                                 <input type="text" name="huisicheng" class="form-control">
                             </td>
@@ -141,7 +137,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font size="4"><strong>公司形象图:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font size="4"><strong>中介图片:</strong>&nbsp;</font></td>
                             <td width="240px">
                                 <input type="hidden" name="huijitouxiang" id="photo1">
                                 <input id="file-pic2" name="file" type="file" multiple data-min-file-count="1">
@@ -152,7 +148,7 @@
                         </tr>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font size="4"><strong>公司简介:</strong>&nbsp;</font></td>
+                            <td width="150px" align="right"><font size="4"><strong>中介描述:</strong>&nbsp;</font></td>
                             <td width="240px" colspan="4">
                                 <textarea name="huisidis" rows="10" cols="80" class="form-control"></textarea>
                             </td>
@@ -236,7 +232,7 @@
                             <td width="240px">
                                 <input type="text" class="form-control" name="huijinkymoney" disabled>
                             </td>
-                            <td width="240px">&nbsp;&nbsp;[<a href="javaScript:bian()">改变金额</a>]</td>
+                            <td width="240px">&nbsp;&nbsp;[<a href="">改变金额</a>]</td>
                             <td width="240px"></td>
                             <td width="240px"></td>
                         </tr>
@@ -379,7 +375,7 @@
                     <table>
                         <tr><td colspan="5">&nbsp;</td></tr>
                         <tr>
-                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>公司名称:</strong></font>&nbsp;</td>
+                            <td width="150px" align="right"><font color="red">*</font><font size="4"><strong>中介名称:</strong></font>&nbsp;</td>
                             <td width="220px"><input type="text" name="huirenming" class="form-control"></td>
                             <td width="220px"></td>
                             <td width="220px"></td>
@@ -481,7 +477,6 @@
         </div>
     </div>
 </div>
-
 <script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script>
 <script src="<%=request.getContextPath()%>/js/highcharts.js"></script>
 <script src="<%=request.getContextPath()%>/js/exporting.js"></script>
@@ -501,37 +496,6 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.all.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/zh-cn.js"></script>
-<script type="text/javascript">
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + " " + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();
-    $("[name='huidjdqdate']").val(currentdate);
-</script>
-<script type="text/javascript">
-    $("[name='huidjdqdate']").datetimepicker({
-        format : 'yyyy-mm-dd hh:mm:ss',
-        weekStart : 1,
-        todayBtn : 1,
-        autoclose : 1,
-        todayHighlight : 1,
-        startView : 2,
-        forceParse : 0,
-        showMeridian : 1,
-        language: 'zh-CN',//汉化
-        minView: "month" //选择日期后，不会再跳转去选择时分秒
-    });
-</script>
 <script type="text/javascript">
     var aaa;
     $(function (){
@@ -777,7 +741,7 @@
     })
 
     function fan(){
-        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+        location.href="<%=request.getContextPath()%>/sunbo/updatezhongjie.jsp";
     }
 
 </script>
@@ -885,7 +849,7 @@
     }
 
     function shu(){
-        location.href="<%=request.getContextPath()%>/zxh/zhuanglist.jsp";
+        location.href="<%=request.getContextPath()%>/sunbo/updatezhongjie.jsp";
     }
 
 </script>
@@ -1082,13 +1046,6 @@
     }
 
     function jinqianguanlijsp(){
-        $("#updatechu").hide();
-        $("#updateren").hide();
-        $("#updateyin").hide();
-        $("#updatejin").show();
-    }
-
-    function bian(){
         $("#updatechu").hide();
         $("#updateren").hide();
         $("#updateyin").hide();
