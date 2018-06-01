@@ -944,19 +944,7 @@
         }
     })
 
-
-
-
     function huichekcbox(){
-
-        var cc =  $("[name='busrouteid']").val();
-        var tt =  $("#bus").children().html();
-        alert(cc+"===22")
-        alert(tt+"===33")
-        // var check =document.getElementsByName("busrouteid");
-        for(var i = 0; i <check.length; i++){
-            alert(check[i].value+"--222")
-        }
 
         /*alert($("[name='metrolineid']").html());
         alert($("[name='schooid']").html());

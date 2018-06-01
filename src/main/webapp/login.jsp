@@ -26,8 +26,8 @@
 
     <form class="form-signin" id="userform" method="post">
         <div class="form-signin-heading text-center">
-            <h1 class="sign-title">tecenet</h1>
-            <img src="<%=request.getContextPath()%>/css/images/login-logo.png" alt=""/>
+            <%--<h1 class="sign-title">tecenet</h1>--%>
+            <img src="<%=request.getContextPath()%>/css/images/logo1.png" alt=""/>
         </div>
         <div class="login-wrap">
             <input type="text" class="form-control" name="username" placeholder="用户名" autofocus>
@@ -37,12 +37,13 @@
                 <i class="fa fa-check"></i>
             </button>
 
-            <div class="registration">
+            <%--<div class="registration">
                 Not a member yet?
                 <a class="" href="registration.html">
                     Signup
                 </a>
-            </div>
+            </div>--%>
+
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> 记住我
                 <span class="pull-right">
@@ -74,9 +75,7 @@
             </div>
         </div>
         <!-- modal -->
-
     </form>
-
 </div>
 <%--<input  onclick="aa()" type="button"value="aaaaaaaaaaaaaaaaaaa"/>--%>
 <script src="<%=request.getContextPath()%>/css/js/jquery-1.10.2.min.js"></script>

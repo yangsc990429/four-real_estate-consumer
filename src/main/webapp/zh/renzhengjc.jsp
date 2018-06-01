@@ -155,7 +155,11 @@
                             <td>
                                 <label><input type="radio" name="huiyyzzzzsh" value="1">等待审核</label>
                                 <label><input type="radio" name="huiyyzzzzsh" value="2">通过审核</label>
+<<<<<<< Updated upstream
                                 <label><input type="radio" name="huiyyzzzzsh" id="zz" value="3">认证不通过</label>
+=======
+                                <label><input type="radio" name="huiyyzzzzsh" id="xx" value="3">认证不通过</label>
+>>>>>>> Stashed changes
                                 <label><input type="radio" name="huiyyzzzzsh" value="4">未提交认证</label>
                             </td>
                         </tr>
@@ -239,6 +243,7 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.all.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/zh-cn.js"></script>
+<<<<<<< Updated upstream
 <script type="text/javascript">
 
     var a = <%=request.getParameter("huijinid")%>;

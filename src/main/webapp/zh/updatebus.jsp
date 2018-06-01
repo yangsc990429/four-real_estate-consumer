@@ -119,9 +119,6 @@ alert($("#updateFormBus").serialize())
         })
     }
 
-    function fanh(){
-        location.href="<%=request.getContextPath()%>/zh/buslist.jsp";
-    }
 
 </script>
 

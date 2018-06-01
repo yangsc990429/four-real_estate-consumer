@@ -127,7 +127,7 @@
             type:"post",
             dataType:"json",
             success:function(list){
-                console.info(list)
+
                 var check="";
                 var aid ="";
                 var yn="";
