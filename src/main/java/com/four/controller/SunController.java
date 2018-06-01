@@ -1,3 +1,4 @@
+/*
 package com.four.controller;
 
 import com.alibaba.fastjson.JSON;
@@ -20,7 +21,9 @@ public class SunController {
    @Autowired
     private SunService sunService;
 
-  /*private Orientation Orientation;*/
+  */
+/*private Orientation Orientation;*//*
+
    @RequestMapping("queryOrientation")
     @ResponseBody
     public String queryOrientation(){
@@ -126,3 +129,4 @@ public String updateqingkuanggai(Situation situation){
 }
 
 }
+*/
