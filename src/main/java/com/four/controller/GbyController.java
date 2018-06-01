@@ -109,7 +109,7 @@ public class GbyController {
     @RequestMapping("addFeature")
     @ResponseBody
     public  void addFeature(Feature feature){
-
+        System.err.println(feature);
         gbyService.addFeature(feature);
     }
     //删除
@@ -331,4 +331,43 @@ public class GbyController {
         gbyService.updateqxchutuidw(ids);
         return "updatesuccess";
     }
+//----------所有预约   querysuoyou
+@RequestMapping("querysuoyou")
+@ResponseBody
+public List<Map<String,Object>> querysuoyou(){
+    List<Map<String,Object>> list =  gbyService.querysuoyou();
+    return  list;
+}
+//批量删除  deleteyuyue
+@ResponseBody
+@RequestMapping("deleteyuyue")
+public void deleteyuyue(String id){
+    gbyService.deleteyuyue(id);
+}
+//查询出售预约  queryChuShou
+@RequestMapping("queryChuShou")
+@ResponseBody
+public List<Map<String,Object>> queryChuShou(){
+    List<Map<String,Object>> list =  gbyService.queryChuShou();
+    return  list;
+}
+//批量删除出售预约  deleteyChuShou
+@ResponseBody
+@RequestMapping("deleteyChuShou")
+public void deleteyChuShou(String id){
+    gbyService.deleteyChuShou(id);
+}
+//查询出租预约 queryChuZu
+@RequestMapping("queryChuZu")
+@ResponseBody
+public List<Map<String,Object>> queryChuZu(){
+    List<Map<String,Object>> list =  gbyService.queryChuZu();
+    return  list;
+}
+//批量删除出租预约  deleteyChuZu
+@ResponseBody
+@RequestMapping("deleteyChuZu")
+public void deleteyChuZu(String id){
+    gbyService.deleteyChuZu(id);
+}
 }

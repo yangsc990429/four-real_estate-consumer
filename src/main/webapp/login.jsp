@@ -115,8 +115,16 @@ function userlogin(){
             }
             //登录成功
             if(data == "1"){
-                window.location.href="<%=request.getContextPath()%>/indexx.jsp";
-                window.event.returnValue=false;
+                $.ajax({
+                    url:"<%=request.getContextPath()%>/yangsc/querymokuai",
+                    type:"post",
+                    dataType:"text",
+                    async:false,
+                    success:function (data){
+                        window.location.href="<%=request.getContextPath()%>/indexx.jsp";
+                        window.event.returnValue=false;
+                    }
+                })
             }
         }
     })

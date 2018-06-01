@@ -44,10 +44,11 @@
     </table>
 </form>
 
-<form id="addchuzu">
+<form id="updatechuzu">
+    <input type="hidden" name="id"/>
     <input type="hidden" name="release"/>
     <input type="hidden" name="wuid"/>
-    <input type="hidden" name="familystructure"/>
+    <input type="hidden" name="chuzugzd"/>
     <table id="asd">
         <tr><td colspan="5">&nbsp;</td></tr>
         <tr>
@@ -121,19 +122,19 @@
                     <input type="text" class="form-control" name="building"><span
                         class="input-group-addon">号楼</span>
                 </div>
-          <%--  <td></td>--%>
+                <%--  <td></td>--%>
             <td>
                 <div class="col-sm-8">
-                <input type="text" class="form-control" name="element">
+                    <input type="text" class="form-control" name="element">
                     <span
                             class="input-group-addon">单元</span>
-            </div>
+                </div>
             </td>
             <td>
                 <div class="col-sm-8">
-                <input type="text" class="form-control" name="chamber"><span
+                    <input type="text" class="form-control" name="chamber"><span
                         class="input-group-addon">室</span>
-            </div>
+                </div>
             </td>
             </td>
             <td width="240px"></td>
@@ -144,9 +145,9 @@
         <tr align="left">
             <td width="160px" align="right"><font size="4"><strong>楼层:</strong>&nbsp;</font></td>
             <td colspan="3">
-            <span class="fd" style="margin-left:0;margin-right:10px;">第</span><input name="whichlayer"  class="inp" style="width:26px;" type="text" />
-            <span class="fd" style="margin-right:10px;">层，共</span><input name="countlayer" class="inp" style="width:26px;" type="text" /><span class="fd">&nbsp;层</span>
-            <font size="2px" color="#999966">&nbsp;&nbsp;(小提示:如不清楚总共几层，可以不用填写楼层总数)</font>
+                <span class="fd" style="margin-left:0;margin-right:10px;">第</span><input name="whichlayer"  class="inp" style="width:26px;" type="text" />
+                <span class="fd" style="margin-right:10px;">层，共</span><input name="countlayer" class="inp" style="width:26px;" type="text" /><span class="fd">&nbsp;层</span>
+                <font size="2px" color="#999966">&nbsp;&nbsp;(小提示:如不清楚总共几层，可以不用填写楼层总数)</font>
             </td>
         </tr>
         <tr><td colspan="5">&nbsp;</td></tr>
@@ -243,7 +244,7 @@
         <tr><td colspan="2" width="240px">&nbsp;</td><td width="240px"></td><td width="240px"></td><td width="240px"></td></tr>
         <tr>
         <tr align="left">
-        <td width="160px" align="right"><font size="4"><strong>户型结构:</strong></font>&nbsp;</td>
+            <td width="160px" align="right"><font size="4"><strong>户型结构:</strong></font>&nbsp;</td>
             <td colspan="3">
                 <input name="tlc2" id="c1" class="inp" style="width:26px;" type="text" />
                 <span class="fd"  style="margin-right:10px;">室</span>
@@ -255,6 +256,7 @@
                 <span class="fd" style="margin-right:10px;">厨</span>
                 <input name="tlc2" id="c5" class="inp" style="width:26px;" type="text" />
                 <span class="fd" style="margin-right:10px;">阳台</span>
+
                 <font size="2px" color="#999966">&nbsp;&nbsp;(小提示:如不清楚总共几层，可以不用填写楼层总数)</font>
             </td>
             <td width="240px">&nbsp;</td>
@@ -392,6 +394,7 @@
     <hr>
     <br>
     <table id="bnm">
+        <input type="hidden" name="release">
         <tr>
             <td width="160px" align="right"><font color="red">*</font><font size="4"><strong>发布会员:</strong></font>&nbsp;</td>
             <td width="240px">
@@ -438,8 +441,8 @@
         <tr><td colspan="5">&nbsp;</td></tr>
         <tr>
             <td width="160px" align="center" colspan="5">
-                <button type="button" class="btn btn-success" onclick="insertFangChu()">保存添加</button>
-                <button type="button" class="btn btn-success" onclick="FangChu()">查看</button>
+                <button type="button" class="btn btn-success" onclick="updateFangChu()">保存修改</button>
+                <button type="button" class="btn btn-success" onclick="fanlie()">返回列表</button>
             </td>
         </tr>
     </table>
@@ -451,7 +454,7 @@
             <div class="modal-header" style="width:350px;height: 50px">
                 <h4 class="modal-title" id="myModaaa">最新消息</h4>
             </div>
-            <div class="modal-body" align="center" style="height:80px"><font size="5px">新增成功</font></div>
+            <div class="modal-body" align="center" style="height:80px"><font size="5px">修改成功</font></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="shu()">确定</button>
             </div>
@@ -459,7 +462,9 @@
     </div>
 </div>
 
-<script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script><script src="<%=request.getContextPath()%>/js/exporting.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery-3.2.1.js"></script>
+<script src="<%=request.getContextPath()%>/js/highcharts.js"></script>
+<script src="<%=request.getContextPath()%>/js/exporting.js"></script>
 <script src="<%=request.getContextPath() %>/js/bootstrap/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/bootstrap-table/dist/bootstrap-table.js"></script>
@@ -473,99 +478,30 @@
 <script src="<%=request.getContextPath() %>/assets/js/chart-master/Chart.js"></script>
 <script src="<%=request.getContextPath()%>/css/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/css/js/modernizr.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/highcharts.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.all.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/zh-cn.js"></script>
 <script type="text/javascript">
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + " " + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();
-    $("[name='expirationtime']").val(currentdate);
-</script>
-<script type="text/javascript">
-    $("[name='expirationtime']").datetimepicker({
-        format : 'yyyy-mm-dd hh:mm:ss',
-        weekStart : 1,
-        todayBtn : 1,
-        autoclose : 1,
-        todayHighlight : 1,
-        startView : 2,
-        forceParse : 0,
-        showMeridian : 1,
-        language: 'zh-CN',//汉化
-        minView: "month" //选择日期后，不会再跳转去选择时分秒
-    });
-</script>
-<script type="text/javascript">
-    $('#file-pic2').fileinput({//初始化上传文件框
-        showUpload : true,	//是否显示上传按钮
-        showRemove : true,	//是否显示移除按钮
-        uploadAsync: true,
-        uploadLabel: "上传",		//设置上传按钮的汉字
-        uploadClass: "btn btn-primary",//设置上传按钮样式
-        showCaption: true,		//是否显示标题
-        language: "zh",			//配置语言
-        uploadUrl: "<%=request.getContextPath()%>/zxh/insertPicture",
-        maxFileSize : 0,
-        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
-        enctype: 'multipart/form-data',
-        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
-        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
-        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
-        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
-        dropZoneTitle: "请通过拖拽图片文件放到这里",
-        dropZoneClickTitle: "或者点击此区域添加图片",
-        //uploadExtraData: {"id": id},//这个是外带数据
-        uploadExtraData: function(previewId, index) {   //额外参数的关键点
-            var obj = {};
-            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
-            return obj;
-        },
-        showBrowse: false,
-        browseOnZoneClick: true,
-        slugCallback : function(filename) {
-            return filename.replace('(', '_').replace(']', '_');
-        }
-    });
-
-    $('#file-pic2').on('fileerror', function(event, data) {
-        alert("失败");
-    });
-    //上传文件成功，回调函数
-    $('#file-pic2').on("fileuploaded", function(event, data, previewId, index) {
-        var result = data.response; //后台返回的json
-        //alert(result);
-        $('#photo1').val(result.a);
+    $("#chebox").hide();
+    $(function (){
+        insertBus()
     })
-</script>
-<script type="text/javascript">
-    $("#addchuzu").hide();
+
     function insertBus(){
         $("#chebox").hide();
-        $("#addchuzu").show();
-        $("[name='wuid']").val($("[name='lei']:checked").val());
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectTypeLeid",
-            type:"post",
-            data:{"id":$("[name='wuid']").val()},
-            dataType:"json",
-            success:function (wu){
-                $("#min").html("<strong>"+wu.zhanname+"</strong>")
-            }
-        })
-        //物业特色
+        $("#updatechuzu").show();
+        if($("[name='lei']:checked").val()!=null){
+            $("[name='wuid']").val($("[name='lei']:checked").val());
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectTypeLeid",
+                type:"post",
+                data:{"id":$("[name='lei']:checked").val()},
+                dataType:"json",
+                success:function (wu){
+                    $("#min").html("<strong>"+wu.zhanname+"</strong>")
+                }
+            })
+        }
         wuye()
         //配套设施
         sheshi()
@@ -583,7 +519,12 @@
 
     function asd(){
         $("#chebox").show();
-        $("#addchuzu").hide();
+        $("#updatechuzu").hide();
+        $("[name='lei']").each(function(){
+            if($(this).val() == $("[name='wuid']").val()){
+                $(this).prop( "checked", true );
+            }
+        });
     }
 </script>
 <script type="text/javascript">
@@ -591,8 +532,8 @@
         $.ajax({
             url:"<%=request.getContextPath()%>/zxh/queryApart",
             type:"post",
-            async:false,
             dataType:"json",
+            async:false,
             success:function (apart){
                 var option = "";
                 $(apart).each(function (){
@@ -629,7 +570,7 @@
             success:function (bus){
                 var check = "";
                 $(bus).each(function (){
-                    check+="&nbsp;&nbsp;&nbsp;<label><input type='checkbox' name='busrouteid' value='"+this.id+"'>"+this.name+"</label>";
+                    check+="&nbsp;&nbsp;&nbsp;<label><input type='checkbox' name='busrouteid' class='che' value='"+this.id+"'>"+this.name+"</label>";
                 })
                 $("#bus").html(check);
             }
@@ -675,39 +616,11 @@
                 success:function (school){
                     var che = "";
                     $(school).each(function (){
-                        che+="&nbsp;&nbsp;&nbsp;<label><input type='checkbox' name='schoolid' value='"+this.id+"'/>"+this.name+"</label>";
+                        che+="&nbsp;&nbsp;&nbsp;<label><input type='checkbox' name='schooid' value='"+this.id+"'/>"+this.name+"</label>";
                     })
                     $("#school").html(che);
                 }
             })
-        })
-        //装修情况
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectSituaAll",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (situ){
-                var option = "<option value='-1'>选择装修情况</option>";
-                $(situ).each(function (){
-                    option+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='decorateid']").html(option);
-            }
-        })
-        //选择行业
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectRetaPid",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (reta){
-                var option = "<option value='-1'>选择行业</option>";
-                $(reta).each(function (){
-                    option+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='tradetypeid']").html(option);
-            }
         })
 
         $("#geng").change(function (){
@@ -720,7 +633,6 @@
                     dataType:"json",
                     async:false,
                     success:function (da){
-                        console.info(da)
                         var option = "";
                         $(da).each(function(){
                             var b = this.name;
@@ -732,79 +644,6 @@
                 })
             }else {
                 $("#de").hide();
-            }
-        })
-        //选择类型
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectShangType",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (reta){
-                var option = "<option value='-1'>选择类型</option>";
-                $(reta).each(function (){
-                    option+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='storeid']").html(option);
-            }
-        })
-        //选择铺面类型
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectPaveTypeAll",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (pave){
-                var option = "<option value='-1'>选择铺面类型</option>";
-                $(pave).each(function (){
-                    option+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='facingid']").html(option);
-            }
-        })
-        //房屋朝向
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectOrienAll",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (date){
-                var ori = "<option value='-1'>选择朝向</option>";
-                $(date).each(function (){
-                    ori+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='orientationid']").html(ori);
-            }
-        })
-        //查询建筑年代
-        $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/selectTimeAll",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (time){
-                var option = "<option value='-1'>请选择年代</option>";
-                $(time).each(function (){
-                    option+="<option value='"+this.id+"'>"+this.name+"</option>";
-                })
-                $("[name='time']").html(option);
-            }
-        })
-        //查询地区
-        $.ajax({
-            url:"<%=request.getContextPath()%>/lfq/querydrea",
-            type:"post",
-            async:false,
-            dataType:"json",
-            success:function (area){
-                var option = "<option value='-1'>不限制</option>";
-                $(area).each(function (){
-                    var b = this.name;
-                    var c = this.shouzimu;
-                    var d =" - ";
-                    option+="<option  value='"+this.id+"' >"+c+d+b+"</option>";
-                })
-                $("[name='areaid']").html(option);
             }
         })
 
@@ -842,12 +681,307 @@
         })
     })
 
+    function fanlie(){
+        location.href="<%=request.getContextPath()%>/zxh/yuanlist.jsp";
+    }
+</script>
+<script type="text/javascript">
+    var id = <%=request.getParameter("id")%>
+    var aa = "";
+    var bb = "";
+    var cc = "";
+    var dd = "";
+    var ee = "";
+    var ff = "";
+    $.ajax({
+        url:"<%=request.getContextPath()%>/zxh/selectChuFangYuanId",
+        type:"post",
+        async:false,
+        data:{"id":id},
+        dataType:"json",
+        success:function (data){
+            var areaid = data.areaid;
+            var districtid = data.districtid;
+            $.ajax({
+                url:"<%=request.getContextPath()%>/lfq/querydrea",
+                type:"post",
+                dataType:"json",
+                async:false,
+                success:function (kpid){
+                    var option = "<option value='-1'>不限制</option>";
+                    $(kpid).each(function(){
+                        var b = this.name;
+                        var c = this.shouzimu;
+                        var d =" - ";
+                        if(areaid == this.id){
+                            option+="<option  value='"+this.id+"' selected>"+c+d+b+"</option>";
+                        }else {
+                            option+="<option  value='"+this.id+"' >"+c+d+b+"</option>";
+                        }
+                    })
+                    $("[name='areaid']").html(option);
+                }
+            })
+            //二级回显
+            var ids = $("[name='areaid']").val();
+            if ($("[name='areaid']").val()!=-1){
+                $("#mn").show();
+                $.ajax({
+                    url:"<%=request.getContextPath()%>/lfq/querydreadifangid",
+                    type:"post",
+                    data:{"id":ids},
+                    dataType:"json",
+                    async:false,
+                    success:function (da){
+                        var option = "";
+                        $(da).each(function(){
+                            var b = this.name;
+                            var c = this.shouzimu;
+                            var d =" - ";
+                            if(this.id == districtid){
+                                option+="<option  value='"+this.id+"' selected>"+c+d+b+"</option>";
+                            }else {
+                                option+="<option  value='"+this.id+"' >"+c+d+b+"</option>";
+                            }
+                        })
+                        $("[name='districtid']").html(option);
+                    }
+                })
+            }else {
+                $("#mn").hide();
+            }
+            $("[name='id']").val(data.id);
+            $("[name='wuid']").val(data.wuid);
+            $("[name='name']").val(data.name);
+            $("[name='bian']").val(data.bian);
+            $("[name='acreage']").val(data.acreage);
+            $("[name='fangprice']").val(data.fangprice);
+            $("[name='residential']").val(data.residential);
+            $("[name='whichlayer']").val(data.whichlayer);
+            $("[name='countlayer']").val(data.countlayer);
+            $("[name='position']").val(data.position);
+            $("[name='photo']").val(data.photo);
+            $("#imgId").attr("src",data.photo);
+            $("[name='busrouteid']").val(data.busrouteid);
+            aa = data.busrouteid;
+            $("[name='metrolineid']").val(data.metrolineid);
+            bb = data.metrolineid;
+            $("[name='schootypeid']").val(data.schootypeid);
+            cc = data.schootypeid;
+            $("[name='schooid']").val(data.schooid);
+            dd = data.schooid;
+            var tradetypeid = data.tradetypeid;
+            var tradeid = data.tradeid;
+            //选择行业
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectRetaPid",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (reta){
+                    var option = "<option value='-1'>选择行业</option>";
+                    $(reta).each(function (){
+                        if(this.id == tradetypeid){
+                            option+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            option+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='tradetypeid']").html(option);
+                }
+            })
+            var id = $("[name='tradetypeid']").val()
+            if ($("[name='tradetypeid']").val()!=-1){
+                $("#de").show();
+                $.ajax({
+                    url:"<%=request.getContextPath()%>/zxh/queryReadPidsid?id="+id,
+                    type:"post",
+                    dataType:"json",
+                    async:false,
+                    success:function (da){
+                        var option = "";
+                        $(da).each(function(){
+                            var b = this.name;
+                            var d =" - ";
+                            if(this.id == tradeid){
+                                option+="<option  value='"+this.id+"' selected>"+d+b+"</option>";
+                            }else{
+                                option+="<option  value='"+this.id+"'>"+d+b+"</option>";
+                            }
+                        })
+                        $("[name='tradeid']").html(option);
+                    }
+                })
+            }else {
+                $("#de").hide();
+            }
+            var storeid = data.storeid;
+            var facingid = data.facingid;
+            //选择类型
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectShangType",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (reta){
+                    var option = "<option value='-1'>选择类型</option>";
+                    $(reta).each(function (){
+                        if(this.id == storeid){
+                            option+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            option+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='storeid']").html(option);
+                }
+            })
+            //选择铺面类型
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectPaveTypeAll",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (pave){
+                    var option = "<option value='-1'>选择铺面类型</option>";
+                    $(pave).each(function (){
+                        if(this.id == facingid){
+                            option+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            option+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='facingid']").html(option);
+                }
+            })
+            $("[name='propertyfee']").val(data.propertyfee);
+            var decorateid = data.decorateid;
+            var orientationid = data.orientationid;
+            var timedai = data.time;
+            //装修情况
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectSituaAll",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (situ){
+                    var option = "<option value='-1'>选择装修情况</option>";
+                    $(situ).each(function (){
+                        if(this.id == decorateid){
+                            option+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            option+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='decorateid']").html(option);
+                }
+            })
+            //房屋朝向
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectOrienAll",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (date){
+                    var ori = "<option value='-1'>选择朝向</option>";
+                    $(date).each(function (){
+                        if(this.id == orientationid){
+                            ori+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            ori+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='orientationid']").html(ori);
+                }
+            })
+            //查询建筑年代
+            $.ajax({
+                url:"<%=request.getContextPath()%>/zxh/selectTimeAll",
+                type:"post",
+                async:false,
+                dataType:"json",
+                success:function (time){
+                    var option = "<option value='-1'>请选择年代</option>";
+                    $(time).each(function (){
+                        if(this.id == timedai){
+                            option+="<option value='"+this.id+"' selected>"+this.name+"</option>";
+                        }else{
+                            option+="<option value='"+this.id+"'>"+this.name+"</option>";
+                        }
+                    })
+                    $("[name='time']").html(option);
+                }
+            })
+            $("[name='equity']").val(data.equity);
+            $("[name='featuresid']").val(data.featuresid);
+            ee = data.featuresid;
+            $("[name='facilityid']").val(data.facilityid);
+            ff = data.facilityid;
+            $("[name='viewcode']").val(data.viewcode);
+            $("[name='videoaddress']").val(data.videoaddress);
+            $("[name='vrlink']").val(data.vrlink);
+            $("[name='introduction']").val(data.introduction);
+            $("[name='putaway']").val([data.putaway]);
+            $("[name='recommended']").val([data.recommended]);
+            $("[name='linkman']").val(data.linkman);
+            $("[name='contactnumber']").val(data.contactnumber);
+            $("[name='release']").val(data.release);
+            bian();
+            $("[name='chuzugzd']").val(data.chuzugzd);
+            $("[name='serialnumber']").val(data.serialnumber);
+            $("[name='sticknumber']").val(data.sticknumber);
+            $("[name='expirationtime']").val(data.expirationtime);
+            $("[name='auditstatus']").val([data.auditstatus]);
+            $("[name='building']").val(data.building);
+            $("[name='element']").val(data.element);
+            $("[name='chamber']").val(data.chamber);
+            $("[name='familystructure']").val(data.familystructure);
+            jiegou()
+            $("[name='landlordname']").val(data.landlordname);
+            $("[name='landlordnumber']").val(data.landlordnumber);
+            $("[name='chuzugzd']").val(data.chuzugzd);
+            $("[name='chuzutgzt']").val(data.chuzutgzt);
+            huichekcbox()
+        }
+    })
+
+
+
+
+    function huichekcbox(){
+
+        var cc =  $("[name='busrouteid']").val();
+        var tt =  $("#bus").children().html();
+        alert(cc+"===22")
+        alert(tt+"===33")
+        // var check =document.getElementsByName("busrouteid");
+        for(var i = 0; i <check.length; i++){
+            alert(check[i].value+"--222")
+        }
+
+        /*alert($("[name='metrolineid']").html());
+        alert($("[name='schooid']").html());
+        alert($("[name='featuresid']").html());
+        alert($("[name='facilityid']").html());*/
+    }
+
+    function jiegou(){
+        var fam = $("[name='familystructure']").val();
+        var split = fam.split(",");
+        $("#c1").val(split[0])
+        $("#c2").val(split[1])
+        $("#c3").val(split[2])
+        $("#c4").val(split[3])
+        $("#c5").val(split[4])
+    }
+
     function bian(){
-        $("[name='release']").val($("[name='renming']").val());
+        if($("[name='release']").val() == null){
+            $("[name='release']").val($("[name='renming']").val());
+        }
         $.ajax({
             url:"<%=request.getContextPath()%>/zxh/selectRenMingId",
             type:"post",
-            data:{"id":$("[name='renming']").val()},
+            data:{"id":$("[name='release']").val()},
             dataType:"json",
             success:function (huiji){
                 $("[name='hui']").val(huiji.huijizhanghao);
@@ -889,43 +1023,106 @@
     }
 </script>
 <script type="text/javascript">
-
-    function insertFangChu(){
-        /*var busrouteid = "";
-        $.each($("[name='busrouteid']:checked"),function (){
-            busrouteid+=","+$(this).val()
-        })
-        $("[name='busrouteid']").val(busrouteid.substring(1))
-        var metrolineid = "";
-        $.each($("[name='metrolineid']:checked"),function (){
-            metrolineid+=","+$(this).val()
-        })
-        $("[name='metrolineid']").val(metrolineid.substring(1))
-        var featuresid = "";
-        $.each($("[name='featuresid']:checked"),function (){
-            featuresid+=","+$(this).val()
-        })
-        $("[name='featuresid']").val(featuresid.substring(1))
-        var facilityid = "";
-        $.each($("[name='facilityid']:checked"),function (){
-            facilityid+=","+$(this).val()
-        })
-        $("[name='facilityid']").val(facilityid.substring(1))
-
-        var schoolid = "";
-        $.each($("[name='schoolid']:checked"),function (){
-            schoolid+=","+$(this).val()
-        })
-        $("[name='schoolid']").val(schoolid.substring(1))*/
+    $.ajax({
+        url:"<%=request.getContextPath()%>/zxh/selectTypeLeid",
+        type:"post",
+        data:{"id":$("[name='wuid']").val()},
+        dataType:"json",
+        success:function (wu){
+            $("#min").html("<strong>"+wu.zhanname+"</strong>")
+        }
+    })
+</script>
+<script type="text/javascript">
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        + " " + date.getHours() + seperator2 + date.getMinutes()
+        + seperator2 + date.getSeconds();
+    $("[name='expirationtime']").val(currentdate);
+</script>
+<script type="text/javascript">
+    $("[name='expirationtime']").datetimepicker({
+        format : 'yyyy-mm-dd hh:mm:ss',
+        weekStart : 1,
+        todayBtn : 1,
+        autoclose : 1,
+        todayHighlight : 1,
+        startView : 2,
+        forceParse : 0,
+        showMeridian : 1,
+        language: 'zh-CN',//汉化
+        minView: "month" //选择日期后，不会再跳转去选择时分秒
+    });
+</script>
+<script type="text/javascript">
+    $('#file-pic2').fileinput({//初始化上传文件框
+        showUpload : true,	//是否显示上传按钮
+        showRemove : true,	//是否显示移除按钮
+        uploadAsync: true,
+        uploadLabel: "上传",		//设置上传按钮的汉字
+        uploadClass: "btn btn-primary",//设置上传按钮样式
+        showCaption: true,		//是否显示标题
+        language: "zh",			//配置语言
+        uploadUrl: "<%=request.getContextPath()%>/lfq/insertPicture",
+        initialPreview: [
+            "<img class='kv-preview-data file-preview-image' id='imgId' width='150px' height='250px'>",
+        ],
+        maxFileSize : 0,
+        maxFileCount: 2,		//允许最大上传数，可以多个，当前设置单个
+        enctype: 'multipart/form-data',
+        //allowedPreviewTypes : ['image', 'html', 'text', 'video', 'audio', 'flash'],//预览类型
+        //allowedFileTypes: ['image', 'video', 'flash'],	//文件类型
+        allowedFileExtensions : ["jpg", "png","gif"],	//上传文件格式
+        msgFilesTooMany: "选择上传的文件数量({n}) 超过允许的最大数值{m}！",
+        dropZoneTitle: "请通过拖拽图片文件放到这里",
+        dropZoneClickTitle: "或者点击此区域添加图片",
+        //uploadExtraData: {"id": id},//这个是外带数据
+        uploadExtraData: function(previewId, index) {   //额外参数的关键点
+            var obj = {};
+            obj.base=$($('#'+previewId+' photoimg')[index]).prop('src');
+            return obj;
+        },
+        showBrowse: false,
+        browseOnZoneClick: true,
+        slugCallback : function(filename) {
+            return filename.replace('(', '_').replace(']', '_');
+        }
+    });
+    $('#file-pic2').on('fileerror', function(event, data) {
+        alert("失败");
+    });
+    //上传文件成功，回调函数
+    $('#file-pic2').on("fileuploaded", function(event, data, previewId, index) {
+        var result = data.response; //后台返回的json
+        //alert(result);
+        $('#photo1').val(result.a);
+    })
+</script>
+<script type="text/javascript">
+    function shu(){
+        location.href="<%=request.getContextPath()%>/zxh/yuanlist.jsp";
+    }
+    function updateFangChu(){
         var asd = "";
         $("[name='tlc2']").each(function (){
             asd += ","+$(this).val()
         })
         $("[name='familystructure']").val(asd.substring(1));
+        alert($("[name='familystructure']").val())
         $.ajax({
-            url:"<%=request.getContextPath()%>/zxh/insertFangChuShou",
+            url:"<%=request.getContextPath()%>/zxh/updateFangChuShouId",
             type:"post",
-            data:$("#addchuzu").serialize(),
+            data:$("#updatechuzu").serialize(),
             dataType:"text",
             success:function (data){
                 if(data == "success"){
@@ -936,10 +1133,6 @@
                 }
             }
         })
-    }
-
-    function shu(){
-        location.reload();
     }
 </script>
 </body>

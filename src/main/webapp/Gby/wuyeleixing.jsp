@@ -92,7 +92,7 @@
                     所在小组：<input type="checkbox" name="xiaozu" value="1">出售<input type="checkbox" name="xiaozu" value="2">出租
                     <input type="checkbox" name="xiaozu" value="3">求购<input type="checkbox" name="xiaozu" value="4">求租
                     <input type="checkbox" name="xiaozu" value="5">楼盘<input type="checkbox" name="xiaozu" value="6">转让<br/>
-                    是否启用：<input type="radio" checked name="statusup" value="启用">启用  <input type="radio" name="statusup" value="禁用"><font color="red">禁用</font><br/>
+                    是否启用：<input type="radio" checked name="statusup" value="1">启用  <input type="radio" name="statusup" value="2"><font color="red">禁用</font><br/>
                     形象图标：  <input type="hidden" name="photoimg" id="photo2"><br>
 
                     <input id="file-pic3" name="file" type="file" multiple data-min-file-count="1"><br>

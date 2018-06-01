@@ -8,6 +8,8 @@ public class User implements Serializable {
     private Integer userid;
     private String username;
     private String userpass;
+    private String name;
+    private Integer zt;
 
     public Integer getUserid() {
         return userid;
@@ -33,12 +35,30 @@ public class User implements Serializable {
         this.userpass = userpass;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getZt() {
+        return zt;
+    }
+
+    public void setZt(Integer zt) {
+        this.zt = zt;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userid=" + userid +
                 ", username='" + username + '\'' +
                 ", userpass='" + userpass + '\'' +
+                ", name='" + name + '\'' +
+                ", zt=" + zt +
                 '}';
     }
 }

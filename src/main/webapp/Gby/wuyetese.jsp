@@ -51,7 +51,7 @@
                     特色名称：<input  type='text'  name='name'/><br/>
                     出售栏目：<input type="checkbox" id="parent" >全选<span id="chushou"></span><br/>
                     出租栏目：<input type="checkbox" id="parent1" >全选<span id="chuzu"></span><br/>
-                    楼盘栏目：<input type="checkbox" name="programa" value="楼盘">楼盘<br>
+                    楼盘栏目：<input type="checkbox" name="programa" value="1">楼盘<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序：<input type='text' id="paixu" name='xuhao' /><font size="1">序号越小，越靠前</font><br/>
                 </form>
             </div>
@@ -75,7 +75,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;
                 </button>
-                <h4 class="modal-title" id="myModalLabel" onclick="up()">
+                <h4 class="modal-title" onclick="up()">
                     修改
                 </h4>
             </div>
@@ -85,7 +85,7 @@
                     特色名称：<input  type='text'  name='name' id="name"/><br/>
                     出售栏目：<input type="checkbox" id="parent3">全选<span id="chushou1"></span><br/>
                     出租栏目：<input type="checkbox" id="parent2" >全选<span id="chuzu1"></span><br/>
-                    楼盘栏目：<input type="checkbox" name="programa" value="楼盘">楼盘<br>
+                    楼盘栏目：<input type="checkbox" name="programa" value="1">楼盘<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;排序：<input type='text'  name='xuhao' id="xuhao"/><font size="1">序号越小，越靠前</font><br/>
 
                 </form>
@@ -263,13 +263,17 @@
     }
 
     function addFeature(){
+        $("#name").val("");
+        $("[name='programa']").val("");
+        $("#xuhao").val("");
+
         $.ajax({
             url:"<%=request.getContextPath()%>/gby/addFeature",
             type:"post",
             data:$("#addForm").serialize(),
             dateType:"text",
             success:function (addFlag){
-                $("#wuyetese").bootstrapTable('refresh');
+                location.reload();
             },
             error:function(){
                 alert("新增出错");
@@ -341,7 +345,10 @@
             success:function (gg){
                 $("#id1").val(gg.id);
                 $("#name").val(gg.name);
-                $("#programa").val(gg.programa);
+                $("[name='programa']").val(gg.programa);
+                if(gg.programa == "1"){
+                    $("[name='programa']").attr("checked",true)
+                }
                 $("#xuhao").val(gg.xuhao);
 
                 var s = gg.sell;//这里改你数据库读出的
