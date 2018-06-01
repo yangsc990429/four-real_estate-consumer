@@ -238,11 +238,20 @@ public class LfqController {
 
 
     //---------------Huiji----------------所有会员
-    //查询所有会员
+    //查询个人会员
     @RequestMapping("queryHuiji")
     @ResponseBody
     public String queryHuiji(){
         List<Map<Object,String>> list = lfqService.queryHuiji();
+        return JSON.toJSONString(list);
+    }
+
+
+    //查询所有会员
+    @RequestMapping("queryHuijissss")
+    @ResponseBody
+    public String queryHuijissss(){
+        List<Map<Object,String>> list = lfqService.queryHuijissss();
         return JSON.toJSONString(list);
     }
 
@@ -284,6 +293,25 @@ public class LfqController {
     @ResponseBody
     public String updatesyhysyhygai(Huiji hj){
        lfqService.updatesyhygai(hj);
+        return "updsuccess";
+    }
+
+    //查询金钱管理
+    @RequestMapping("queryhyrenzhengshenhe")
+    @ResponseBody
+    public String queryhyrenzhengshenhe(String id){
+        Huijin list =  lfqService.queryhyrenzhengshenhe(id);
+        return JSON.toJSONString(list);
+    }
+
+
+    //修改金钱管理
+    @RequestMapping("updatejqglhui")
+    @ResponseBody
+    public String updatejqglhui(Huijin hj){
+        System.err.println(hj+"---88");
+        lfqService.updatejqglhui(hj);
+
         return "updsuccess";
     }
 

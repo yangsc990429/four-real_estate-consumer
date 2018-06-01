@@ -38,14 +38,14 @@
         <div class="panel-body">
             <div id="trtreeas">
                 <form id="addhui">
-                    <input type="hidden" name="huijiid">
+                    <input type="hidden" name="huijinid">
                     <table>
 
                         <tr>
                             <td>会员账号:</td>
                             <td>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nianprice" class="form-control" disabled="disabled">
+                                    <input type="text" name="huijizhanghao" class="form-control" disabled="disabled">
                                 </div>
                             </td>
                             <td></td>
@@ -56,8 +56,8 @@
                         <tr>
                             <td align="center"><h5>可用余额:</h5></td>
                             <td>
-                                <div class="col-sm-4">
-                                    <input type="text" name="huijinid" class="form-control" size="5px" disabled="disabled">
+                                <div class="col-sm-6">
+                                    <input type="text" name="huijinkymoney" class="form-control" size="5px" disabled="disabled">
                                 </div>
                             </td>
                             <td></td>
@@ -68,8 +68,8 @@
                         <tr>
                             <td>金钱数量:</td>
                             <td>
-                                <div class="col-sm-4">
-                                    <input type="text" name="" class="form-control" size="3px">
+                                <div class="col-sm-6">
+                                    <input type="text" name="huijinmoneysl" class="form-control" size="3px">
                                 </div>
                             </td>
                             <td><font color="#a5z42a2a">正数表示增加，负数表示减少，如：100、+100表示加上100金钱，-100表示减去100金钱</font></td>
@@ -81,7 +81,7 @@
                             <td>说明:</td>
                             <td>
                                 <div class="col-sm-10">
-                                    <input type="text" name="" class="form-control">
+                                    <input type="text" name="huijinshuiming" class="form-control">
                                 </div>
                             </td>
                             <td></td>
@@ -126,49 +126,47 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/zh-cn.js"></script>
 <script type="text/javascript">
 
-    var id = <%=request.getParameter("huijinid")%>;
+    var id = <%=request.getParameter("id")%>;
 
     $(function(){
-
-        $("#bjyy").hide();
-        $("#bbb").hide();
-
         $.ajax({
-            url:"<%=request.getContextPath()%>/lfq/updatehyrenzhengshenhe?id="+id,
+            url:"<%=request.getContextPath()%>/lfq/queryhyrenzhengshenhe?id="+id,
             type:"post",
             dataType:"json",
             async:false,
             success:function (date){
-                /*$("[name='huijiid']").val(date.huijiid);
-                $("[name='huijizhanghao']").val(date.huijizhanghao);
-                $("[name='huijipass']").val(date.huijipass);
-                $("[name='huijilianxiren']").val(date.huijilianxiren);
-                $("[name='huijiyouxiang']").val(date.huijiyouxiang);
-                $("[name='huijishouji']").val(date.huijishouji);
-                $("[name='huijidianhua']").val(date.huijidianhua);
-                $("[name='huijiqq']").val(date.huijiqq);
-                $("[name='huijitouxiang']").val(date.huijitouxiang);
-                $("[name='nianprice']").val(date.nianprice);
                 $("[name='huijinid']").val(date.huijinid);
-                $("[name='huijinkymoney']").val(date.huijinkymoney);*/
+                $("[name='huijizhanghao']").val(date.huijizhanghao);
+                $("[name='huijinkymoney']").val(date.huijinkymoney);
+                $("[name='huijinmoneysl']").val(date.huijinmoneysl);
+                $("[name='huijinshuiming']").val(date.huijinshuiming);
+
+                /*  $("[name='huijishouji']").val(date.huijishouji);
+                  $("[name='huijidianhua']").val(date.huijidianhua);
+                  $("[name='huijiqq']").val(date.huijiqq);
+                  $("[name='huijitouxiang']").val(date.huijitouxiang);
+                  $("[name='nianprice']").val(date.nianprice);
+                  $("[name='huijinid']").val(date.huijinid);
+                  $("[name='huijinkymoney']").val(date.huijinkymoney);*/
             }
         });
+    })
 
-        //查询等级
+    //修改
+    function updatesyhyxx() {
+
         $.ajax({
-            url:"<%=request.getContextPath()%>/lfq/queryshenhe",
+            url:"<%=request.getContextPath()%>/lfq/updatejqglhui",
             type:"post",
-            dataType:"json",
+            data:$("#addhui").serialize(),
+            dataType:"text",
             async:false,
-            success:function (da){
-                var option = "";
-                $(da).each(function(){
-                    option+="<option value='"+this.huidengid+"'>"+this.huidengname+"</option>";
-                })
-                $("[name='huidengid']").html(option);
+            success:function (ss) {
+                location.href="<%=request.getContextPath()%>/LFQ/syhy.jsp";
             }
         })
-    })
+
+    }
 
 
     //认证审核
@@ -186,7 +184,7 @@
 
     //返回所有会员
     function fanhuisyhy() {
-        location.href="<%=request.getContextPath()%>/LFQ/syhy.jsp";
+        location.href="<%=request.getContextPath()%>/LFQ/syhy.jsp?id="+id;
     }
 
 </script>
