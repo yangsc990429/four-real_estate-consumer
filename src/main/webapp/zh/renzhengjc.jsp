@@ -155,11 +155,8 @@
                             <td>
                                 <label><input type="radio" name="huiyyzzzzsh" value="1">等待审核</label>
                                 <label><input type="radio" name="huiyyzzzzsh" value="2">通过审核</label>
-<<<<<<< Updated upstream
                                 <label><input type="radio" name="huiyyzzzzsh" id="zz" value="3">认证不通过</label>
-=======
                                 <label><input type="radio" name="huiyyzzzzsh" id="xx" value="3">认证不通过</label>
->>>>>>> Stashed changes
                                 <label><input type="radio" name="huiyyzzzzsh" value="4">未提交认证</label>
                             </td>
                         </tr>
@@ -243,7 +240,24 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.all.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/zh-cn.js"></script>
-<<<<<<< Updated upstream
+<script type="text/javascript">
+    $.ajaxSetup( {
+        //设置ajax请求结束后的执行动作
+        complete : function(XMLHttpRequest, textStatus) {
+            // 通过XMLHttpRequest取得响应头，REDIRECT
+            var redirect = XMLHttpRequest.getResponseHeader("REDIRECT");//若HEADER中含有REDIRECT说明后端想重定向
+            if (redirect == "REDIRECT") {
+                var win = window;
+                while (win != win.top){
+                    win = win.top;
+                }
+                alert("你没有此权限")
+                //将后端重定向的地址取出来,使用win.location.href去实现重定向的要求
+                win.location.href= XMLHttpRequest.getResponseHeader("CONTEXTPATH");
+            }
+        }
+    });
+</script>
 <script type="text/javascript">
 
     var a = <%=request.getParameter("huijinid")%>;

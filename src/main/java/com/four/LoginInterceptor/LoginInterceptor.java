@@ -92,7 +92,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 if (StringUtils.equals("XMLHttpRequest", type)) {
                     //int  = 200;
                     response.setHeader("REDIRECT", "REDIRECT");//告诉ajax这是重定向
-                    response.setHeader("CONTEXTPATH", request.getContextPath() + "/ftmp_183_ma/index.html");//重定向地址
+                    response.setHeader("CONTEXTPATH", request.getContextPath() + "/indexx.jsp");//重定向地址
                     response.setStatus(HttpServletResponse.SC_OK);
                     return false;
                 }else{
