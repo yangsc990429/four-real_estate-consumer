@@ -9,4 +9,4 @@ var scriptInitList = [
     "<script type='text/javascript' src='/mt/pagebase.js'></script>", //�˳���¼��ȡcookie�ȹ��ò���
     "<link rel='stylesheet' href='/mt/jquery.Scrollbar.css'>"
 ];
-document.write(scriptInitList.join(""));
+//document.write(scriptInitList.join(""));

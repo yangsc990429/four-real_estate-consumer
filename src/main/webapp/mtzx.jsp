@@ -215,7 +215,7 @@
                             <input onclick="ga('send', 'event', 'zhanneisousuo', 'sousuo', this.value); " id="ico-search" maxlength="100" class="search-word" type="text" placeholder="请输入小区名称、区域进行房源搜索" autocomplete="off" />
                             <input onclick="kaishizhaofang()" class="search-btn" id="btSearch" type="button" value="开始找房">
                         </div>
-                        <button type="button" class="search-by-map fr" onclick="javascrtpt: window.location.href = '../mt/imp/esfmap.html'; ga('send', 'event', 'zhanneisousuo', 'sousuo', 'dituzhaofang');"><i></i>地图找房</button>
+                        <button type="button" class="search-by-map fr" onclick="javascrtpt: window.location.href = '<%=request.getContextPath()%>/dituzf.jsp'; ga('send', 'event', 'zhanneisousuo', 'sousuo', 'dituzhaofang');"><i></i>地图找房</button>
                         <ol id="SearchTips" class="search_list" style="display: none;width:609px;background:#fff;opacity:0.95"></ol>
                     </div>
                     <dl class="hot-search clearFix">

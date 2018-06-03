@@ -1368,7 +1368,7 @@
 <!--webIm-->
 
 <!--webNIM-->
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=d6zGANUDmor3AVuE7Iy34UCY"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9Qqgu6wUHSFzaBdUfUTHnaIStqcynhwW"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/mt/NIM_Web_NIM_v4.6.0.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/mt/localStorage.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/mt/WebNimCommon.js"></script>

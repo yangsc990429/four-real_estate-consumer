@@ -2,7 +2,7 @@
 /* esf_list CSS Document */
 /* header */
 html,body{ width:100%; height:100%;}
-.map_frame .maitian-header{ height:60px; background:url("map_header_bg.png"/*tpa=http://bj.maitian.cn/Skin/img/map_header_bg.png*/);}
+.map_frame .maitian-header{ height:60px; background:url("../mt/imp/map_header_bg.png");}
 .map_frame .nav-wrap{ width:auto; height:60px; padding:0 20px;}
 .map_frame .nav-wrap ul li.logo a{ padding:0px 20px 0 0;}
 .map_frame .nav-wrap ul li,.map_frame .nav-wrap ul li a,.map_frame .nav-wrap ul li.header_select a.show{ height:60px; line-height:60px;}
@@ -17,11 +17,11 @@ html,body{ width:100%; height:100%;}
 .map_frame .search_box_noBorder{ padding:0 10px;border-left:0;}
 .map_frame .nav-wrap ul li.search_box_noBorder:hover{ background:none;}
 .map_frame .search_box_noBorder input.text{ color:#fff; height:14px; font-size:14px; line-height:14px; width:220px; /* 需求变更，地图页搜索框加边框 */    background:#c4533a; padding:8px 0 8px 8px; border-radius:15px;}
-.map_frame .search_box_noBorder input.search_btn{ width:28px; height:28px; background:url("search_btn.png"/*tpa=http://bj.maitian.cn/Skin/img/search_btn.png*/) no-repeat; cursor:pointer;}
+.map_frame .search_box_noBorder input.search_btn{ width:28px; height:28px; background:url("../mt/imp/search_btn.png") no-repeat; cursor:pointer;}
 .map_frame .nav-wrap ul li.clearup_btn,.map_frame  .nav-wrap ul li.clearup_btn{ padding:0 0 0 10px; background:none;}
-.map_frame .nav-wrap ul li.clearup_btn a{ padding-left:22px; background:url("clearup_btn.png"/*tpa=http://bj.maitian.cn/Skin/img/clearup_btn.png*/) left center no-repeat;}
+.map_frame .nav-wrap ul li.clearup_btn a{ padding-left:22px; background:url("../mt/imp/clearup_btn.png") left center no-repeat;}
 .map_frame .maitian-header{ position:absolute; left:0; top:0; width:100%; z-index:5;}
-.live_range{ width:412px; height:204px; position:absolute; top:60px; left:0; background:url("list_left_tab-1.png"/*tpa=http://bj.maitian.cn/Skin/img/list_left_tab.png*/); border-radius:4px; box-shadow:0 0 3px #999; display:none;}
+.live_range{ width:412px; height:204px; position:absolute; top:60px; left:0; background:url("../mt/imp/list_left_tab-1.png"); border-radius:4px; box-shadow:0 0 3px #999; display:none;}
 .live_range ul{ padding:19px 0 0 19px;}
 .live_range ul li{ height:31px; padding-bottom:20px; line-height:31px; float:none; text-align:left;}
 .live_range ul li span{ font-size:16px; color:#333; display:inline-block; width:90px; vertical-align:middle;}
@@ -37,13 +37,13 @@ html,body{ width:100%; height:100%;}
 .live_range p button{ width:100%; height:100%; text-align:center; background:#e8e8e8; color:#999; font-size:16px; border:0; cursor:pointer;}
 /*.live_range p button:hover,*/.live_range p button.active{background:#f56140; color:#fff;}
 .more_tj{ position:relative; padding-right:10px;}
-.more_tj em{ background:url("arrow_drop2-1.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_drop2.png*/) no-repeat; height: 6px; position: absolute; width: 10px;top:28px; right:8px;}
+.more_tj em{ background:url("../mt/imp/arrow_drop2-1.png") no-repeat; height: 6px; position: absolute; width: 10px;top:28px; right:8px;}
 .more_tj .more_tj_box{ display:none;}
-.more_tj_box{ position:absolute; left:0; top:60px; width:112px; background:url("list_left_tab-1.png"/*tpa=http://bj.maitian.cn/Skin/img/list_left_tab.png*/); border-top:1px solid #e8e8e8; border-right:1px solid #e8e8e8; border-radius:3px; box-shadow:0 0 3px #999;}
+.more_tj_box{ position:absolute; left:0; top:60px; width:112px; background:url("../mt/imp/list_left_tab-1.png"); border-top:1px solid #e8e8e8; border-right:1px solid #e8e8e8; border-radius:3px; box-shadow:0 0 3px #999;}
 .map_frame .nav-wrap ul li.header_select .more_tj_ul .more_tj_li{ width:102px; height:34px; line-height:34px; position:relative; border-left:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;}
 .map_frame .nav-wrap ul .more_tj_li, .map_frame .nav-wrap ul .more_tj_li a, .map_frame .nav-wrap ul li.more_tj_li a.show{ color:#333; font-size:16px; height:30px; padding:0 0 0 9px; line-height:30px;}
 .map_frame .nav-wrap ul .more_tj_li a:hover { background:none }
-.map_frame .nav-wrap ul li.header_select .more_tj_ul .more_tj_li em{ position:absolute; right:8px; top:14px;background:url("arrow_drop-2.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_drop.png*/) no-repeat;}
+.map_frame .nav-wrap ul li.header_select .more_tj_ul .more_tj_li em{ position:absolute; right:8px; top:14px;background:url("../mt/imp/arrow_drop-2.png") no-repeat;}
 .header_select .more_tj_ul .filter_select .filter_sel{ top:32px; left:50px;}
 .map_frame .nav-wrap ul .more_tj_li li{ height:30px;}
 .map_frame .nav-wrap ul .more_tj_li li a{ padding:0; line-height:30px;}
@@ -81,7 +81,7 @@ html,body{ width:100%; height:100%;}
 .esf_map{position:relative;height:100%;margin:0 auto;min-width:1190px;}
 .list_map{width:100%;height:100%;background:#ccc; float:right;}
 
-.list_left{position:absolute;top:60px;bottom:0;left:0;width:420px;height:100%;z-index:1;overflow-y:auto;overflow-x:hidden;background:url("list_left_tab-1.png"/*tpa=http://bj.maitian.cn/Skin/img/list_left_tab.png*/); box-shadow:0 0 3px #999;}
+.list_left{position:absolute;top:60px;bottom:0;left:0;width:420px;height:100%;z-index:1;overflow-y:auto;overflow-x:hidden;background:url("../mt/imp/list_left_tab-1.png"); box-shadow:0 0 3px #999;}
 .list_left_tab{ padding:10px 20px; height:35px; line-height:35px;}
 .list_left_tab .list_left_tab_cont{ border:1px solid #cfcfcf; border-left:0; height:35px; line-height:35px; padding:0;}
 .list_left_tab .list_left_tab_cont a{ display:inline-block; width:73px; height:35px; text-align:center; color:#c5c6c6; font-size:14px; line-height:35px; border-left:1px solid #cfcfcf;}
@@ -114,7 +114,7 @@ html,body{ width:100%; height:100%;}
 .list_left .filter_sel{ width:100%; top:175px;}
 .list_left .filter_sel ul.map_ico_left li,.list_left .filter_sel ul li.MT_mouseover { cursor:default;}
 .list_left .filter_sel ul li{ height:auto;}
-.list_left .filter_sel ul li{position:relative;padding:20px 20px 10px;background:url("border_line.png"/*tpa=http://bj.maitian.cn/Skin/img/border_line.png*/) repeat-x bottom;min-height:1px;}
+.list_left .filter_sel ul li{position:relative;padding:20px 20px 10px;background:url("../mt/imp/border_line.png") repeat-x bottom;min-height:1px;}
 .list_left .filter_sel ul li:hover{background:#edf4fb;}
 .list_left .filter_sel ul li img{float:left;width:142px;height:106px;}
 .list_left .filter_sel ul li .hide_border{display:none;}
@@ -146,7 +146,7 @@ html,body{ width:100%; height:100%;}
 .list_left .filter_sel ul li .list_title dl dd.line{padding-top:17px;}
 .list_left .filter_sel ul li .list_title dl dd.line i{display:inline-block;margin:-3px 10px 0 0;width:14px;height:16px;background-position:-520px -344px;vertical-align: middle;}
 
-.list_wrap ul li{position:relative;padding:20px;background:url("border_line.png"/*tpa=http://bj.maitian.cn/Skin/img/border_line.png*/) repeat-x bottom;min-height:1px;}
+.list_wrap ul li{position:relative;padding:20px;background:url("../mt/imp/border_line.png") repeat-x bottom;min-height:1px;}
 .list_wrap ul li:hover{background:#edf4fb;}
 .list_wrap ul li img{float:left;width:142px;height:106px;}
 .list_wrap ul li .hide_border{display:none;}
@@ -180,12 +180,12 @@ html,body{ width:100%; height:100%;}
 .list_wrap ul li .list_title dl dd.line i{display:inline-block;margin:-3px 10px 0 0;width:14px;height:16px;background-position:-520px -344px;vertical-align: middle;}
 
 /* 左侧隐藏按钮 */
-.indent_btn{ width:15px; height:70px; position:absolute; top:50%; left:420px; margin-top:15px; border-radius:0 4px 4px 0; background:url("list_left_tab-1.png"/*tpa=http://bj.maitian.cn/Skin/img/list_left_tab.png*/); z-index:6; box-shadow:2px 0 2px #999;}
-.indent_btn em{ display:block; height:100%; background:url("indent_btn.png"/*tpa=http://bj.maitian.cn/Skin/img/indent_btn.png*/) left center no-repeat;}
+.indent_btn{ width:15px; height:70px; position:absolute; top:50%; left:420px; margin-top:15px; border-radius:0 4px 4px 0; background:url("../mt/imp/list_left_tab-1.png"); z-index:6; box-shadow:2px 0 2px #999;}
+.indent_btn em{ display:block; height:100%; background:url("../mt/imp/indent_btn.png") left center no-repeat;}
 .indent_btn em.right{ background-position:-15px center;}
 
 /***租房生活圈****/
-.list_wrapa ul li{position:relative;padding:20px 0;background:url("border_line.png"/*tpa=http://bj.maitian.cn/Skin/img/border_line.png*/) repeat-x bottom;min-height:1px;}
+.list_wrapa ul li{position:relative;padding:20px 0;background:url("../mt/imp/border_line.png") repeat-x bottom;min-height:1px;}
 .list_wrapa ul li:hover{background:#feeadc;}
 .list_wrapa ul li img{float:left;width:142px;height:106px;}
 .list_wrapa ul li .hide_border{display:none;}
@@ -240,7 +240,7 @@ html,body{ width:100%; height:100%;}
 .list_wrapa ul li .list_title dl dd label{float:left;margin-right:5px;padding:0 7px;display:inline-block;height:18px;line-height:18px;border:1px solid #7bb1eb;color:#7bb1eb;}
 
 /***小区生活圈****/
-.list_wrapb ul li{position:relative;padding:20px 0;background:url("border_line.png"/*tpa=http://bj.maitian.cn/Skin/img/border_line.png*/) repeat-x bottom;min-height:1px;}
+.list_wrapb ul li{position:relative;padding:20px 0;background:url("../mt/imp/border_line.png") repeat-x bottom;min-height:1px;}
 .list_wrapb ul li:hover{background:#edf4fb;}
 .list_wrapb ul li img{float:left;width:142px;height:106px;}
 .list_wrapb ul li .hide_border{display:none;}
@@ -281,9 +281,9 @@ html,body{ width:100%; height:100%;}
 .map_frame .nav-wrap ul li.clearup_btn span, .map_frame .nav-wrap ul li.save_btn span{ height:30px; line-height:30px; display:inline-block;background:#c4533a; padding:0 0 0 10px; border-radius:15px;}
 .map_frame .nav-wrap ul li.clearup_btn a, .map_frame .nav-wrap ul li.save_btn a{ height:30px; line-height:30px;font-size:12px;}
 .map_frame .nav-wrap ul li.save_btn:hover{ background:none;}
-.map_frame .nav-wrap ul li.save_btn a{ padding-left:22px;  background:url("save_btn.png"/*tpa=http://bj.maitian.cn/Skin/img/save_btn.png*/) left center no-repeat;}
-.list_left .filter_sel ul li .list_title p i.down { background:url("arrow_down3-1.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_down3.png*/); height: 12px; margin: 2px 0 0 4px; width: 11px;}
-.list_left .filter_sel ul li .list_title p i.up { background:url("arrow_up3-1.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_up3.png*/); height: 12px; margin: 2px 0 0 4px; width: 11px;}
+.map_frame .nav-wrap ul li.save_btn a{ padding-left:22px;  background:url("../mt/imp/save_btn.png") left center no-repeat;}
+.list_left .filter_sel ul li .list_title p i.down { background:url("../mt/imp/arrow_down3-1.png"); height: 12px; margin: 2px 0 0 4px; width: 11px;}
+.list_left .filter_sel ul li .list_title p i.up { background:url("../mt/imp/arrow_up3-1.png"); height: 12px; margin: 2px 0 0 4px; width: 11px;}
 .list_wrap .list_title h1 label,.list_wrap .list_title h1 label span{color:#666; line-height:12px; font-weight:normal; padding:0 2px;}
 .list_wrap .list_title h1 label{ margin:0 0 0 -2px; display:block;line-height: 22px;}
 .list_left .filter_sel ul li .list_title p span.percen{ font-size:14px;}
@@ -313,10 +313,10 @@ html,body{ width:100%; height:100%;}
 }
 
 /* 小图房源标签调整 */
-.map_ico_left .vip-ico{background:url("vip_s.png"/*tpa=http://bj.maitian.cn/Skin/img/vip_s.png*/); height: 60px; left: 20px; position: absolute;top: 18px; width: 60px; z-index: 1;}
-.list_wrap ul.map_ico_left li .new {background:url("new_s.png"/*tpa=http://bj.maitian.cn/Skin/img/new_s.png*/);  height: 67px; left: 11px; position: absolute; top: 1px; width: 60px;}
-.list_wrap ul.map_ico_left li .sold{background:url("sale_s.png"/*tpa=http://bj.maitian.cn/Skin/img/sale_s.png*/); height: 60px; left: 20px; position: absolute;top: 19px; width: 60px; z-index: 1;}
-.list_wrap ul.map_ico_left li .sold{background:url("wxhouse_s.png"/*tpa=http://bj.maitian.cn/Skin/img/wxhouse_s.png*/); height: 60px; left: 20px; position: absolute;top: 19px; width: 60px; z-index: 1;}
+.map_ico_left .vip-ico{background:url("../mt/imp/vip_s.png"); height: 60px; left: 20px; position: absolute;top: 18px; width: 60px; z-index: 1;}
+.list_wrap ul.map_ico_left li .new {background:url("../mt/imp/new_s.png");  height: 67px; left: 11px; position: absolute; top: 1px; width: 60px;}
+.list_wrap ul.map_ico_left li .sold{background:url("../mt/imp/sale_s.png"); height: 60px; left: 20px; position: absolute;top: 19px; width: 60px; z-index: 1;}
+.list_wrap ul.map_ico_left li .sold{background:url("../mt/imp/wxhouse_s.png"); height: 60px; left: 20px; position: absolute;top: 19px; width: 60px; z-index: 1;}
 
 /* 地图搜索框联想列表样式 */
 .map_frame .nav-wrap ul li.search_box_noBorder li {

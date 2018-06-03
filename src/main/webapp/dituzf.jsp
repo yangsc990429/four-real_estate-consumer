@@ -257,15 +257,13 @@
         }
     </style>
 
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/mt/esf_list_map.css?version=3.0.0">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/mt/esf_list_map.css-version=3.0.0.css">
     <!--[if lt IE 9]><script type="text/javascript" src="<%=request.getContextPath()%>/mt/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=d6zGANUDmor3AVuE7Iy34UCY"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9Qqgu6wUHSFzaBdUfUTHnaIStqcynhwW"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
-
-
     <script src="<%=request.getContextPath()%>/mt/Common.js"></script>
     <script>
         window.onload = function () {
