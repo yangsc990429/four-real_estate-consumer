@@ -77,7 +77,7 @@
     </div>
     <div class="login_frame details clearfix">
         <label class="go_reg">还没有麦田账号?<a onclick="ga('send', 'event', 'denglu', 'maitianzaixiandenglu', 'mashangzhuce');" href='<%=request.getContextPath()%>/zhuce.jsp'>马上注册</a></label>
-        <p><span tab="0" class="cur_tab">手机短信登录</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span tab="1">已有账号登录</span></p>
+        <p><span tab="0" class="cur_tab">手机短信登录</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<%--<span tab="1">已有账号登录</span>--%></p>
         <form id="usereForm">
            <ul class="FancyForm " style="display: block" id="ulMobileVerify">
                <li>
@@ -149,7 +149,7 @@
                 dataType:"text",
                 success:function (foul){
                     if(foul == "success"){
-                        alert("登陆成功");
+                        /*alert("登陆成功");*/
                         location.href="<%=request.getContextPath()%>/index.jsp";
 
                     }else if(foul == "mimacuowu"){

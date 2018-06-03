@@ -129,7 +129,7 @@
 <header class="maitian-header">
     <div class="nav-wrap clearfix">
         <ul class="fl">
-            <li class="logo"><a href="/index.html" onclick="ga('send', 'event', 'quanzhanyetou', 'logo', 'logo');"><img src="/Skin/img/logo.png" alt=""></a></li>
+            <li class="logo"><a href="/index.html" onclick="ga('send', 'event', 'quanzhanyetou', 'logo', 'logo');"><img src="/../mt/imp/logo.png" alt=""></a></li>
             <li class="city">
                 <div class="filter_select clearfix selectBox">
                     <a href="javascript:;" class="show">北京</a>
@@ -244,7 +244,7 @@
         <p id="lastSearchTerm"></p>
     </div>
     <ul id="SearchTips" style="top: 37px; left: 0.5px; width: 622px; position: absolute; border: 1px solid #d9d9d9; background-color: white; display: none; z-index: 3;"></ul>
-    <script type='text/javascript' src='/../mt/imp/localStorage.js'></script>
+    <script type='text/javascript' src='<%=request.getContextPath()%>/mt/imp/localStorage.js'></script>
 
 
     <div class="clear"></div>
