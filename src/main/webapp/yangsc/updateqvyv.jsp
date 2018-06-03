@@ -221,7 +221,6 @@
     </table>
 <input  type="hidden" name="id">
 </form>
-
 <script type="text/javascript">
     $.ajaxSetup( {
         //设置ajax请求结束后的执行动作
@@ -233,12 +232,14 @@
                 while (win != win.top){
                     win = win.top;
                 }
-                //将后端重定向的地址取出来,使用win.location.href去实现重定向的要求
-                /* win.location.href= XMLHttpRequest.getResponseHeader("CONTEXTPATH");*/
                 alert("你没有此权限")
+                //将后端重定向的地址取出来,使用win.location.href去实现重定向的要求
+                win.location.href= XMLHttpRequest.getResponseHeader("CONTEXTPATH");
             }
         }
     });
+</script>
+<script type="text/javascript">
     var id=0;
     id=<%=request.getParameter("id")%>;
     $("#dasda").buttonset();

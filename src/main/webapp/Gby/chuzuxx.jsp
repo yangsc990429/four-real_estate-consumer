@@ -85,9 +85,8 @@
                     <div id="tree-div" style="color:black" ></div>
                 </div>
                 <!-- 		选项卡 -->
-
+            </nav>
         </div>
-    </nav>
     <input type="hidden" value="${userid}" name="userid" >
 
     </nav>
@@ -412,7 +411,7 @@
             </div>
 
         </div>
-        <!-- /. FOOTER  -->
+    </div>    <!-- /. FOOTER  -->
         <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
         <!-- JQUERY SCRIPTS -->
         <script src="../../assets/js/jquery-1.10.2.js"></script>
@@ -441,6 +440,24 @@
         <!-- bootstrap-fileinput -->
         <script src="<%=request.getContextPath() %>/js/bootstrap-fileinput/js/fileinput.js"></script>
         <script src="<%=request.getContextPath() %>/js/bootstrap-fileinput/js/locales/zh.js"></script>
+        <script type="text/javascript">
+            $.ajaxSetup( {
+                //设置ajax请求结束后的执行动作
+                complete : function(XMLHttpRequest, textStatus) {
+                    // 通过XMLHttpRequest取得响应头，REDIRECT
+                    var redirect = XMLHttpRequest.getResponseHeader("REDIRECT");//若HEADER中含有REDIRECT说明后端想重定向
+                    if (redirect == "REDIRECT") {
+                        var win = window;
+                        while (win != win.top){
+                            win = win.top;
+                        }
+                        alert("你没有此权限")
+                        //将后端重定向的地址取出来,使用win.location.href去实现重定向的要求
+                        win.location.href= XMLHttpRequest.getResponseHeader("CONTEXTPATH");
+                    }
+                }
+            });
+        </script>
         <script>
 
 
