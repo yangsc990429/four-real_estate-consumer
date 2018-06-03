@@ -1,0 +1,109 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt,menu,table,caption,colgroup,col,thead,tbody,tfoot,tr,th,td,menu,blockquote,hr,pre,q,address,iframe,map,area,b,i,del,ins,span,a,em,strong,form,legend,fieldset,input,button,label,select,optgroup,option,textarea,object,param,var,article,aside,audio,bdi,canvas,command,datalist,details,embed,fiqure,fiqcaption,header,footer,hgroup,keyqen,mark,meter,nav,output,progress,rp,rt,ruby,section,source,summary,time,track,video{margin:0;padding:0;background:transparent;outline:0;font-size:12px;font-family:Microsoft YaHei;}
+html,body{height:100%;color:#333}
+ul,ol,li{list-style:none outside none}
+fieldset,em{border:0 none;font-style:normal}
+table{border-collapse:collapse}
+a img{border:0 none}
+a:link,a:hover,a:active,a:visited{text-decoration:none;color:#0074e4;}
+/*a:hover{text-decoration:underline}*/
+a:focus{font-style:inherit}
+p:before,p:after{display:none;content:".";font-size:0}
+input[text],input[button],input[checkbox],input[password]{background:#fff}
+input[radio],input[checkbox],input[reset],input[submit]{border:0 none}
+.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden} 
+.clearfix:after{content:".";clear:both;display:block;height:0;font-size:0}
+.cf:before,.cf:after{content:".";display:table}
+.cf:after{clear:both}
+.hide{overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;visibility:hidden}
+
+i{display:inline-block;}
+.fl{float:left;}
+.fr{float:right;}
+.mai-ico{background:url("bg-4.png"/*tpa=http://bj.maitian.cn/Skin/game/img/bg.png*/) no-repeat;}
+.font_14{font:normal 14px Microsoft YaHei;}
+.font_16{font:normal 16px Microsoft YaHei;}
+.font_18{font:normal 18px Microsoft YaHei;color:#f40;}
+.pr12{ padding-right:12px; font-style:normal;}
+/***
+	Header***/
+.maitian-header{width:100%;height:50px;background:#f86000;}
+.nav-wrap{margin:0 auto;width:1190px;height:50px;}
+.nav-wrap ul li{float:left;}
+.nav-wrap ul li.logo{margin:8px 30px 0 0;}
+.nav-wrap ul li.logo a{padding:0;line-height:0;}
+.nav-wrap ul li.logo a:hover{background:none;}
+.nav-wrap ul li a{display:inline-block;padding:0 18px;line-height:50px;color:#fff;font-size:16px;}
+.nav-wrap ul li a:hover{background:#d25202;}
+.nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:50px;color:#fff;font-size:16px;background:#e45901;}
+.nav-wrap ol{float:right;line-height:50px;font-size:14px;color:#fff;}
+.nav-wrap ol a{display:inline-block;line-height:50px;font-size:14px;color:#fff;}
+.nav-wrap ol a.yellow{color:#fedd02;}
+.nav-wrap ol span{margin-left:20px;}
+
+
+
+body{background:#fad6ac;}
+.img_1{ height:188px; background:url("9CE156776307469696285175AD65BA91_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_1.jpg*/) center no-repeat;}
+.img_2{ height:186px; background:url("A2072B54162242B191CF3CD5897988E9_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_2.jpg*/) center no-repeat;}
+.img_3{ height:159px; background:url("9D03311EC8FE409EAC5677B370C79073_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_3.jpg*/) center no-repeat;}
+.img_4{ height:210px; background:url("49596D612573456E9B689706B3F4216F_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_4.jpg*/) center no-repeat;}
+.img_5{ height:209px; background:url("5D3F03C5BF8C495F9DA1E7F6223429D7_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_5.png*/) center no-repeat;}
+.img_6{ height:161px; background:url("EA678FE350DA4EC09255DF373BA53C98_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_6.jpg*/) center no-repeat; padding:66px 0 0 555px;}
+.img_7{ height:53px; background:url("F7A8E432974F483F92833619760E8914_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_7.jpg*/) center no-repeat;}
+.main{ background:url("7F76D406B6DF4E8783C0C59C5B7E5390_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/bg1.jpg*/) center top no-repeat;}
+.QRcode{ width:1189px; margin:0 auto; padding:0 15px; background:url("75DBDB7A61A54E63822834BCB8560D31_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/bg2.png*/) center repeat-y;}
+h4.QRget{ height:49px; background:url("5869AD64D9344D90B6B332E017C1A737_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/QRget.jpg*/) center no-repeat;}
+h4.online{ height:49px; background:url("FFEFDE8F44A949B9B034B66EACDC7FAD_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/online.jpg*/) center no-repeat;}
+.list{height:209px; background:url("5D3F03C5BF8C495F9DA1E7F6223429D7_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/img_5.png*/) left no-repeat; padding:30px 84px 0 0;}
+.specil_tips{ width:460px; margin:0 auto; color:#f86000; font-size:18px; line-height:36px;}
+.specil_ico1{ width:73px; height:40px; margin-right:14px; margin-top:13px;}
+.aB{ display:inline-block;}
+.btns{ padding-right:125px; width:285px;}
+.qianggou{ width:285px; height:86px; background:url("AD3E020C784647F29857ACB882F9E7B9_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/qianggou.jpg*/) center no-repeat;}
+.btns .checkhis{ width:148px; height:23px; line-height:54px; margin-left:80px; color:#cc2a1e; font-size:18px;}
+.qr{padding:34px 0 0 83px;}
+.qr img{ width:195px; height:195px;}
+.qr p{ text-align:center; }
+.qr p.qrTit{line-height:30px; color:#e80006; font-size:20px;}
+.qr p.qrTit span{ font-size:12px;}
+.qr p img{ width:108px; height:28px; padding:10px 0;}
+.qr li{ width:195px; padding-right:222px; float:left;}
+.rules{ padding:40px 0 40px 83px; color:#9b4b10; width:680px;}
+.rules dt{ font-size:16px; line-height:28px; font-weight: bold;}
+.rules dd{ font-size:14px; line-height:28px;}
+#gun{ overflow:hidden; position:absolute; left:0; width:350px;height:150px; padding:15px 0 15px 18px;}
+#gundiv{position:relative;width:350px; border:1px solid #dcc2a1; height:150px; overflow:hidden; background:#fbdeba; margin:0 auto;}
+#gun li{ height:30px; line-height:30px; color:#9b4b10;}
+
+
+/* 弹框 */
+
+.pop{ background:url("0EC6A42D1F6B40D58A718E35215F8792_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/popBg.png*/) no-repeat;}
+.popTop,.popBot{ width:650px; height:24px;}
+.popTop{ background-position:left top;}
+.popMain{ background-position:center top;background-repeat:repeat-y;}
+.popBot{ background-position:right top;}
+h5.popTit{ padding-left:38px; height:33px; line-height:32px; color:#fff437; font-family: "黑体"; font-size:24px;}
+.hisList{ background:#f0b47e; margin:12px 0 0 42px; border-collapse:separate;}
+.hisList th,.hisList td{ height:34px; text-align: center; background: #e71f1f;}
+.hisList th{ color:#fff437; font-size:14px;}
+.hisList td{ color:#fff; font-size:12px;}
+.tit{ line-height:36px; color:#fff437; font-size:24px; font-family:"黑体";text-align: center;}
+.tip{ line-height:24px; color:#fff437; font-size:18px; font-family:"黑体"; width:380px;text-align: center;}
+a.btn{ width:225px; height:42px; margin:12px 0 0 30px; display:block; text-align:center; line-height:42px; color:#fff437; font-family:"微软雅黑"; font-size:18px; background:url("C583C0B169FD4830BD065A255A3D8CC0_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/btn.gif*/) no-repeat;}
+.btn:hover{ text-decoration:none;}
+.historypop{display:none; width:650px; position:absolute; top:0; left:0; z-index:1000; }
+#mask{ display:none; position:absolute; top:0; left:0; z-index:999; width:100%; height:100%; background:#000; opacity:0.7; filter:alpha(opacity=70);}
+.close{ display:block; width:37px; height:37px; background:url("close-2.png"/*tpa=http://bj.maitian.cn/Skin/game/img/close.png*/) no-repeat; position:absolute; right:-6px; top:-6px;}
+.nochanceCont{ padding-left:204px; min-height:100px;}
+.nochance .nochanceCont{ background:url("965B406ADC1F418E888A0E0DBAD285B9_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/nochance.png*/) 80px 0 no-repeat;}
+.center .btn{ margin-left:35px;}
+p.h2{ line-height:48px; font-size:36px; font-family:"黑体";width:360px; color:#fff437;}
+.getCont{ margin:-31px 0 0 -53px; background:url("150379DD5DB54CE3BC9BE7CA0F27D543_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/get.png*/) no-repeat; padding-left:141px;}
+.getCont .tit{ font-size:30px; width:360px; line-height:48px;}
+.get .btn{ margin-left:60px;  margin-top:20px;}
+.iWatch{ position:absolute; top:80px; left:87px;}
+.tit1{ font-size:24px; color:#fff437; font-family:"微软雅黑";}
+.nochance .nogetCont{background:url("C813FF5F3331459BA9717EEEB6965E18_364X272-1.jpg"/*tpa=http://bj.maitian.cn/Skin/game/img/noget.png*/) no-repeat;}

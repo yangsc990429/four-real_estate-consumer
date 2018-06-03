@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/upgrade_400.css">
+</head>
+
+<body class="website_bg">
+<div class="website_upgrade">
+ <div class="upgrade">
+ <p>网站升级中...</p>
+ <dd>攻城狮vs程序猿正在全力以赴，
+以最快的速度响应修复!</dd>
+  <a href="http://www.maitian.cn">返回首页></a>
+ </div>
+</div>
+</body>
+</html>

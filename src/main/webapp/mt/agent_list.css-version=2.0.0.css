@@ -1,0 +1,165 @@
+﻿@charset "utf-8";
+/* esf_list CSS Document */
+.esf_list{position:relative;margin:0 auto;width:1130px;}
+.list_left{position:relative;width:1130px;background:#fff;}
+.nav_fixed{position:fixed;top:0px;}
+
+/***
+	condition***/
+.condition{width:1128px;border:1px solid #eaeaea;padding:0 0 16px;}.channel_nav{height:38px;}
+.channel_nav ul{ height:38px;}
+.channel_nav ul li{float:left;}
+.channel_nav ul li a{position:relative;width:106px;display:inline-block;font-size:14px;line-height:38px;color:#333;text-align:center;border:1px solid #eaeaea;border-width:1px 0 0px 1px;}
+.channel_nav ul li a.last{ border-right:1px solid #eaeaea;}
+.channel_nav ul li a:hover{color:#f56140}
+/*.channel_nav ul li a:hover{margin-top:-1px;border-top:2px solid #0074e4;line-height:36px;height:38px;color:#0074e4;border-bottom:none}
+*/.channel_nav ul li a i{display:none;}
+.channel_nav ul li a:hover i{display:block;position:absolute;left:50%;margin-left:-5px;bottom:0;display:inline-block;width:0;height:0;border-left:5px solid #f9f9f9;border-right:5px solid #f9f9f9;border-bottom:5px solid #0074e4;}
+.channel_nav ul li a.bg{border-top:2px solid #f56140;line-height:36px;height:38px;color:#f56140;border-bottom:none; background:#fff;}
+
+
+.filter_options{margin-top:13px;}
+.filter_options ol{padding:1px;}
+/*.filter_options:hover ol{position:relative;z-index:99;padding:0 0 0 0;border:solid #fff;border-width:1px 0 1px 1px;border-right:1px solid #fff;width:316px;}*/
+.filter_options label{float:left;margin:4px 0;width:77px;padding-left:20px;}
+.filter_options label.one{margin-top:10px;}
+.filter_options label a:link,.filter_options label a:visited{display:inline-block;margin:0 4.5px;padding:0 2px;height:18px;line-height:18px;color:#333;}
+.filter_options label a:hover{background:#f56140;color:#fff;}
+.filter_options label a.bg{padding:0 2px;display:inline-block;background:#f56140;color:#fff;}
+.filter_options ul{float:left;}
+.filter_options ul li{float:left;margin:4px 0;}
+.filter_options ul.three li{float:left;margin:4px 0;width:76px;}
+.filter_options ul a:link,.filter_options ul a:visited{display:inline-block;margin:0 4.5px;padding:0 2px;height:18px;line-height:18px;color:#333;}
+.filter_options ul a:hover{background:#f56140;color:#fff;}
+.filter_options ul a.bg{padding:0 2px;display:inline-block;background:#f56140;color:#fff;}
+
+.filter_options .panesa{display:none;}
+/*.filter_options:hover .panesa{display:block;}*/
+.filter_options .panex{display:none;position:relative;padding:4px 0 4px 56px;border:1px solid #eaeaea;background:#fff;width:1010px; margin-left:36px;}
+.filter_options .panex .quyu_shangquan{padding:4px 0; float:left;}
+.filter_options .panex .quyu_shangquan span{display:inline-block;margin:6px 16px 0 20px;background:#f86000;width:14px;height:14px;line-height:14px;text-align:center;color:#fff;font-weight:bold;}
+.filter_options .panex .quyu_shangquan a{line-height:24px;margin-right:10px;white-space:nowrap;color:#333; white-space:nowrap;}
+/*.filter_options .panex .quyu_shangquan a:hover{color:#f56140;}*/.filter_options .panex .quyu_shangquan a.bg{color:#fff;background:#f56140; padding:0 2px;}
+.filter_options .panex .no_restrictions{position:absolute;top:12px;left:25px;}
+.filter_options .panex .close_ch{position:absolute;top:-4px;right:0px;line-height:20px;}
+.filter_options .panex .close_ch a{font-size:24px;color:#e2e2e2;}
+
+/***
+	list-right***/
+.list_right{width:1130px;}
+.screening{padding-left:20px;height:38px;background:#f9f8f8;border:1px solid #eaeaea;margin: 30px 0 0 0;}
+.screening ul li{position:relative;float:left;line-height:38px;font-size:14px;color:#555;height: 38px;}
+.screening ul li a{display:inline-block;padding:0 21px;height:38px;color:#555;font:normal 14px/38px Microsoft YaHei;}
+.screening ul li a:hover{padding:0 20px;height:39px;border:solid #eaeaea;border-width:0 1px;color:#f56140;}
+.screening ul li a.bg:link,.screening ul li a.bg:hover,.screening ul li a.bg:visited,.screening ul li a.bg:active{background:#fff;padding:0 20px;height:39px;border:solid #eaeaea;border-width:0 1px;color:#f56140;}
+.screening ul li a i{display:inline-block;margin:3px 0 0 5px;width:7px;height:8px;background-position:-488px -40px;vertical-align:middle;}
+.screening ul li a i.up{background-position:-497px -40px;}
+.screening p{float:right;padding-right:15px;color:#555;line-height:38px;}
+.screening p span{margin:0 4px;color:#f50;}
+.screening label{float:right;}
+.screening label a.list:link{display:inline-block;width:42px;height:38px;background-position:-408px -144px;}
+.screening label a.list_gay:link{display:inline-block;width:42px;height:38px;background-position:-456px -144px;}
+.screening label a.map:link{display:inline-block;width:40px;height:38px;background-position:-504px -144px;}
+.screening label a.map_gay:link{display:inline-block;width:40px;height:38px;background-position:-552px -144px;}
+
+.list_wrap ul li{position:relative;padding:30px 0; border-bottom:1px dotted #ddd;overflow:hidden;}
+.list_wrap ul li:hover{background:#edf4fb;}
+.list_wrap ul li .agent_man dl{float:left;width:120px;text-align:center;}
+.list_wrap ul li .agent_man dl dt{position:relative;}
+.list_wrap ul li .agent_man dl dt img{float:left;padding:4px;width:110px;height:149px;border:1px solid #e0e0e0; padding:4px;}
+.list_wrap ul li .sold{position:absolute;top:0px;left:0;display:inline-block;width:76px;height:75px;background-position:-750px -583px;}
+.list_wrap ul li .agent_man dl dd label{display:inline-block;margin:2px 2px 0;width:12px;height:12px;background-position:-113px -24px;vertical-align:middle;}
+.list_wrap ul li .agent_man dl dd label.gary{background-position:-128px -24px;}
+.list_wrap ul li .agent_man dl dd label.half{background-position:-113px -39px;}
+.list_wrap ul li .agent_man ol{float:left;padding-left:20px;width:700px;}
+.list_wrap ul li .agent_man ol li{padding:0;width:720px;border:none;background:none;line-height:26px;font-size:14px;}
+.list_wrap ul li .agent_man ol li a{font-size:18px;margin-right:15px;}
+.list_wrap ul li .agent_man ol li a.font12{font-size:14px;margin-right:0;}
+.list_wrap ul li .agent_man ol li kbd{color:#f40;font:normal 14px Microsoft YaHei;}
+.list_wrap ul li .agent_man ol li.characteristics{padding:12px 0 13px;}
+.list_wrap ul li .agent_man ol li.characteristics label{width:73px;display:inline-block;margin-right:7px;border-radius:3px;line-height:24px;}
+.list_wrap ul li .agent_man ol li.characteristics label i{display:inline-block;margin:0 4px 0 0;width:19px;height:19px;vertical-align:middle;}
+.list_wrap ul li .agent_man ol li.characteristics label span{line-height:24px;vertical-align:middle;}
+.list_wrap ul li .agent_man ol li.characteristics label.flower{border:1px solid #cae3e6;color:#3d9ba9;}/**音乐艺术**/
+.list_wrap ul li .agent_man ol li.characteristics label.flower i{margin:5px 0 0 3px;background-position:-408px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.food{border:1px solid #faded4;color:#f3855d;}/**美食达人**/
+.list_wrap ul li .agent_man ol li.characteristics label.food i{margin:3px 0 0 5px;background-position:-440px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.shoot{border:1px solid #d0daef;color:#5982ed;}/**摄影发烧**/
+.list_wrap ul li .agent_man ol li.characteristics label.shoot i{margin:5px 0 0 3px;background-position:-464px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.geomancy{border:1px solid #e7e0c6;color:#ac8942;}/**擅长风水**/
+.list_wrap ul li .agent_man ol li.characteristics label.geomancy i{margin:2px 3px 0 1px;background-position:-488px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.smallqu{border:1px solid #c8ddf2;color:#328adf;}/**小区达人**/
+.list_wrap ul li .agent_man ol li.characteristics label.smallqu i{margin:4px 1px 0 3px;background-position:-520px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.decorate{border:1px solid #cbeadb;color:#3da975;}/**装修达人**/
+.list_wrap ul li .agent_man ol li.characteristics label.decorate i{margin:0 1px 0 3px;background-position:-552px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.english{border:1px solid #9972ce;color:#8c5ecc;}/**外语交流**/
+.list_wrap ul li .agent_man ol li.characteristics label.english i{margin:4px 1px 0 3px;background-position:-576px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.health{border:1px solid #ff7449;color:#fd5c2a;}/**中医养生**/
+.list_wrap ul li .agent_man ol li.characteristics label.health i{margin:4px 1px 0 3px;background-position:-600px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.travel{border:1px solid #91ca6f;color:#46ba00;}/**旅行驴友**/
+.list_wrap ul li .agent_man ol li.characteristics label.travel i{margin:4px 1px 0 3px;background-position:-624px -192px;}
+.list_wrap ul li .agent_man ol li.characteristics label.film{border:1px solid #6d939b;color:#26606c;}/**电影杂家**/
+.list_wrap ul li .agent_man ol li.characteristics label.film i{margin:4px 3px 0 3px;background-position:-408px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.hairdressing{border:1px solid #cf4464;color:#c61d44;}/**美容瘦身**/
+.list_wrap ul li .agent_man ol li.characteristics label.hairdressing i{margin:0 0 0 3px;background-position:-439px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.literature{border:1px solid #a29825;color:#a29825;}/**文学才子**/
+.list_wrap ul li .agent_man ol li.characteristics label.literature i{margin:2px 1px 0 3px;background-position:-464px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.clothing{border:1px solid #ed92df;color:#e872d6;}/**穿衣搭配**/
+.list_wrap ul li .agent_man ol li.characteristics label.clothing i{margin:6px 1px 0 3px;background-position:-488px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.fitness{border:1px solid #52b197;color:#2aa080;}/**健身教练**/
+.list_wrap ul li .agent_man ol li.characteristics label.fitness i{margin:4px 0 0 3px;background-position:-520px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.household{border:1px solid #a4684b;color:#a24e25;}/**家居搭配**/
+.list_wrap ul li .agent_man ol li.characteristics label.household i{margin:4px 0 0 3px;background-position:-552px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.investment{border:1px solid #e3a02d;color:#e3a02d;}/**投资理财**/
+.list_wrap ul li .agent_man ol li.characteristics label.investment i{margin:2px 1px 0 2px;background-position:-590px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.district{border:1px solid #f93333;color:#ea1515;}/**学区专家**/
+.list_wrap ul li .agent_man ol li.characteristics label.district i{margin:5px 2px 0 2px;background-position:-624px -213px;}
+.list_wrap ul li .agent_man ol li.characteristics label.business{border:1px solid #37569e;color:#0f358d;}/**优质商业**/
+.list_wrap ul li .agent_man ol li.characteristics label.business i{margin:2px 0 0 5px;background-position:-600px -240px;}
+.list_wrap ul li .agent_man ol li.characteristics label.financing{border:1px solid #85714e;color:#85714e;}/**融资担保**/
+.list_wrap ul li .agent_man ol li.characteristics label.financing i{margin:5px 2px 0 3px;background-position:-622px -240px;}
+.list_wrap ul li .agent_man ol li.characteristics label.specialist{border:1px solid #2295b2;color:#2295b2;}/**后期专家**/
+.list_wrap ul li .agent_man ol li.characteristics label.specialist i{margin:5px 2px 0 3px;background-position:-600px -264px;}
+
+.list_wrap ul li .agent_man ol li.font12{font-size:12px;color:#555;}
+.list_wrap ul li .agent_man ol li.top{padding-bottom:6px;}
+.list_wrap ul li .four_title{position:absolute;top:60px;right:0;}
+.list_wrap ul li .four_title dl dd{float:left;padding:0 15px;font-size:14px;text-align:center;color:#555;line-height:24px;border-right:1px solid #e6e6e6;}
+.list_wrap ul li .four_title dl dd.none{border:none}
+.list_wrap ul li .four_title dl dd span{font-size:20px;}
+
+
+
+
+/* 房顾 */
+.agents_photo{ display:block; position:relative; width:106px; height:147px; padding:4px; border:1px solid #ddd;}
+.agents_photo .agent_logo{width:106px; padding-top:5px; position:absolute; left:4px; bottom:4px; height:17px; text-align:center; vertical-align:middle; background:url("mask.png"/*tpa=http://bj.maitian.cn/Skin/img/mask.png*/);}
+.agents_photo .agent_logo img{ width:65px; height:12px;}
+.agent_info .agent_phone_num{ padding-left:22px; font-size:14px;  color:#f56140; background:url("phone_icon.png"/*tpa=http://bj.maitian.cn/Skin/img/phone_icon.png*/) left center no-repeat;}
+
+
+/* 福厦房顾星级 */
+.agent_star_box{ padding-top:2px; width:192px; padding-bottom:4px;}
+.agent_star{ display:inline-block; width:14px; height:13px; background:url("agent_star.png"/*tpa=http://bj.maitian.cn/Skin/img/agent_star.png*/) left top no-repeat; margin-right:2px;margin-right:1px\9;}
+.agent_star_light{background:url("agent_star.png"/*tpa=http://bj.maitian.cn/Skin/img/agent_star.png*/) left bottom no-repeat;}
+
+.list_wrap ul li .agents_photo img{  width:106px; height:147px;}
+.list_wrap ul li .agents_photo .agent_logo img{ width:65px; height:12px; float:none;}
+
+.sale_points_author{ padding-left:30px; width:428px;}
+.sale_points_author h6{ font-size:12px; font-weight:normal; color:#999;}
+.sale_points_author h6 a{ font-size:20px; padding-right:10px;}
+.sale_points_author h6 span{ margin-left:10px; font-size:20px; font-weight:bold; padding-left:20px;}
+.sale_points_author p,.sale_points_author span{ line-height:27px; font-size:16px; color:#333;}
+.sale_points_list p{ float:left; text-align:center; width:185px; font-size:12px; color:#999; line-height:23px; padding-top:52px;}
+.sale_points_list p span{ font-size:22px; color:#666; display:block;}
+
+
+/* 北京特有样式 */
+.bj_agent_list .sale_points_list p{ width:139px;}
+.bj_agent_list .sale_points_author span a{ font-size:16px;}
+
+
+.sale_points_author p.way_report { margin-top:6px;}
+.sale_points_author p.way_report span { display:block; font-size:12px; color:#999; line-height:16px;}
+.sale_points_author p.way_report span.way_report_info{color:#666; width:422px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; line-height:26px;}

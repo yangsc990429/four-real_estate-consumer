@@ -95,6 +95,9 @@
 <script src="<%=request.getContextPath()%>/css/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/css/js/modernizr.min.js"></script>
 <script type="text/javascript">
+
+
+
 function userlogin(){
 
     $.ajax({

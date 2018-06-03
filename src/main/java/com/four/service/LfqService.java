@@ -72,4 +72,12 @@ public interface LfqService {
     Huijin queryhyrenzhengshenhe(String id);
 
     void updatejqglhui(Huijin hj);
+
+    String fasongyzm(String phone);
+
+    void zhuceuser(User user);
+
+    String querydengluuser(User user);
+
+    User queryuserjbzil(String name);
 }

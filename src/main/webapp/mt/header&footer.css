@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+/*
+* @author: song
+* @description: MTFOOTER
+* @time: 2017-08-28
+*/
+
+body{ min-width: 1150px;}
+.wrapper{ width: 1150px; margin: 0 auto;}
+.wrapper2{ width: 1150px; margin: 0 auto; padding-right:64px;}
+.fl{ float: left;}
+.fr{ float: right;}
+.clearFix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearFix {zoom: 1;}
+/*footer*/
+.footer{background:#4c4b4b!important;}
+.website-map{ padding:32px 0 20px;
+    line-height:14px;}
+.hot-list-wrap li,.website-map li{ padding:0px 10px; margin:4px 0; border-right:2px solid #d6d6d6; float:left;}
+.hot-list-wrap li{ margin:8px 0;}
+.website-map{margin-left:-10px;}
+.hot-list-wrap li:last-child,.website-map li:last-child{border-right:0;}
+.hot-list-wrap li a,.website-map li a{ font-size:14px; color:#d6d6d6; line-height:14px;  white-space:nowrap;}
+.footer-left {
+    width:740px;
+}
+.hot-list-title li{float:left; width:130px;height:34px;line-height:34px;
+    text-align: center;
+    font-size:14px; color:#888; cursor:pointer;margin-right:14px; background-color:#333;}
+.hot-list-title li:first-child{color:#fff}
+.hot-list-wrap{ display:none; margin:20px 0 28px -10px; height:120px;}
+.hotline{ width:288px;height:103px; border:2px solid #6f6f6f; margin-top:62px; color:#f66f51; text-align: center;}
+.hotline h6{font-size:24px; width:122px; background-color:#4c4b4b;height:24px; line-height:24px; margin: -12px auto 0;}
+.hotline p{ font-size:28px; font-weight:bold; line-height:80px;}
+.footer-line{background:#333;}
+.footer-line .wrapper{height:55px; line-height:55px; color:#d6d6d6;}
+
+

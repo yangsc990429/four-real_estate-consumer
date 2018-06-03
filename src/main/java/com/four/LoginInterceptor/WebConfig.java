@@ -36,6 +36,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 "classpath:/Images/");
         registry.addResourceHandler("/yangsc/Images/**").addResourceLocations(
                 "classpath:/yangsc/Images/");
+        registry.addResourceHandler("/mt/**").addResourceLocations(
+                "classpath:/mt/");
         super.addResourceHandlers(registry);
 
     }
@@ -50,7 +52,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
 
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/lfq/addmokuai", "/yangsc/querymokuai", "/lfq/queryuser", "/lfq/querytree", "/js/**", "/yangsc/Images/**",
-                "/Images/**", "/yangsc/Css/**","/ftmp_183_ma/**", "/Fc/**", "/yangsc/ditu.html", "/bootstrap/**", "/assets/**", "/css/**");
+                "/Images/**", "/yangsc/Css/**","/ftmp_183_ma/**", "/Fc/**", "/yangsc/ditu.html", "/bootstrap/**", "/assets/**", "/css/**","/mt/**","/qt/**");
         super.addInterceptors(registry);
     }
 }
