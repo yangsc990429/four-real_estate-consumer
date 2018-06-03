@@ -23,8 +23,8 @@
 .dezxails ol{margin-top:15px;height:37px;padding:18px 0 0 135px;background:#ededed;}
 .dezxails ol li{float:left;}
 .dezxails ol li a{font-size:14px;color:#000;line-height:22px;}
-.dezxails ol li i{display:inline-block;width:15px;height:16px;background:url("QQ.png"/*tpa=http://bj.maitian.cn/Skin/member/images/QQ.png*/) no-repeat;vertical-align:middle;}
-.dezxails ol li i.sina{display:inline-block;margin:-2px 4px 0 25px;width:16px;height:16px;background:url("sina.png"/*tpa=http://bj.maitian.cn/Skin/member/images/sina.png*/) no-repeat;vertical-align:middle;}
+.dezxails ol li i{display:inline-block;width:15px;height:16px;background:url("../mt/imp/QQ.png") no-repeat;vertical-align:middle;}
+.dezxails ol li i.sina{display:inline-block;margin:-2px 4px 0 25px;width:16px;height:16px;background:url("../mt/imp/sina.png") no-repeat;vertical-align:middle;}
 .FancyF li i{position:absolute;top:39px;left:5px;width:14px;height:18px;background-position:-792px -504px;z-index:999;}
 .FancyF li i.password{left:6px;background-position:-824px -504px;*+background-position:-824px -500px;}
 .FancyF li i.red_star{top:46px;left:14px;background-position:-832px -544px;}
@@ -33,7 +33,7 @@
 .FancyF input{position:relative;margin:9px 0 17px;padding-left:5%;width:95%;height:38px;line-height:38px;border-radius:5px;color:#000;}
 .FancyF label{position:absolute;z-index:2;top:39px;left:24px;display:block;color:#BCBCBC;cursor:text;font-size:14px;}
 .FancyF .val label{left:-9999px;opacity:0!important;filter:alpha(opacity="0")!important;}
-.FancyF input[type=text],.FancyF input[type=password],.FancyF textarea{position:relative;z-index:3;display:block;width:87.5%;background:url("404.html-aspxerrorpath=-404.html"/*tpa=http://bj.maitian.cn/Skin/member/images/transparent_bg2.png*/);border:1px solid #eaeaea;}
+.FancyF input[type=text],.FancyF input[type=password],.FancyF textarea{position:relative;z-index:3;display:block;width:87.5%;background:url("../mt/imp/404.html-aspxerrorpath=-404.html");border:1px solid #eaeaea;}
 .FancyF input[type=text]:focus+label,.FancyF input[type=password]:focus+label,.FancyF textarea:focus+label{opacity:.5;filter:alpha(opacity="50");}
 .FancyF textarea{min-height:3.95em;line-height:1.3}
 .FancyF .fff{width:390px;position:absolute;z-index:1;top:28px;right:0;left:0;height:38px;line-height:38px;background-color:#fff;
@@ -72,7 +72,7 @@ i{display:inline-block;}
 .fl{float:left;}
 .f1{float:left;}
 .fr{float:right;}
-.mai-ico{background:url("bg-2.png"/*tpa=http://bj.maitian.cn/Skin/img/bg.png*/) no-repeat;}
+.mai-ico{background:url("../mt/imp/bg-2.png") no-repeat;}
 .font_14{font:normal 14px Microsoft YaHei;}
 .font_16{font:normal 16px Microsoft YaHei;}
 .font_18{font:normal 18px Microsoft YaHei;color:#f40;}
@@ -85,7 +85,7 @@ i{display:inline-block;}
 .nav-wrap ul li{float:left;margin-right: 1px;height:60px;}
 .nav-wrap ul li.city{margin:15px 0px 0 20px; height:30px;}
 .nav-wrap ul li.city:hover{background:none}
-.nav-wrap ul li.city a.show {display: block; width: 51px; height: 30px; background: url("header_city-1.png"/*tpa=http://bj.maitian.cn/Skin/img/header_city.png*/); padding:0 0 0 9px; color: #fff;}
+.nav-wrap ul li.city a.show {display: block; width: 51px; height: 30px; background: url("../mt/imp/header_city-1.png"); padding:0 0 0 9px; color: #fff;}
 .nav-wrap ul li.city .filter_sel{ width:60px; height:105px;}
 .nav-wrap ul li.city .filter_select{ margin-right:0;}
 .nav-wrap ul li.city .filter_sel li{ float: none; }
@@ -96,7 +96,7 @@ i{display:inline-block;}
 .nav-wrap ul li.logo a:hover,.nav-wrap ul li.logo:hover{background:none;}
 .nav-wrap ul li a{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px; height:60px;}
 .nav-wrap ul li a:hover{}
-.nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px;background:url("header_sel_bg-2.png"/*tpa=http://bj.maitian.cn/Skin/img/header_sel_bg.png*/) repeat;}
+.nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px;background:url("../mt/imp/header_sel_bg-2.png") repeat;}
 .nav-wrap .about a.none {display: none};
 .nav-wrap .about{height:60px;color:#fff;font-size:14px}
 .nav-wrap .about p{padding-top:11px;padding-bottom:5px;}
@@ -107,7 +107,7 @@ i{display:inline-block;}
 .nav-wrap .about .reg{padding-right:24px}
 .nav-wrap .about h3{display:block;font-weight:normal;color: #fff}
 
-.header_select .filter_select em{ top:28px;background: url("arrow_drop2-1.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_drop2.png*/) no-repeat;}
+.header_select .filter_select em{ top:28px;background: url("../mt/imp/arrow_drop2-1.png") no-repeat;}
 .nav-wrap ul li.header_select a.show{padding:0 4px 0 18px;display:inline-block;line-height:60px;color:#fff;font-size:16px; height:60px;}
 .header_select .filter_select .filter_sel{ top:56px; height:100px; width:80px;}
 .header_select .filter_select .filter_sel li{
@@ -125,7 +125,7 @@ i{display:inline-block;}
 .city .selectBox{ padding-right:16px;}
 .filter_select {position: relative;display: inline-block; padding-right:28px; *zoom: 1;*display: inline;height:30px;text-align: center;font-weight: normal;}
 .filter_select .show{float: left; height:30px; overflow: hidden; padding:0 2px; font-size: 16px;text-align: left; line-height:30px; font-size:12px; color:#333;}
-.filter_select em {    position: absolute;    top:13px;    right:14px;    width: 10px;    height: 6px;    background: url("arrow_drop-2.png"/*tpa=http://bj.maitian.cn/Skin/img/arrow_drop.png*/) no-repeat;}
+.filter_select em {    position: absolute;    top:13px;    right:14px;    width: 10px;    height: 6px;    background: url("../mt/imp/arrow_drop-2.png") no-repeat;}
 .filter_sel {position: absolute;top:30px;left: 0px;width: 100px;height: 200px;border: 1px solid #ededed;box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);border-radius: 5px;background: #fff;z-index: 9999;display: none;overflow: hidden;}
 .filter_sel ul li {display: block;height: 35px; line-height:35px;font-size: 14px;color: #666;overflow: hidden;text-align: left;background: #fff;cursor: pointer;padding-left: 15px;}
 .filter_sel .active {background: #f78166;color: #fff;}
@@ -198,7 +198,7 @@ i{display:inline-block;}
     padding-left: 10px;
     width: 613px;}
 .so_search input.txt_agent{float:left;margin-right:10px;padding-left:10px;width:651px;height:35px;line-height:35px;border:1px solid #d9d9d9;border-radius:3px;color:#999;}
-.so_search input.but{background: #f56140 url("bg-2.png"/*tpa=http://bj.maitian.cn/Skin/img/bg.png*/) no-repeat scroll -309px 8px; border: none; border-radius: 0 5px 5px 0;cursor: pointer; float: left;height: 37px; width: 62px;}
+.so_search input.but{background: #f56140 url("../mt/imp/bg-2.png") no-repeat scroll -309px 8px; border: none; border-radius: 0 5px 5px 0;cursor: pointer; float: left;height: 37px; width: 62px;}
 .so_search label{position:relative;float:left;display:inline-block;width:27px;height:35px;border:solid #d9d9d9;border-width:1px 1px 1px 0;border-top-right-radius:3px;border-bottom-right-radius:3px;cursor:pointer;margin-right:13px;}
 .so_search .dingding .xuxu,.so_search label kbd{display:none;}
 .so_search .dingding:hover .xuxu{display:block;position:absolute;top:35px;left:500px;padding:1px;width:auto;border:1px solid #e3e2e1;background:#fff;box-shadow:0 0 10px #d2d1d0;-webkit-box-shadow:0 0 10px #d2d1d0;-moz-box-shadow:0 0 10px #d2d1d0;}
@@ -288,10 +288,10 @@ i{display:inline-block;}
 
 
 /*IM*/
-.IM_btn i,.sale_points_author h6 span.IM_btn i{display:inline-block;margin:-3px 5px 0;width:17px;height:16px;background:url("maitianim_btn-1.png"/*tpa=http://bj.maitian.cn/Skin/img/imgV2/maitianim_btn.png*/);vertical-align:middle;}
+.IM_btn i,.sale_points_author h6 span.IM_btn i{display:inline-block;margin:-3px 5px 0;width:17px;height:16px;background:url("../mt/imp/maitianim_btn-1.png");vertical-align:middle;}
 .hc_right .IM_btn,.IM_btn,.sale_points_author h6 span.IM_btn{ vertical-align:middle;padding-left:0!important;width:76px; background:#f66f51; height:32px; font:normal 16px/32px Arial;border-radius:3px;color:#fff!important;display:inline-block;text-align:center;cursor:pointer;overflow:hidden; }
 .hc_right span.IM_btn{margin-top:10px;}
 .IM_btn_min .IM_btn,.sale_points_author h6.IM_btn_min .IM_btn{width:63px!important;height:26px!important;font:normal 14px/26px Arial!important;}
 .IM_btn_min .IM_btn i,.sale_points_author h6.IM_btn_min .IM_btn i{margin:-1px 3px 0 0;}
 .sale_points_author h6 span{vertical-align:middle;}
-.IM_btn_a{display:inline-block;margin:0px 5px 0;width:18px;height:16px;background:url("maitianim.png"/*tpa=http://bj.maitian.cn/Skin/img/imgV2/maitianim.png*/);vertical-align:middle;}
+.IM_btn_a{display:inline-block;margin:0px 5px 0;width:18px;height:16px;background:url("../mt/imp/maitianim.png");vertical-align:middle;}

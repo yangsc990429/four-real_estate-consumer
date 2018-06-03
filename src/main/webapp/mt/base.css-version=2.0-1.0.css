@@ -16,10 +16,7 @@
 .dezxails dl dd{font-size:14px;}
 .dezxails dl dd a{font-size:14px;color:#333;}
 .dezxails dl dd a.red{color:#f40;}
-.dezxails dl dd input{margin:-3px 10px 0 0;*margin-top:0;vertical-align:middle;}
-/*
 .dezxails dl dd input{margin:-3px 10px 0 0;*+margin-top:0;vertical-align:middle;}
-*/
 .dezxails samp{margin-left:90px;text-align:center;}
 .dezxails samp a{display:inline-block;width:282px;height:42px;background:#ff4400;line-height:42px;font-size:18px;color:#fff;border-radius:3px;}
 .dezxails samp a:hover{background:#fd5b0c;}
@@ -29,10 +26,7 @@
 .dezxails ol li i{display:inline-block;width:15px;height:16px;background:url("../mt/imp/QQ.png") no-repeat;vertical-align:middle;}
 .dezxails ol li i.sina{display:inline-block;margin:-2px 4px 0 25px;width:16px;height:16px;background:url("../mt/imp/sina.png") no-repeat;vertical-align:middle;}
 .FancyF li i{position:absolute;top:39px;left:5px;width:14px;height:18px;background-position:-792px -504px;z-index:999;}
-.FancyF li i.password{left:6px;background-position:-824px -504px;*background-position:824px 500px;}
-/*
 .FancyF li i.password{left:6px;background-position:-824px -504px;*+background-position:-824px -500px;}
-*/
 .FancyF li i.red_star{top:46px;left:14px;background-position:-832px -544px;}
 .FancyF li .sendm{position:absolute;top:35px;right:-15px;z-index:10;}
 .FancyF li .sendm a{display:inline-block;width:96px;height:26px;line-height:26px;background-position:-712px -544px;color:#000;text-align:center;}
@@ -68,7 +62,7 @@ input[text],input[button],input[checkbox],input[password]{background:#fff}
 input[radio],input[checkbox],input[reset],input[submit]{border:0 none}
 textarea{ resize:none;}
 .clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden} 
-/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/
+/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/ 
 .clearfix:after{content:".";clear:both;display:block;height:0;font-size:0}
 .cf:before,.cf:after{content:".";display:table}
 .cf:after{clear:both}
@@ -103,7 +97,7 @@ i{display:inline-block;}
 .nav-wrap ul li a{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px; height:60px;}
 .nav-wrap ul li a:hover{}
 .nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px;background:url("../mt/imp/header_sel_bg.png") repeat;}
-.nav-wrap .about a.none {display: none}
+.nav-wrap .about a.none {display: none};
 .nav-wrap .about{height:60px;color:#fff;font-size:14px}
 .nav-wrap .about p{padding-top:11px;padding-bottom:5px;}
 .nav-wrap .about a{float:right;display:inline-block;color:#fff}
@@ -208,10 +202,7 @@ i{display:inline-block;}
 .so_search label{position:relative;float:left;display:inline-block;width:27px;height:35px;border:solid #d9d9d9;border-width:1px 1px 1px 0;border-top-right-radius:3px;border-bottom-right-radius:3px;cursor:pointer;margin-right:13px;}
 .so_search .dingding .xuxu,.so_search label kbd{display:none;}
 .so_search .dingding:hover .xuxu{display:block;position:absolute;top:35px;left:500px;padding:1px;width:auto;border:1px solid #e3e2e1;background:#fff;box-shadow:0 0 10px #d2d1d0;-webkit-box-shadow:0 0 10px #d2d1d0;-moz-box-shadow:0 0 10px #d2d1d0;}
-.so_search .dingding:hover .xuxu ul li.red{padding:0;height:33px;background:#f86000;line-height:33px;color:#fff;text-indent:6px;font-family:Microsoft YaHei;cursor:default;border:none;*position:absolute;*left:0;*right:0;}
-/*
 .so_search .dingding:hover .xuxu ul li.red{padding:0;height:33px;background:#f86000;line-height:33px;color:#fff;text-indent:6px;font-family:Microsoft YaHei;cursor:default;border:none;*+position:absolute;*+left:0;*+right:0;}
-*/
 .so_search .dingding:hover .xuxu ul li{width:auto;border-bottom:1px dashed #f8f7f7;}
 .so_search .dingding:hover .xuxu ul li a{display:inline-block;padding:0 5px;line-height:31px;color:#888;}
 .so_search .dingding:hover .xuxu ul li a i{display:inline-block;width:0;height:0;border-top:5px solid #fff;border-left:5px solid #d7cecb;border-right:5px solid #fff;border-bottom:5px solid #fff;vertical-align:middle;}

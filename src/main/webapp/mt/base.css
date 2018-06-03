@@ -23,8 +23,8 @@
 .dezxails ol{margin-top:15px;height:37px;padding:18px 0 0 135px;background:#ededed;}
 .dezxails ol li{float:left;}
 .dezxails ol li a{font-size:14px;color:#000;line-height:22px;}
-.dezxails ol li i{display:inline-block;width:15px;height:16px;background:url(/mt/imp/QQ.png) no-repeat;vertical-align:middle;}
-.dezxails ol li i.sina{display:inline-block;margin:-2px 4px 0 25px;width:16px;height:16px;background:url(/mt/imp/sina.png) no-repeat;vertical-align:middle;}
+.dezxails ol li i{display:inline-block;width:15px;height:16px;background:url("../mt/imp/QQ.png") no-repeat;vertical-align:middle;}
+.dezxails ol li i.sina{display:inline-block;margin:-2px 4px 0 25px;width:16px;height:16px;background:url("../mt/imp/sina.png") no-repeat;vertical-align:middle;}
 .FancyF li i{position:absolute;top:39px;left:5px;width:14px;height:18px;background-position:-792px -504px;z-index:999;}
 .FancyF li i.password{left:6px;background-position:-824px -504px;*+background-position:-824px -500px;}
 .FancyF li i.red_star{top:46px;left:14px;background-position:-832px -544px;}
@@ -33,11 +33,11 @@
 .FancyF input{position:relative;margin:9px 0 17px;padding-left:5%;width:95%;height:38px;line-height:38px;border-radius:5px;color:#000;}
 .FancyF label{position:absolute;z-index:2;top:39px;left:24px;display:block;color:#BCBCBC;cursor:text;font-size:14px;}
 .FancyF .val label{left:-9999px;opacity:0!important;filter:alpha(opacity="0")!important;}
-.FancyF input[type=text],.FancyF input[type=password],.FancyF textarea{position:relative;z-index:3;display:block;width:87.5%;background:url(/Skin/member/images/transparent_bg2.png);border:1px solid #eaeaea;}
+.FancyF input[type=text],.FancyF input[type=password],.FancyF textarea{position:relative;z-index:3;display:block;width:87.5%;background:url("../mt/imp/transparent_bg2.png");border:1px solid #eaeaea;}
 .FancyF input[type=text]:focus+label,.FancyF input[type=password]:focus+label,.FancyF textarea:focus+label{opacity:.5;filter:alpha(opacity="50");}
 .FancyF textarea{min-height:3.95em;line-height:1.3}
 .FancyF .fff{width:390px;position:absolute;z-index:1;top:28px;right:0;left:0;height:38px;line-height:38px;background-color:#fff;
-    border:1px solid #eaeaea;border-radius:5px;background:#fff;-webkit-box-shadow:0 0 5px #e9e9e9 inset;-moz-box-shadow:0 0 5px #e9e9e9 inset;box-shadow:0 0 5px #e9e9e9 inset;}
+border:1px solid #eaeaea;border-radius:5px;background:#fff;-webkit-box-shadow:0 0 5px #e9e9e9 inset;-moz-box-shadow:0 0 5px #e9e9e9 inset;box-shadow:0 0 5px #e9e9e9 inset;}
 .FancyForm3 .fff{top:0;}
 .FancyForm3 label{top:11px;}
 .FancyF .fffw1{ width:270px; }
@@ -61,8 +61,8 @@ p:before,p:after{display:none;content:".";font-size:0}
 input[text],input[button],input[checkbox],input[password]{background:#fff}
 input[radio],input[checkbox],input[reset],input[submit]{border:0 none}
 textarea{ resize:none;}
-.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}
-/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/
+.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden} 
+/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/ 
 .clearfix:after{content:".";clear:both;display:block;height:0;font-size:0}
 .cf:before,.cf:after{content:".";display:table}
 .cf:after{clear:both}
@@ -72,7 +72,7 @@ i{display:inline-block;}
 .fl{float:left;}
 .f1{float:left;}
 .fr{float:right;}
-.mai-ico{background:url(../mt/imp/bg.png) no-repeat;}
+.mai-ico{background:url("../mt/imp/bg.png") no-repeat;}
 .font_14{font:normal 14px Microsoft YaHei;}
 .font_16{font:normal 16px Microsoft YaHei;}
 .font_18{font:normal 18px Microsoft YaHei;color:#f40;}
@@ -85,7 +85,7 @@ i{display:inline-block;}
 .nav-wrap ul li{float:left;margin-right: 1px;height:60px;}
 .nav-wrap ul li.city{margin:15px 0px 0 20px; height:30px;}
 .nav-wrap ul li.city:hover{background:none}
-.nav-wrap ul li.city a.show {display: block; width: 51px; height: 30px; background: url(../mt/imp/header_city.png); padding:0 0 0 9px; color: #fff;}
+.nav-wrap ul li.city a.show {display: block; width: 51px; height: 30px; background: url("../mt/imp/header_city.png"); padding:0 0 0 9px; color: #fff;}
 .nav-wrap ul li.city .filter_sel{ width:60px; height:105px;}
 .nav-wrap ul li.city .filter_select{ margin-right:0;}
 .nav-wrap ul li.city .filter_sel li{ float: none; }
@@ -96,7 +96,7 @@ i{display:inline-block;}
 .nav-wrap ul li.logo a:hover,.nav-wrap ul li.logo:hover{background:none;}
 .nav-wrap ul li a{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px; height:60px;}
 .nav-wrap ul li a:hover{}
-.nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px;background:url(../mt/imp/header_sel_bg.png) repeat;}
+.nav-wrap ul li a.bg:link,.nav-wrap ul li a.bg:hover,.nav-wrap ul li a.bg:visited,.nav-wrap ul li a.bg:active{display:inline-block;padding:0 18px;line-height:60px;color:#fff;font-size:16px;background:url("../mt/imp/header_sel_bg.png") repeat;}
 .nav-wrap .about a.none {display: none};
 .nav-wrap .about{height:60px;color:#fff;font-size:14px}
 .nav-wrap .about p{padding-top:11px;padding-bottom:5px;}
@@ -107,25 +107,25 @@ i{display:inline-block;}
 .nav-wrap .about .reg{padding-right:24px}
 .nav-wrap .about h3{display:block;font-weight:normal;color: #fff}
 
-.header_select .filter_select em{ top:28px;background: url(../mt/imp/arrow_drop2.png) no-repeat;}
+.header_select .filter_select em{ top:28px;background: url("../mt/imp/arrow_drop2.png") no-repeat;}
 .nav-wrap ul li.header_select a.show{padding:0 4px 0 18px;display:inline-block;line-height:60px;color:#fff;font-size:16px; height:60px;}
 .header_select .filter_select .filter_sel{ top:56px; height:100px; width:80px;}
 .header_select .filter_select .filter_sel li{
-    text-align: center;
-    float:none;
-    padding:0;
+	text-align: center;
+	float:none;
+	padding:0;
 }
 .header_select .filter_select .filter_sel a{ color:#666; height:30px; line-height:30px; font-size:14px; padding:0; display:block;}
 
 .header_select .filter_select .filter_sel .active a{
-    color:#fff;
+	color:#fff;
 }
 /** 自定义下拉框滚动条样式 **/
 .header_select .selectBox{ height:60px;}
 .city .selectBox{ padding-right:16px;}
 .filter_select {position: relative;display: inline-block; padding-right:28px; *zoom: 1;*display: inline;height:30px;text-align: center;font-weight: normal;}
 .filter_select .show{float: left; height:30px; overflow: hidden; padding:0 2px; font-size: 16px;text-align: left; line-height:30px; font-size:12px; color:#333;}
-.filter_select em {    position: absolute;    top:13px;    right:14px;    width: 10px;    height: 6px;    background: url(../mt/imp/arrow_drop.png) no-repeat;}
+.filter_select em {    position: absolute;    top:13px;    right:14px;    width: 10px;    height: 6px;    background: url("../mt/imp/arrow_drop.png") no-repeat;}
 .filter_sel {position: absolute;top:30px;left: 0px;width: 100px;height: 200px;border: 1px solid #ededed;box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);border-radius: 5px;background: #fff;z-index: 9999;display: none;overflow: hidden;}
 .filter_sel ul li {display: block;height: 35px; line-height:35px;font-size: 14px;color: #666;overflow: hidden;text-align: left;background: #fff;cursor: pointer;padding-left: 15px;}
 .filter_sel .active {background: #f78166;color: #fff;}
@@ -256,7 +256,7 @@ i{display:inline-block;}
 	-------------------------------------------------- */
 .reveal-modal-bg{position:fixed;height:100%;width:100%;background:#000;background:rgba(0,0,0,.3);z-index:100;display:none;top:0;left:0;z-index:100;}
 .reveal-modal{visibility:hidden;top:0!important;left:50%;margin-left:-450px;width:900px;position:fixed;z-index:101;padding:0 40px;}
-.reveal-modal .close-reveal-modal{position:absolute;top:8px;right:75px;display:inline-block;width:32px;height:32px;cursor:pointer;background-position:-1040px 0;z-index:101;}
+.reveal-modal .close-reveal-modal{position:absolute;top:8px;right:75px;display:inline-block;width:32px;height:32px;cursor:pointer;background-position:-1040px 0;z-index:101;} 
 
 .rightn_zc{position:absolute;top:0;right:0;z-index:9999;}
 
@@ -288,10 +288,10 @@ i{display:inline-block;}
 
 
 /*IM*/
-.IM_btn i,.sale_points_author h6 span.IM_btn i{display:inline-block;margin:-3px 5px 0;width:17px;height:16px;background:url(../mt/imp/maitianim_btn.png);vertical-align:middle;}
+.IM_btn i,.sale_points_author h6 span.IM_btn i{display:inline-block;margin:-3px 5px 0;width:17px;height:16px;background:url("../mt/imp/maitianim_btn.png");vertical-align:middle;}
 .hc_right .IM_btn,.IM_btn,.sale_points_author h6 span.IM_btn{ vertical-align:middle;padding-left:0!important;width:76px; background:#f66f51; height:32px; font:normal 16px/32px Arial;border-radius:3px;color:#fff!important;display:inline-block;text-align:center;cursor:pointer;overflow:hidden; }
 .hc_right span.IM_btn{margin-top:10px;}
 .IM_btn_min .IM_btn,.sale_points_author h6.IM_btn_min .IM_btn{width:63px!important;height:26px!important;font:normal 14px/26px Arial!important;}
 .IM_btn_min .IM_btn i,.sale_points_author h6.IM_btn_min .IM_btn i{margin:-1px 3px 0 0;}
 .sale_points_author h6 span{vertical-align:middle;}
-.IM_btn_a{display:inline-block;margin:0px 5px 0;width:18px;height:16px;background:url(../mt/imp/maitianim.png);vertical-align:middle;}
+.IM_btn_a{display:inline-block;margin:0px 5px 0;width:18px;height:16px;background:url("../mt/imp/maitianim-1.png");vertical-align:middle;}

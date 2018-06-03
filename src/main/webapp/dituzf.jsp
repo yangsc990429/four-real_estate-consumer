@@ -257,13 +257,14 @@
         }
     </style>
 
+    <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/mt/esf_list_map.css-version=3.0.0.css">
     <!--[if lt IE 9]><script type="text/javascript" src="<%=request.getContextPath()%>/mt/html5.js"></script><![endif]-->
     <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9Qqgu6wUHSFzaBdUfUTHnaIStqcynhwW"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/mt/SearchInfoWindow_min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/mt/GeoUtils_min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/mt/InfoBox_min.js"></script>
     <script src="<%=request.getContextPath()%>/mt/Common.js"></script>
     <script>
         window.onload = function () {
@@ -1273,12 +1274,12 @@
         var RE_ID_RegionID = eval("(" + "''" + ")");
         //var Search_GardenInfo = eval("(" + '[]' + ")");
 
-        var HousingType = "";  //标识房源类型为：二手房
+ /*       var HousingType = "";  //标识房源类型为：二手房
         GLOBAL.Load(_scriptList, '', function () {
                 GLOBAL.View.HouseSecondCycle.Init();
             }
             , "debug"
-        )
+        )*/
     </script>
 
     <!--footer-->
