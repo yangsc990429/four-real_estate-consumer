@@ -5,7 +5,7 @@
 .app_tit{ font-size:90px;text-shadow: 0 0 10px rgba(0,0,0,.3); color:#fff;line-height: 150px; }
 .bancon{ padding-top:148px;}
 .download_box{ width: 440px;}
-.phone_pic{ width:460px; height:601px; margin-top:-30px; background:url("phone_pic.gif"/*tpa=http://bj.maitian.cn/Skin/img/phone_pic.gif*/) no-repeat;}
+.phone_pic{ width:460px; height:601px; margin-top:-30px; background:url("../mt/imp/phone_pic.gif") no-repeat;}
 .fl{ float:left;}
 .fr{ float:right;}
 .download_btns_box{ width: 218px; text-align: center;}
@@ -22,7 +22,7 @@ background-image: -o-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1
 background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1));
 background-image: linear-gradient(to top, rgba(0,0,0,.1), rgba(255,255,255,.1));}
 .download_btns_box a span{ display: inline-block; height: 60px;line-height: 56px; padding-left: 10px; cursor:pointer; vertical-align: middle;}
-.download_btns_box a em{ display: inline-block; width:30px; height:60px;background:url("ia.png"/*tpa=http://bj.maitian.cn/Skin/img/ia.png*/) left center no-repeat; vertical-align: middle;}
+.download_btns_box a em{ display: inline-block; width:30px; height:60px;background:url("../mt/imp/ia.png") left center no-repeat; vertical-align: middle;}
 .download_btns_box a em.Android{ background-position: right center;}
 .download_code{ text-align: center; margin-top:20px; width: 150px; border-radius:5px; background: #df4b2a; overflow: hidden;-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.3);-moz-box-shadow: 0 5px 10px rgba(0,0,0,.3);box-shadow: 0 5px 10px rgba(0,0,0,.3);}
 .download_code img{ width:150px; height:150px; display: block;}

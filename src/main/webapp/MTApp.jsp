@@ -67,7 +67,7 @@
         <div class="nav_bg"></div>
         <div class="nav_wrap clearfix">
             <!-- LOGO -->
-            <a href="/Index.html" class="logo float_l" onclick="ga('send', 'event', 'quanzhanyetou', 'logo', 'logo');"><img src="/skin/img/logo1.png" alt="麦田在线LOGO"></a>
+            <a href="<%=request.getContextPath()%>/mtzx.jsp" class="logo float_l" ><img src="<%=request.getContextPath()%>/mt/imp/logo1.png" alt="麦田在线LOGO"></a>
             <!-- 北京 -->
             <div class="city float_l">
                 <div class="filter_select clearfix selectBox">
