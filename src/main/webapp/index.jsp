@@ -556,7 +556,7 @@
             <label><a onclick="ga('send', 'event', 'paixu', 'liebiaomoshi', 'liebiaomoshi');" href='/esfall' class="list mai-ico"></a><a onclick="    ga('send', 'event', 'paixu', 'liebiaomoshi', 'shenghuoquan');" href='/esfmap' class="map_gay mai-ico"></a></label>
             <!--<p>找到<span>9579</span>套符合要求的房源</p>-->
         </div>
-        <p class="search_result">找到<span>9579</span>套符合要求的房源</p>
+       <%-- <p class="search_result">找到<span>9579</span>套符合要求的房源</p>--%>
         <!---房源列表 start--->
         <div class="list_wrap">
             <ul>

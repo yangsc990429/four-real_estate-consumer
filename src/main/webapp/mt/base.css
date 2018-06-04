@@ -61,8 +61,8 @@ p:before,p:after{display:none;content:".";font-size:0}
 input[text],input[button],input[checkbox],input[password]{background:#fff}
 input[radio],input[checkbox],input[reset],input[submit]{border:0 none}
 textarea{ resize:none;}
-.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden} 
-/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/ 
+.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}
+/*.clear{clear:both;margin:0;padding:0;font-size:0;line-height:0;visibility:hidden}*/
 .clearfix:after{content:".";clear:both;display:block;height:0;font-size:0}
 .cf:before,.cf:after{content:".";display:table}
 .cf:after{clear:both}
@@ -256,7 +256,7 @@ i{display:inline-block;}
 	-------------------------------------------------- */
 .reveal-modal-bg{position:fixed;height:100%;width:100%;background:#000;background:rgba(0,0,0,.3);z-index:100;display:none;top:0;left:0;z-index:100;}
 .reveal-modal{visibility:hidden;top:0!important;left:50%;margin-left:-450px;width:900px;position:fixed;z-index:101;padding:0 40px;}
-.reveal-modal .close-reveal-modal{position:absolute;top:8px;right:75px;display:inline-block;width:32px;height:32px;cursor:pointer;background-position:-1040px 0;z-index:101;} 
+.reveal-modal .close-reveal-modal{position:absolute;top:8px;right:75px;display:inline-block;width:32px;height:32px;cursor:pointer;background-position:-1040px 0;z-index:101;}
 
 .rightn_zc{position:absolute;top:0;right:0;z-index:9999;}
 
