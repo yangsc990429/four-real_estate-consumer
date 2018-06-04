@@ -191,7 +191,7 @@
                 </a>
             </li>
             <li>
-                <a onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'APP');" href='/MTApp.html'>麦田APP</a>
+                <a onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'APP');" href='/MTApp.jsp'>麦田APP</a>
             </li>
         </ul>
         <div class="about float_r">
@@ -1442,7 +1442,7 @@
                         <div id="send-file-warning"></div>
                     </div>
                     <div class="im-btn-container">
-                        <a href="/MTApp.html" target="_blank" title="下载麦田APP">立即下载麦田APP，随时随地聊~</a>
+                        <a href="/MTApp.jsp" target="_blank" title="下载麦田APP">立即下载麦田APP，随时随地聊~</a>
                         <input type="button" value="发送" class="send" onclick="sendText()" />
                     </div>
                 </div>

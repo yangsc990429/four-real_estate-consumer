@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 随风
-  Date: 2018-05-29
-  Time: 上午 11:16
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -183,9 +176,9 @@
                             <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'ershoufang'); " href='/esfall'>二手房</a></li>
                             <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'zufang'); " href='/zfall'>租房</a></li>
                             <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'xiaoqu'); " href='/xqall'>小区</a></li>
-                            <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'jingjiren'); " href='/bkesf'>房产顾问</a></li>
-                            <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'weituo'); " href='/membersell'>委托</a></li>
-                            <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'APP'); " href='<%=request.getContextPath()%>/mt/MTApp.html'>麦田APP</a></li>
+                            <li><a target="_blank"  href='<%=request.getContextPath()%>/zxh/fangchanguwen.jsp'>委托卖房</a></li>
+                            <li><a target="_blank"  href='<%=request.getContextPath()%>/zxh/weituo.jsp'>委托</a></li>
+                            <li><a target="_blank" onclick=" ga('send', 'event', 'quanzhanyetou', 'zhudaohang', 'APP'); " href='<%=request.getContextPath()%>/MTApp.jsp'>麦田APP</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -793,7 +786,7 @@
                         <div id="send-file-warning"></div>
                     </div>
                     <div class="im-btn-container">
-                        <a href="/MTApp.html" target="_blank" title="下载麦田APP">立即下载麦田APP，随时随地聊~</a>
+                        <a href="/MTApp.jsp" target="_blank" title="下载麦田APP">立即下载麦田APP，随时随地聊~</a>
                         <input type="button" value="发送" class="send" onclick="sendText()" />
                     </div>
                 </div>
@@ -995,6 +988,9 @@
         location.href="<%=request.getContextPath()%>/index.jsp";
     }
 
+    function weituo(){
+        window.open("zxh/weituo.jsp","_blank")
+    }
     
 </script>
 

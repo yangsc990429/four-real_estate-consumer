@@ -107,13 +107,17 @@
             contentType:"application/x-www-form-urlencoded",//必须的否则条件查询时会乱码
             columns:[[
                 {field:'che',width:10,checkbox:true,},
-                {field:'b',title:'委托信息',width: 300,
-                    formatter: function (value,row,index){
-                        var a ='<span><a href="#">'+row.mianjiyaoqiu+'<span/>,</a>';
-                        return a;
+                {field:'xuqiu',title:'委托信息',width: 300},
+                {field:'lei',title:'类型',width:300,
+                    formatter:function (value,row,index){
+                        if(row.weituotype == "1"){
+                            return "<font color='green'>出租</font>";
+                        }
+                        if(row.weituotype == "2"){
+                            return "<font color='green'>出购</font>";
+                        }
                     }
                 },
-                {field:'weituotype',title:'类型',width:300},
                 {field:'xiwangquyu',title:'希望区域',width:300},
                 {field:'phone',title:'电话',width:300},
                 {field:'fabutime',title:'发布时间',width:300,}
@@ -131,9 +135,7 @@
         for (var i = 0; i < a.length; i++) {
             idsp+=","+a[i].zhaofangid;
         }
-
         var idse = idsp.substring(1);
-        alert(idse)
         $.ajax({
             url:"<%=request.getContextPath()%>/lfq/deleteZF",
             type:"post",
@@ -146,27 +148,6 @@
         });
 
     }
-    /*function deleteZF(zhaofangid) {
-        if(confirm("确认删除吗?")){
-            $.ajax({
-
-                url:"<%=request.getContextPath()%>/lfq/deleteZF",
-                type:"post",
-                data:{"idse":zhaofangid},
-                dataType:"text",
-                success:function(json){
-
-                    location.href=location;//刷新页面
-                },
-                error:function (){
-                    alert("删除失败");
-                }
-            })
-        }
-
-    }
-
-*/
 
 </script>
 </body>

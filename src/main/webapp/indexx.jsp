@@ -118,9 +118,9 @@ $(function() {
 <li><a href="javaScript:querytreess(3)"><img src="<%=request.getContextPath()%>/Fc/images/common/navi03.png" width="26" height="36" alt="咨询管理"><span>咨询管理</span></a></li>
 <li><a href="javaScript:querytreess(4)"><img src="<%=request.getContextPath()%>/Fc/images/common/navi04.png" width="34" height="36" alt="房源管理"><span>房源管理</span></a></li>
 <li><a href="javaScript:querytreess(5)"><img src="<%=request.getContextPath()%>/Fc/images/common/navi05.png" width="24" height="36" alt="楼盘小区"><span>楼盘小区</span></a></li>
-<li><a href="javaScript:querytreess(6)"><img src="<%=request.getContextPath()%>/Fc/images/common/navi01.png" width="36" height="36" alt="家装馆"><span>家装馆</span></a></li>
+<li><a href="javaScript:querytreess(6)"><img src="<%=request.getContextPath()%>/Fc/images/common/navi08.png" width="36" height="36" alt="家装馆"><span>家装馆</span></a></li>
 <li><a href=""><img src="<%=request.getContextPath()%>/Fc/images/common/navi07.png" width="34" height="36" alt="资金支付-发票"><span>资金支付-发票</span></a></li>
-<li class="active"><a href=""><img src="<%=request.getContextPath()%>/Fc/images/common/navi08.png" width="34" height="36" alt="产品管理信息"><span>产品管理信息</span></a></li>
+<li class="active"><a href="javaScript:zhuxiao()"><img src="<%=request.getContextPath()%>/Fc/images/common/navi01.png" width="34" height="36" alt="注销"><span>注销</span></a></li>
 
 <%--    <div class="user" style="width:170px;height:48px;"><a href="javascript:showmenu(UserList)">admin</a>
         <div id="UserList"><a href="">修改</a>
@@ -396,6 +396,10 @@ $(function(){
                 alert("系统错误，请使用debug调试 ！！！");
             }
         })
+    }
+
+    function zhuxiao(){
+        location.href="<%=request.getContextPath()%>/zxh/zhuxiao";
     }
 /*    });*/
 </script>
